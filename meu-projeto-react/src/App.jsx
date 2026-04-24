@@ -6,6 +6,7 @@ import Footer from './componentes/footer/Footer.jsx'
 import Header from './componentes/Header/Header.jsx'
 import Inicial from './paginas/Inicial/Inicial.jsx'
 
+import Interface from './paginas/Interface/Interface.jsx'
 
 const App = () => {
   return (
