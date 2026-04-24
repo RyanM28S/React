@@ -4,6 +4,7 @@ import Home from './paginas/Home/Home.jsx'
 import CadastroP from './paginas/Formularios/CadastroP.jsx'
 import Footer from './componentes/footer/Footer.jsx'
 import Header from './componentes/Header/Header.jsx'
+import Interface from './paginas/Interface/Interface.jsx'
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
       <main className='conteiner-flexivel'>
 
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={<Interface />}/>
           <Route path="/cadastro" element={<CadastroP />}/>
           <Route path="/login" element={<Home />}/>
           <Route path="/professores" element={<Home />}/>
