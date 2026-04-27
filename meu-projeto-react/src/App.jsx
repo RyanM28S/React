@@ -5,8 +5,9 @@ import CadastroP from './paginas/Formularios/CadastroP.jsx'
 import Footer from './componentes/footer/Footer.jsx'
 import Header from './componentes/Header/Header.jsx'
 import Inicial from './paginas/Inicial/Inicial.jsx'
-
 import Interface from './paginas/Interface/Interface.jsx'
+import Categorias from './paginas/Categorias/Categorias.jsx'
+import Perfil from './paginas/Perfil/Perfil.jsx'
 
 const App = () => {
   return (
@@ -23,8 +24,9 @@ const App = () => {
           <Route path="/cadastro" element={<CadastroP />}/>
           <Route path="/login" element={<Home />}/>
           <Route path="/professores" element={<Home />}/>
-          <Route path="/categorias" element={<Home />}/>
-          <Route path="/interface" element={<Home />}/>
+          <Route path="/categorias" element={<Categorias />}/>
+          <Route path="/interface" element={<Interface />}/>
+          <Route path="/perfil" element={<Perfil />}/>
         </Routes>
 
       </main>
