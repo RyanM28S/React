@@ -15,7 +15,7 @@ const Inicial = () => {
     <>
     <section className={style.inicio}>
       <div className={style['parte-de-cima']}>
-        <div className="parte1">
+        <div className={style.parte1}>
           <div className={style.circulo}></div>
           <h2>O NOVO PADRÃO EM FEEDBACK ESCOLAR</h2>
         </div>
@@ -124,9 +124,9 @@ const Inicial = () => {
         <a href="" className={style['a-parte3']}>Acessa Visão Geral </a>
       </div>
 
-      <div className="direita-parte3">
-        <div className="caixas-parte3">
-          <div className="caixa1-parte3">
+      <div className={style['direita-parte3']}>
+        <div className={style['caixas-parte3']}>
+          <div className={style['caixa1-parte3']}>
             <img src={iconeInicialHeader} alt="icone-ilustrativo-para-aba-professores" />
             <h2>Avalie Professores</h2>
             <p>
@@ -134,7 +134,7 @@ const Inicial = () => {
               os melhores professores.
             </p>
           </div>
-          <div className="caixa2-parte3">
+          <div className={style['caixa2-parte3']}>
             <img src={iconePredio} alt="icone-ilustrativo-para-aba-setores" />
             <h2>Setores da Escola</h2>
             <p>
