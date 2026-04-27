@@ -31,7 +31,7 @@ const Header = () => {
         <img src={ImgPessoas} alt="icone-para-ir-para-tela-professores" />
         Professores
       </Link>
-      <Link to="" className={style.btn3} id="categoriash">
+      <Link to="/categorias" className={style.btn3} id="categoriash">
         <img src={ImgPredio} alt="icone-para-ir-para-tela-setores" />
         Categorias
       </Link>
@@ -44,7 +44,7 @@ const Header = () => {
         </Link>
     </div>
     <div className={style.fim}>
-       <Link to="" className={style['btn-perfil']}>
+       <Link to="/perfil" className={style['btn-perfil']}>
           <img src={ImgPessoa} alt="icone-para-representa-pessoa-para-acessa-o-perfil"/>
           Gui_tzn
         </Link>

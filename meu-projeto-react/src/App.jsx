@@ -5,9 +5,9 @@ import CadastroP from './paginas/Formularios/CadastroP.jsx'
 import Footer from './componentes/footer/Footer.jsx'
 import Header from './componentes/Header/Header.jsx'
 import Inicial from './paginas/Inicial/Inicial.jsx'
-import Professores from './paginas/Professores/Professores.jsx'
-
 import Interface from './paginas/Interface/Interface.jsx'
+import Categorias from './paginas/Categorias/Categorias.jsx'
+import Perfil from './paginas/Perfil/Perfil.jsx'
 
 const App = () => {
   return (
