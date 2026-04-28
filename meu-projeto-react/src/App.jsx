@@ -8,6 +8,7 @@ import Categorias from './paginas/Categorias/Categorias.jsx'
 import Perfil from './paginas/Perfil/Perfil.jsx'
 import Professores from './paginas/Professores/Professores.jsx'
 
+
 const App = () => {
   return (
     <BrowserRouter>

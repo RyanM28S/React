@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
 
   .header {
     background-color: black;
@@ -17,10 +19,10 @@
   .h1 {
     color: #ededed;
     font-family: "Syne", sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
     display: block;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin: auto;
   }
   
@@ -32,8 +34,10 @@
   .inicial {
     background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
     box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
-    border-radius: 0.5rem;
+    border-radius: 0.7rem;
+    padding: 0.4rem 0.4rem;
     height: 40px;
+    width: 40px;
     margin:  auto 1rem ;
   }
   .começo {

@@ -1,6 +1,9 @@
 import React from 'react'
 import style from './Interface.module.css'
-import Collage from '../../assets/iconcollage.png'
+import Collage from '../../assets/iconcollage.svg'
+import Star from '../../assets/iconStar.svg'
+import Mensagem from '../../assets/iconBalaodemensagem.svg'
+import Grafico from '../../assets/iconLinhagrafico.svg'
 import { Link } from 'react-router-dom'
 
 const Interface = () => {
@@ -24,7 +27,7 @@ const Interface = () => {
             <div className={style.container_estatisticas}>
             <div className={style.destatistica}>
                 <div className={style.destatistica1}>
-                <img src={Collage} alt="" />
+                <img src={Star} alt="" />
                 <h4>12</h4>
                 </div>
                 <div className={style.destatistica2}>
@@ -34,7 +37,7 @@ const Interface = () => {
             
             <div className={style.destatistica}>
                 <div className={style.destatistica1}>
-                <img src={Collage} alt="" />
+                <img src={Mensagem} alt="" />
                 <h4>8</h4>
                 </div>
                 <div className={style.destatistica2}>
@@ -43,7 +46,7 @@ const Interface = () => {
             </div>
             <div className={style.destatistica}>
                 <div className={style.destatistica1}>
-                <img src={Collage} alt="" />
+                <img src={Grafico} alt="" />
                 <h4>20</h4>
                 </div>
                 <div className={style.destatistica2}>
@@ -57,7 +60,7 @@ const Interface = () => {
             </div>
             <div className={style.container_acoes}>
             <div className={style.dacoes}>
-                <img src={Collage} alt="" />
+                <img  alt="" />
                 <h4>Avaliar Professores</h4>
                 <p>Compartilhe suas experiências com os professores.</p>
                 <Link to="/home">
@@ -65,7 +68,7 @@ const Interface = () => {
                 </Link>
             </div>
             <div className={style.dacoes}>
-                <img src={Collage} alt="" />
+                <img  alt="" />
                 <h4>Avaliar Setores</h4>
                 <p>Avalie diferentes setores da escola.</p>
                 <Link to="/home">
@@ -73,7 +76,7 @@ const Interface = () => {
                 </Link>
             </div>
             <div className={style.dacoes}>
-                <img src={Collage} alt="" />
+                <img  alt="" />
                 <h4>Painel de Professores</h4>
                 <p>Veja a categoria de professores.</p>
                 <Link to="/home">

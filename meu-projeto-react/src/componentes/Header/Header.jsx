@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import style from './Header.module.css'
-import ImgInicial from '../../assets/icone_inicial_header.png'
-import ImgPessoas from '../../assets/icone_pessoas_header.png'
+import ImgInicial from '../../assets/icone_inicial_header1.svg'
+import ImgPessoas from '../../assets/icone_pessoas_header.svg'
 import ImgPessoa from '../../assets/icone-pessoa.png'
 import ImgPredio from '../../assets/icone-predio.png'
-import ImgIncocolage from '../../assets/iconcollage.png'
+import ImgIncocolage from '../../assets/iconcollage.svg'
 import ImgEntrar from '../../assets/icone-entrar.png'
 
 

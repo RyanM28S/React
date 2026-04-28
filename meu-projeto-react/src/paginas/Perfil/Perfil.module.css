@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Syne:wght@400..800&display=swap');
+
+
 .main {
     background: linear-gradient(180deg, #0b0b10, #0a0a0f);
     padding: 10% 4.9rem 5% 4.9rem;
@@ -143,8 +147,8 @@
     h4 {
         font-size: 0.9rem;
         font-family: 'Nunito Sans', sans-serif;
-        font-weight: 500;
-        color: rgba(224, 224, 224, 0.6);
+        font-weight: 600;
+        color: #9D9AA8BD;
     }
     p {
       font-size: 1rem;
