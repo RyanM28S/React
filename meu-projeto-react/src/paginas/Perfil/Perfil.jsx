@@ -3,8 +3,8 @@ import styles from './Perfil.module.css'
 import { Link } from 'react-router-dom'
 import Sair from '../../assets/iconSair.png'
 import Carta from '../../assets/iconcarta.png'
-import Escudo from '../../assets/iconSair.png'
-import Calendario from '../../assets/iconSair.png'
+import Escudo from '../../assets/iconEscudo.png'
+import Calendario from '../../assets/iconCalendario.png'
 
 const Perfil = () => {
   return (
@@ -31,8 +31,8 @@ const Perfil = () => {
                     <div className={styles.d1divs_perfil2}>
                     <div className={styles.d1texto_perfil2}>
                         <div className={styles.d2informacoes_perfil2}>
-                        <img src={Carta} alt="" />
-                        <h3>Informações de Contato</h3>
+                            <img src={Carta} alt="" />
+                            <h3>Informações de Contato</h3>
                         </div>
                         <h4>Email</h4>
                         <p>guitzn9@gmail.com</p>
@@ -45,7 +45,7 @@ const Perfil = () => {
                     <div className={styles.d1divs_perfil2}>
                     <div className={styles.d2texto_perfil2}>
                         <div className={styles.d2informacoes_perfil2}>
-                        <img src={Escudo} alt="" />
+                            <img src={Escudo} alt="" />
                         <h3>Informações da Conta</h3>
                         </div>
                         <h4>Status</h4>

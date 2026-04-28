@@ -1,4 +1,6 @@
-  
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Syne:wght@400..800&display=swap');
+
   /*main*/
   
   .main { 
@@ -6,7 +8,7 @@
     background: linear-gradient(180deg, #0b0b10, #0a0a0f);
     color: white;
   }
-  
+
   .comeco_conteiner {
     display: flex;
     align-items: center;
@@ -83,11 +85,14 @@
   }
   
   .destatistica {
+    display: flex;
+    flex-direction: column;
     height: 9rem;
     width: 32%;
     border-radius: 1rem;
     background: #3B0F3F;
-    padding: 2rem 0;
+    padding: 2rem 2rem;
+    gap: 1rem;
     display: flex;
     border: 1px solid rgba(64, 45, 173, 0.281);
     transition: all 0.5s ease-out;
@@ -118,7 +123,16 @@
   .destatistica1 {
     display: flex;
     align-items: center;
-  
+    justify-content: space-between;
+    width: 100%;
+
+    img {
+      height: 2rem;
+      width: 2rem;
+    }
+    h4 {
+      margin-left: auto;
+    }
   
   }
   
