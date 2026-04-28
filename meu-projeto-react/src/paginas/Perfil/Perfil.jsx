@@ -3,6 +3,8 @@ import styles from './Perfil.module.css'
 import { Link } from 'react-router-dom'
 import Sair from '../../assets/iconSair.png'
 import Carta from '../../assets/iconcarta.png'
+import Escudo from '../../assets/iconSair.png'
+import Calendario from '../../assets/iconSair.png'
 
 const Perfil = () => {
   return (
@@ -43,7 +45,7 @@ const Perfil = () => {
                     <div className={styles.d1divs_perfil2}>
                     <div className={styles.d2texto_perfil2}>
                         <div className={styles.d2informacoes_perfil2}>
-                        <img src="../img/iconEscudo.png" alt="" />
+                        <img src={Escudo} alt="" />
                         <h3>Informações da Conta</h3>
                         </div>
                         <h4>Status</h4>
@@ -52,13 +54,13 @@ const Perfil = () => {
                         </div>
                         <h4>Membro desde</h4>
                         <div className={styles.d2data_perfil2}>
-                        <img src="../img/iconCalendario.png" alt="" /> 
-                        <p className="d2data">21/03/2026</p>
+                        <img src={Calendario} alt="" /> 
+                        <p className={styles.d2data}>21/03/2026</p>
                         </div>
                         <h4>Último acesso</h4>
                         <div className={styles.d2data_perfil2}>
-                        <img src="../img/iconCalendario.png" alt="" />
-                        <p className="d2data">17/04/2026</p>
+                        <img src={Calendario} alt="" />
+                        <p className={styles.d2data}>17/04/2026</p>
                         </div>
                     </div>
                     </div>

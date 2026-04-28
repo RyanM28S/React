@@ -27,7 +27,7 @@ const Categorias = () => {
             </section>
             <section>
                 <div className={styles.conteiner_setores}>
-                    <div class={styles.dsetores_linha1}>
+                    <div className={styles.dsetores_linha1}>
                         <div className={styles.dsetores1}>
                             <div className={styles.imagem_maiorsetor1}>
                                 <img src={Secretaria} alt="" />
@@ -46,7 +46,7 @@ const Categorias = () => {
                                     <img src={Carta} alt="" />
                                     <p>secretaria@escolaexemplo.com</p>
                                 </div>
-                                <a href="#" className={styles.verdetalhes}>Ver detalhes e avaliar →</a>
+                                <Link to="" className={styles.verdetalhes}>Ver detalhes e avaliar →</Link>
                             </div>
                         </div>
                         <div className={styles.dsetores2}>
@@ -64,7 +64,7 @@ const Categorias = () => {
                                     <img src={Carta} alt="" />
                                     <p>biblioteca@escolaexemplo.com</p>
                                 </div>
-                                <a href="#">Ver detalhes e avaliar →</a>
+                                <Link to="">Ver detalhes e avaliar →</Link>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ const Categorias = () => {
                                     <img src={Carta} alt="" />
                                     <p>coordenacao@escolaexemplo.c...</p>
                                 </div>
-                                <a href="#">Ver detalhes e avaliar →</a>
+                                <Link to="">Ver detalhes e avaliar →</Link>
                             </div>
                         </div>
                         <div className={styles.dsetores4}>
@@ -102,45 +102,45 @@ const Categorias = () => {
                                     <img src={Carta} alt="" />
                                     <p>biblioteca@escolaexemplo.com</p>
                                 </div>
-                                <a href="#">Ver detalhes e avaliar →</a>
+                                <Link to="">Ver detalhes e avaliar →</Link>
                             </div>
                         </div>
                     </div>  
-                    <div class={styles.dsetores_linha1}>
-                        <div class={styles.dsetores3}>
-                            <div class={styles.imagem_maiorsetor1}>
+                    <div className={styles.dsetores_linha1}>
+                        <div className={styles.dsetores3}>
+                            <div className={styles.imagem_maiorsetor1}>
                                 <img src={Orientacao} alt="" />
                             </div>
-                            <div class={styles.dtexto_setores3}>
+                            <div className={styles.dtexto_setores3}>
                                 <h3>Orientação Educacional</h3>
-                                <p class={styles.setorestexto1}>Oferece suporte psicopedagógico e orientação para o...</p>
-                                <div class={styles.dados_setores}>
+                                <p className={styles.setorestexto1}>Oferece suporte psicopedagógico e orientação para o...</p>
+                                <div className={styles.dados_setores}>
                                     <img src={Localizacao} alt="" />
                                     <p>Bloco A, Sala 103</p>
                                 </div>
-                                <div class={styles.dados_setores}>
+                                <div className={styles.dados_setores}>
                                     <img src={Carta} alt="" />
                                     <p>orientacao@escolaexemplo.com</p>
                                 </div>
-                                <a href="#">Ver detalhes e avaliar →</a>
+                                <Link to="">Ver detalhes e avaliar →</Link>
                             </div>
                         </div>
-                        <div class={styles.dsetores3}>
-                            <div class={styles.imagem_maiorsetor1}>
+                        <div className={styles.dsetores3}>
+                            <div className={styles.imagem_maiorsetor1}>
                                 <img src={Manutencao} alt="" />
                             </div>
-                            <div class={styles.dtexto_setores3}>
+                            <div className={styles.dtexto_setores3}>
                                 <h3>Manutenção e Limpeza</h3>
-                                <p class={styles.setorestexto1}>Responsável pela conservação, limpeza e bom funcionamento...</p>
-                                <div class={styles.dados_setores}>
+                                <p className={styles.setorestexto1}>Responsável pela conservação, limpeza e bom funcionamento...</p>
+                                <div className={styles.dados_setores}>
                                     <img src={Localizacao} alt="" />
                                     <p>Anexo de Serviços</p>
                                 </div>
-                                <div class={styles.dados_setores}>
+                                <div className={styles.dados_setores}>
                                     <img src={Carta} alt="" />
                                     <p>manutencao@escolaexemplo.com</p>
                                 </div>
-                                <a href="#">Ver detalhes e avaliar →</a>
+                                <Link to="">Ver detalhes e avaliar →</Link>
                             </div>
                         </div>
                     </div>
