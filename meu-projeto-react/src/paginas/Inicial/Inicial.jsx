@@ -9,6 +9,7 @@ import iconeEstrela from '../../assets/icone-estrela.png'
 import iconeMensagem from '../../assets/icone-mensagem.svg'
 import iconeSetaParaCima from '../../assets/icone-seta-para-cima.png'
 import style from './Inicial.module.css'
+import { Link } from 'react-router-dom'
 const Inicial = () => {
   return (
 
@@ -121,7 +122,7 @@ const Inicial = () => {
           comunicação e o acompanhamento <br />
           dentro do ambiente escolar.
         </p>
-        <a href="" className={style['a-parte3']}>Acessa Visão Geral </a>
+        <Link to="/home" className={style['a-parte3']}>Acessa Visão Geral </Link>
       </div>
 
       <div className={style['direita-parte3']}>

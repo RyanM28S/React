@@ -10,7 +10,7 @@ const Interface = () => {
             <div className={style.comeco_conteiner}>
                 <div className={style.comeco_bemvindo}>
                     <div className={style.bemvindo_imagem}>
-                    <img src= {Collage} alt="" />
+                    <img src={Collage} alt="" />
                     </div>
                     <div className={style.bemvindo_texto}>
                     <h2>Bem-vindo, <span id="nome">jurandirbueno02010</span>!</h2> <p>Este é seu painel de controle. Aqui você pode acessar todas as funcionalidades plataforma.</p>
@@ -24,7 +24,7 @@ const Interface = () => {
             <div className={style.container_estatisticas}>
             <div className={style.destatistica}>
                 <div className={style.destatistica1}>
-                <img src alt="" />
+                <img src={Collage} alt="" />
                 <h4>12</h4>
                 </div>
                 <div className={style.destatistica2}>
@@ -34,7 +34,7 @@ const Interface = () => {
             
             <div className={style.destatistica}>
                 <div className={style.destatistica1}>
-                <img src alt="" />
+                <img src={Collage} alt="" />
                 <h4>8</h4>
                 </div>
                 <div className={style.destatistica2}>
@@ -43,7 +43,7 @@ const Interface = () => {
             </div>
             <div className={style.destatistica}>
                 <div className={style.destatistica1}>
-                <img src alt="" />
+                <img src={Collage} alt="" />
                 <h4>20</h4>
                 </div>
                 <div className={style.destatistica2}>
@@ -57,26 +57,26 @@ const Interface = () => {
             </div>
             <div className={style.container_acoes}>
             <div className={style.dacoes}>
-                <img src alt="" />
+                <img src={Collage} alt="" />
                 <h4>Avaliar Professores</h4>
                 <p>Compartilhe suas experiências com os professores.</p>
-                <Link to="">
+                <Link to="/home">
                 <h5>Acessar</h5>
                 </Link>
             </div>
             <div className={style.dacoes}>
-                <img src alt="" />
+                <img src={Collage} alt="" />
                 <h4>Avaliar Setores</h4>
                 <p>Avalie diferentes setores da escola.</p>
-                <Link to="">
+                <Link to="/home">
                 <h5>Acessar</h5>
                 </Link>
             </div>
             <div className={style.dacoes}>
-                <img src alt="" />
+                <img src={Collage} alt="" />
                 <h4>Painel de Professores</h4>
                 <p>Veja a categoria de professores.</p>
-                <Link to="">
+                <Link to="/home">
                 <h5>Acessar</h5>
                 </Link>
             </div>
@@ -86,7 +86,7 @@ const Interface = () => {
             </div>
             
             <div className={style.datividade}>
-            <img src alt="" />
+            <img src={Collage} alt="" />
             <p>Nenhuma atividade recentes para exibir</p>
             </div>
         </section>
