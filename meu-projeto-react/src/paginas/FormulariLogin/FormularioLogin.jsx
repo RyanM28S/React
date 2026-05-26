@@ -1,6 +1,4 @@
 import styles from "../Cadastro/login.module.css";
-import image1 from "../../assets/icone_inicial_header1.svg";
-import image2 from "../../assets/icone_pessoas_header.svg";
 import { Link } from "react-router-dom";
 
 const FormularioLogin = () => {
@@ -12,40 +10,50 @@ const FormularioLogin = () => {
           <p>login para continuar</p>
 
           <form id="formLogin">
-            <label forHTML="Email">Usuário</label>
+            <label htmlFor="Email">Usuário</label>
             <br />
+
             <input
               id="Email"
               name="Email"
               type="email"
               placeholder="Digite seu email de usuário"
             />
+
             <br />
-            <label forHTML="Senha">Senha</label>
+
+            <label htmlFor="Senha">Senha</label>
             <br />
+
             <input
               id="Senha"
               name="Senha"
               type="password"
               placeholder="Digite sua senha"
             />
+
             <br />
+
             <button type="submit" className={styles["button-entrar"]}>
               Entrar na Plataforma
             </button>
+
             <br />
           </form>
+
           <p id="p"></p>
+
           <button id="cadastro" className={styles.buttonnao}>
             Não tem cadastro?
           </button>
         </div>
       </div>
+
       <div>
         <p className={styles["p-footer"]}>
           Ao fazer login, você concorda com nossos{" "}
-          <Link href="" className={styles[a - footer]}>
-            Termos de Uso{" "}
+          <Link to="" className={styles["a-footer"]}>
+            Termos de Uso
           </Link>
         </p>
       </div>
