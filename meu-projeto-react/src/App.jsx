@@ -1,4 +1,4 @@
-import React from 'react'
+import { useLocation} from 'react-router-dom'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from './componentes/footer/Footer.jsx'
 import Header from './componentes/Header/Header.jsx'
@@ -7,20 +7,28 @@ import Interface from './paginas/Interface/Interface.jsx'
 import Categorias from './paginas/Categorias/Categorias.jsx'
 import Perfil from './paginas/Perfil/Perfil.jsx'
 import Professores from './paginas/Professores/Professores.jsx'
-
+import Cadastro from './paginas/Cadastro/Cadastro.jsx'
+import FormularioLogin from './paginas/FormulariLogin/FormularioLogin.jsx'
 
 const App = () => {
+
+  const location = useLocation()
+
+
+  const naoTem = ['/', 'cadastro', '*'];
+  const hide = naoTem.includes(location.pathname)
+
   return (
-    <BrowserRouter>
+    
 
     <div className='conteiner-principal'>
 
-      <Header />
+      {!hide && <Header />}
 
       <main className='conteiner-flexivel'>
 
         <Routes>
-          <Route path="/" element={<Inicial />}/>
+          <Route path="/" element={<FormularioLogin />}/>
           <Route path="/interface" element={<Interface />}/>
           <Route path="/categorias" element={<Categorias />}/>
           <Route path="/perfil" element={<Perfil />}/>
@@ -30,11 +38,11 @@ const App = () => {
 
       </main>
 
-       <Footer />
+       {!hide && <Footer />}
 
     </div>
 
-    </BrowserRouter>
+ 
   )
 }
 
