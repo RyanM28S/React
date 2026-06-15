@@ -10,7 +10,8 @@
   .logo {
     background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
     box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
     height: 80px;
     display: block;
     margin: 1rem auto;
@@ -40,8 +41,9 @@
   }
   
   .prof {
-    border-radius: 1rem;
+    border-radius: 2rem;
     width: 30%;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
