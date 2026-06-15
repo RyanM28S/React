@@ -42,26 +42,26 @@ const Perfil = () => {
                     </div>
                     </div>
                     <div className={styles.d1divs_perfil2}>
-                    <div className={styles.d2texto_perfil2}>
-                        <div className={styles.d2informacoes_perfil2}>
-                            <img src={Escudo} alt="" />
-                        <h3>Informações da Conta</h3>
+                        <div className={styles.d2texto_perfil2}>
+                            <div className={styles.d2informacoes_perfil2}>
+                                <img src={Escudo} alt="" />
+                            <h3>Informações da Conta</h3>
+                            </div>
+                            <h4>Status</h4>
+                            <div className="">
+                            <p>Aprovado</p>              
+                            </div>
+                            <h4>Membro desde</h4>
+                            <div className={styles.d2data_perfil2}>
+                            <img src={Calendario} alt="" /> 
+                            <p className={styles.d2data}>21/03/2026</p>
+                            </div>
+                            <h4>Último acesso</h4>
+                            <div className={styles.d2data_perfil2}>
+                            <img src={Calendario} alt="" />
+                            <p className={styles.d2data}>17/04/2026</p>
+                            </div>
                         </div>
-                        <h4>Status</h4>
-                        <div className="">
-                        <p>Aprovado</p>              
-                        </div>
-                        <h4>Membro desde</h4>
-                        <div className={styles.d2data_perfil2}>
-                        <img src={Calendario} alt="" /> 
-                        <p className={styles.d2data}>21/03/2026</p>
-                        </div>
-                        <h4>Último acesso</h4>
-                        <div className={styles.d2data_perfil2}>
-                        <img src={Calendario} alt="" />
-                        <p className={styles.d2data}>17/04/2026</p>
-                        </div>
-                    </div>
                     </div>
                 </div>
                 <div className={styles.d3atividade_perfil3}>

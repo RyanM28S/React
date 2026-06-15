@@ -24,7 +24,7 @@ const Inicial = () => {
             <br />
             Elevada.</span>
         </h1>
-        <h3 className={style['h3-parte-cima}']}>
+        <h3 className={style['h3-parte-cima']}>
           Salotti Opina é uma plataforma definitiva para avaliações <br />
           institucionais. Uma interface premium projetada para conectar <br />
           alunos, professores e administração com clareza e sofisticação.

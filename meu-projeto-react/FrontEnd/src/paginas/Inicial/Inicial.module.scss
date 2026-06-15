@@ -1,16 +1,9 @@
-* {
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #050505;
-      }
-    }
+
     .inicio {
-      min-height: 100vh;
-      width: 100%;
+      margin-top: 96px;
     }
     .circulo {
       margin-left: 10px;
-      margin-top: 3px;
       width: 15px;
       height: 15px;
       background-color: #9c03f4;
@@ -56,7 +49,8 @@
     }
     
     .parte-de-cima {
-      margin: 0;
+      min-width: 100vh;
+      min-height: 89.9vh;
       padding: 0;
       background:
         linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
@@ -74,7 +68,7 @@
         auto;
     }
     .titulo-parte-cima {
-      margin-top: 50px;
+     
       font-size: 10rem;     
       text-align: center;
       color: white;

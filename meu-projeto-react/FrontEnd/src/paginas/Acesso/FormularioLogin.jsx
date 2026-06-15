@@ -2,6 +2,23 @@ import styles from "./Acesso.module.scss"
 import { Link } from "react-router-dom";
 
 const FormularioLogin = () => {
+
+
+  function handleLogin(event) {
+    event.preventDefault()
+    const dados = Object.fromEntries(
+      new FormData(event.target)
+    )
+
+    if(!dados.Email || !dados.Senha) {
+      alert("Falta informações!")
+      return
+    }
+    console.log("Dados validos", dados)
+  }
+
+
+
   return (
     <>
       <div id="conteudo">
@@ -9,7 +26,7 @@ const FormularioLogin = () => {
           <h1>Bem-vindo de volta</h1>
           <p>login para continuar</p>
 
-          <form id="formLogin">
+          <form onSubmit={handleLogin} id="formLogin">
             <label htmlFor="Email">Usuário</label>
             <br />
 
