@@ -1,7 +1,4 @@
 
-    .inicio {
-      margin-top: 96px;
-    }
     .circulo {
       margin-left: 10px;
       width: 15px;
@@ -37,7 +34,7 @@
       gap: 10px;
       justify-content: center;
       text-align: center;
-      margin: auto;
+      margin:auto;
       font-size: 1rem;
       font-weight: normal;
       box-shadow: 0 0 10px rgba(188, 19, 254, 0.5);
@@ -51,7 +48,7 @@
     .parte-de-cima {
       min-width: 100vh;
       min-height: 89.9vh;
-      padding: 0;
+      padding: 2rem;
       background:
         linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
@@ -87,9 +84,10 @@
     }
     .h3-parte-cima {
       color: #a1a1aa;
+      margin: 3rem auto;
       font-weight: 400;
       text-align: center;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       text-shadow:
         0 0 5px rgba(161, 0, 255, 0.4),
         0 0 10px rgba(161, 0, 255, 0.3);
@@ -101,7 +99,7 @@
       gap: 1.5rem;
     }
     .button1-cima {
-      padding: 1.5rem;
+      padding: 1rem;
       border: 2px solid rgba(255, 255, 255, 0.18);
       font-size: 1.5rem;
       border-radius: 1rem;

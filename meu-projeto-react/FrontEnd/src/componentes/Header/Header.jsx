@@ -17,10 +17,12 @@ const Header = () => {
   return (
     
     <header className={style.header}>
-    <div className={style.começo}>
+
+    <Link to="/" className={style.começo}>
       <img src={ImgInicial} alt="logo-da-inicial-do-header" className={style.inicial} />
       <h1 className={style.h1}>Salotti <span className={style['span-titulo']}>Opina</span></h1>
-    </div>  
+    </Link>  
+
     <div className={style.meio}>
       <Link to="/interface" className={style.btn1} id="naoh">
         <img src={ImgInicial} alt="icone-para-ir-para-tela-inicial" />
