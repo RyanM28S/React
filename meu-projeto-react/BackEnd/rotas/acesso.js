@@ -7,9 +7,9 @@ const roteador = express.Router();
 
 async function Login(req, res) {
   const { Email, Senha } = req.body;
-  const [buscar] = await db.query("SELECT * FROM usuarios WHERE email = ?", [
-    Email,
-  ]);
+  const [buscar] = await db.query("SELECT * FROM usuarios WHERE email = ?", 
+    [Email]
+  );
   if (buscar.length === 0) {
     return res.status(400).json({ message: "Usuario não encontrado" });
   }
@@ -17,13 +17,17 @@ async function Login(req, res) {
   const token = jwt.sign(
     {
       id: usuario.id,
-      emial: usuario.email,
+      Email: usuario.Email,
     },
-    process.env.JWT_SECRET,
+    "process.env.JWT_SECRET",
     {
       expiresIn: "1h",
     },
   );
+  res.status(201).json({
+    status: "sucesso",
+    token: token
+  })
 }
 
 async function Cadastro(req, res) {
@@ -54,6 +58,6 @@ async function Cadastro(req, res) {
 }
 
 roteador.post("/login", Login);
-roteador.post("cadastro", Cadastro);
+roteador.post("/cadastro", Cadastro);
 
 export default roteador;
