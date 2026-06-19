@@ -1,77 +1,120 @@
 .footer {
-    padding: 1rem;
-    background: #1A0018;
-    border-top: 1px solid rgba(255, 0, 255, 0.15);
-    font-family: "Poppins", sans-serif;
+  padding: 60px 80px 20px;
+  background: linear-gradient(180deg, #120014 0%, #1a001f 40%, #0b0010 100%);
+  border-top: 1px solid rgba(255, 0, 255, 0.15);
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 0 40px rgba(192, 0, 255, 0.2);
+}
+
+.footer-flex {
+  display: flex;
+  gap: 1rem;
+align-items: center;
+}
+
+.footer-flex h1 {
+  color: #f2f2f2;
+  text-align: center;
+}
+
+.footer-flex span {
+  background: rgb(127, 0, 255);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inicial1 {
+  background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
+  box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
+  border-radius: 0.5rem;
+  height: 50px;
+  padding: 0.2rem;
+}
+
+.text-footer {
+  margin: 1rem 0;
+  color: #a1a1aa;
+  font-size: 1.1rem;
+}
+
+.mae {
+  margin-top: 1rem;
+  display: flex;
+  padding-bottom: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #4a0d4f;
+}
+
+.links-rapidos h2 {
+  color: #f2f2f2;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-size: 2rem;
+  font-family: "Syne", sans-serif;
+}
+
+.links-rapidos a {
+  text-decoration: none;
+  color: #a1a1aa;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.links-rapidos a:hover {
+  color: #7a00ff;
+  animation: moverParaDireita 0.8s ease forwards;
+}
+
+@keyframes moverParaDireita {
+  0% {
+    transform: translateX(0);
   }
-  
-  .footer-flex {
-    display: flex;
-    gap: 1rem;
+
+  100% {
+    transform: translateX(8px);
   }
-  
-  .footer-flex h1 {
-    color: #f2f2f2;
-    text-align: center;
-  }
-  
-  .footer-flex span {
-    background: rgb(127, 0, 255);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .inicial1 {
-    background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
-    box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
-    border-radius: 0.5rem;
-    height: 50px;
-    padding: 0.2rem;
-  }
-  
-  .text-footer {
-    margin: 1rem 0;
-    color: #a1a1aa;
-    font-size: 1.1rem;
-  }
-  
-  .mae {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #4a0d4f;
-  }
-  
-  .links-rapidos h2 {
-    color: #f2f2f2;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    font-family: "Syne", sans-serif;
-  }
-  
-  .links-rapidos a {
-    text-decoration: none;
-    color: #a1a1aa;
-    font-size: 1.1rem;
-    display: block;
-  }
-  
-  .links-rapidos a:hover {
-    color: #7a00ff;
-    animation: moverParaDireita 0.8s ease forwards;
-  }
-  
-  @keyframes moverParaDireita {
-    0% {
-      transform: translateX(0);
-    }
-  
-    100% {
-      transform: translateX(8px);
-    }
-  }
-  
-  .direitos {
-    color: #a1a1aa;
-    margin: 1rem 0;
-  }
+}
+
+.direitos {
+  color: #a1a1aa;
+  margin: 1rem 0;
+}
+
+.icone-redes2 {
+  background-image: url("../../assets/whatssap2.svg");
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  transition: background-image 0.3s ease;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.icone-redes2:hover {
+  background-image: url("../../assets/whatssap.svg");
+}
+.icone-redes {
+  background-image: url("../../assets/github.svg");
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  transition: background-image 0.3s ease;
+}
+.icone-redes:hover {
+  background-image: url("../../assets/github2.svg");
+}
+.icone-redes3 {
+  background-image: url("../../assets/gmail.svg");
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  transition: background-image 0.3s ease;
+}
+.icone-redes3:hover {
+  background-image: url("../../assets/gmail2.svg");
+}
+

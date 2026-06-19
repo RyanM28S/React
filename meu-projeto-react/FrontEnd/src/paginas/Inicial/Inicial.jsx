@@ -31,7 +31,7 @@ const Inicial = () => {
         </h3>
         <div className={style['butoes-cima']}>
           <button className={style['button1-cima']}>
-            Painel de Controle de Acesso <span className={style.seta}>⇨</span>
+            Painel de Controle de Acesso <span className={style.seta}></span>
           </button>
           <button className={style['button2-cima']}>Explorar</button>
         </div>
