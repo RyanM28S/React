@@ -163,3 +163,19 @@
 @view-transition {
   navigation: auto;
 }
+::view-transition-old(root){
+  animation-name: sair;
+  animation-timing-function: ease;
+}
+
+
+@keyframes entrar {
+  to{
+    translate: 100vw;
+  }
+}
+@keyframes sair {
+  from{
+    translate: -100vw;
+  }
+}
