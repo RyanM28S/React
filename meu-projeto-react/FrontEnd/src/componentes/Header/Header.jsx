@@ -26,7 +26,7 @@ const Header = () => {
     <div className={style.meio}>
       <Link to="/interface" className={style.btn1} id="naoh">
         <img src={ImgInicial} alt="icone-para-ir-para-tela-inicial" />
-        Não se trata de uma questão de...
+        Inicial
       </Link>
       <Link to="/professores" className={style.btn2} id="professoresh">
         <img src={ImgPessoas} alt="icone-para-ir-para-tela-professores" />
