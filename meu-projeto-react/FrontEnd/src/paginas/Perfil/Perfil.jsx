@@ -3,27 +3,33 @@ import { Link } from 'react-router-dom'
 import Sair from '../../assets/iconSair.png'
 import Carta from '../../assets/iconcarta.png'
 import Escudo from '../../assets/iconEscudo.png'
+import { motion } from "framer-motion";
 import Calendario from '../../assets/iconCalendario.png'
 
 const Perfil = () => {
   return (
-    <>
+     <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.4 }}
+>
         <section className={styles.main}>
             <section className={styles.conteiner_perfil}>
                 <div className={styles.dperfil1}>
                     <div className={styles.ddivs_perfil1}>
-                    <div className={styles.dimagem_perfil}>
-                        <h1>G</h1>
-                    </div>
-                    <div className={styles.dtexto_perfil}>
-                        <h3>Gui_tzn 1</h3>
-                        <p>guitzn9@gmail.com</p>
-                    </div>
-                    <div>
-                        <button type="submit">
-                        <img src={Sair} alt="" />
-                        Sair</button>
-                    </div>
+                        <div className={styles.dimagem_perfil}>
+                            <h1>G</h1>
+                        </div>
+                        <div className={styles.dtexto_perfil}>
+                            <h3>Gui_tzn 1</h3>
+                            <p>guitzn9@gmail.com</p>
+                        </div>
+                        <div>
+                            <button type="submit">
+                            <img src={Sair} alt="" />
+                            Sair</button>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.dperfil2}>
@@ -85,7 +91,7 @@ const Perfil = () => {
                 </div>
             </section>
         </section>
-    </>
+    </motion.div>
   )
 }
 

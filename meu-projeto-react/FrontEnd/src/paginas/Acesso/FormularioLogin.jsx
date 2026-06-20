@@ -1,5 +1,6 @@
 import styles from "./Acesso.module.scss"
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const FormularioLogin = () => {
 
@@ -20,7 +21,12 @@ const FormularioLogin = () => {
 
 
   return (
-    <>
+     <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.4 }}
+>
       <div id="conteudo">
         <div className={styles.conteiner}>
           <h1>Bem-vindo de volta</h1>
@@ -74,7 +80,7 @@ const FormularioLogin = () => {
           </Link>
         </p>
       </div>
-    </>
+    </motion.div>
   );
 };
 
