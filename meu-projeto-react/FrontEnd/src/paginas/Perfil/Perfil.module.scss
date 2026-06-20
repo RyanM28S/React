@@ -3,7 +3,6 @@
 
 
 .main {
-    background: linear-gradient(180deg, #0b0b10, #0a0a0f);
     padding: 10% 4.9rem 5% 4.9rem;
     color: white;
   }
@@ -60,6 +59,8 @@
       justify-content: center;
       border-radius: 100%;
       width: 123px;
+      font-size: 4.5rem;
+      animation: pulse 1s ease infinite;
       height: 123px;
       padding: 2.5rem;
       background: #7F00FF;
@@ -105,6 +106,20 @@
     }
   }
   
+  @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px rgba(127, 0, 255, 0.3);
+        scale: 1;
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(127, 0, 255, 0.5);
+        scale: 1.05;
+      }
+      100% {
+        scale: 1;
+        box-shadow: 0 0 10px rgba(127, 0, 255, 0.3);
+      }
+    }
   .dperfil2 {
     display: flex;
     align-items: center;

@@ -89,7 +89,15 @@ const Categorias = () => {
             viewport={{ once: true }}
           >
             <div className={styles.dsetores_linha1}>
-              <div className={styles.dsetores1}>
+              <motion.div
+                className={styles.dsetores1}
+                variants={cardVariants}
+                transition={{ duration: 0.5 }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                }}
+              >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Secretaria} alt="" />
                   <div className={styles.pdaimagemmaior}>
@@ -115,8 +123,17 @@ const Categorias = () => {
                     Ver detalhes e avaliar →
                   </Link>
                 </div>
-              </div>
-              <div className={styles.dsetores2}>
+              </motion.div>
+
+              <motion.div
+                className={styles.dsetores2}
+                variants={cardVariants}
+                transition={{ duration: 0.5 }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                }}
+              >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Cantina} alt="" />
                 </div>
@@ -135,10 +152,18 @@ const Categorias = () => {
                   </div>
                   <Link to="">Ver detalhes e avaliar →</Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div className={styles.dsetores_linha1}>
-              <div className={styles.dsetores3}>
+              <motion.div
+                className={styles.dsetores3}
+                variants={cardVariants}
+                transition={{ duration: 0.5 }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                }}
+              >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Cordenacao} alt="" />
                 </div>
@@ -157,8 +182,17 @@ const Categorias = () => {
                   </div>
                   <Link to="">Ver detalhes e avaliar →</Link>
                 </div>
-              </div>
-              <div className={styles.dsetores4}>
+              </motion.div>
+
+              <motion.div
+                className={styles.dsetores4}
+                variants={cardVariants}
+                transition={{ duration: 0.5 }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                }}
+              >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Biblioteca} alt="" />
                 </div>
@@ -178,10 +212,18 @@ const Categorias = () => {
                   </div>
                   <Link to="">Ver detalhes e avaliar →</Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div className={styles.dsetores_linha1}>
-              <div className={styles.dsetores3}>
+              <motion.div
+                className={styles.dsetores3}
+                variants={cardVariants}
+                transition={{ duration: 0.5 }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                }}
+              >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Orientacao} alt="" />
                 </div>
@@ -200,8 +242,17 @@ const Categorias = () => {
                   </div>
                   <Link to="">Ver detalhes e avaliar →</Link>
                 </div>
-              </div>
-              <div className={styles.dsetores3}>
+              </motion.div>
+
+              <motion.div
+                className={styles.dsetores3}
+                variants={cardVariants}
+                transition={{ duration: 0.5 }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                }}
+              >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Manutencao} alt="" />
                 </div>
@@ -220,7 +271,7 @@ const Categorias = () => {
                   </div>
                   <Link to="">Ver detalhes e avaliar →</Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </section>
