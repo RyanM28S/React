@@ -1,16 +1,17 @@
-import styles from './Categorias.module.scss'
-import Predio from '../../assets/icone-predio.png'
-import Secretaria from '../../assets/iconsecretaria.png'
-import Localizacao from '../../assets/iconlocalizacao.png'
-import Carta from '../../assets/iconcarta.png'
+import { useState } from "react";
+import styles from "./Categorias.module.scss";
+import Predio from "../../assets/icone-predio.png";
+import Secretaria from "../../assets/iconsecretaria.png";
+import Localizacao from "../../assets/iconlocalizacao.png";
+import Carta from "../../assets/iconcarta.png";
 import { motion } from "framer-motion";
-import Cantina from '../../assets/iconcantina.png'
-import Biblioteca from '../../assets/iconbiblioteca.png'
-import Orientacao from '../../assets/iconorientacaoeducacional.png'
-import Manutencao from '../../assets/iconmanutencao.png'
-import Cordenacao from '../../assets/iconcordenacao.png'
+import Cantina from "../../assets/iconcantina.png";
+import Biblioteca from "../../assets/iconbiblioteca.png";
+import Orientacao from "../../assets/iconorientacaoeducacional.png";
+import Manutencao from "../../assets/iconmanutencao.png";
+import Cordenacao from "../../assets/iconcordenacao.png";
 
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const cardVariants = {
   hidden: {
@@ -25,6 +26,8 @@ const cardVariants = {
 };
 
 const Categorias = () => {
+  const [categoriaSelecionada, setCategoria] = useState(null);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -89,7 +92,13 @@ const Categorias = () => {
             viewport={{ once: true }}
           >
             <div className={styles.dsetores_linha1}>
-              <motion.div
+              <motion.div onClick={() => setCategoria({
+                  nome: "Secretaria",
+                  setor: "Adiministração",
+                  localizacao: "Bloco ve ai",
+                  email: "email",
+                  descricao: "descricao"
+                })} 
                 className={styles.dsetores1}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -125,7 +134,13 @@ const Categorias = () => {
                 </div>
               </motion.div>
 
-              <motion.div
+              <motion.div onClick={() => setCategoria({
+                  nome: "Secretaria",
+                  setor: "Adiministração",
+                  localizacao: "Bloco ve ai",
+                  email: "email",
+                  descricao: "descricao"
+                })} 
                 className={styles.dsetores2}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -155,7 +170,13 @@ const Categorias = () => {
               </motion.div>
             </div>
             <div className={styles.dsetores_linha1}>
-              <motion.div
+              <motion.div onClick={() => setCategoria({
+                  nome: "Secretaria",
+                  setor: "Adiministração",
+                  localizacao: "Bloco ve ai",
+                  email: "email",
+                  descricao: "descricao"
+                })} 
                 className={styles.dsetores3}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -184,7 +205,13 @@ const Categorias = () => {
                 </div>
               </motion.div>
 
-              <motion.div
+              <motion.div onClick={() => setCategoria({
+                  nome: "Secretaria",
+                  setor: "Adiministração",
+                  localizacao: "Bloco ve ai",
+                  email: "email",
+                  descricao: "descricao"
+                })} 
                 className={styles.dsetores4}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -215,7 +242,13 @@ const Categorias = () => {
               </motion.div>
             </div>
             <div className={styles.dsetores_linha1}>
-              <motion.div
+              <motion.div onClick={() => setCategoria({
+                  nome: "Secretaria",
+                  setor: "Adiministração",
+                  localizacao: "Bloco ve ai",
+                  email: "email",
+                  descricao: "descricao"
+                })} 
                 className={styles.dsetores3}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -244,7 +277,13 @@ const Categorias = () => {
                 </div>
               </motion.div>
 
-              <motion.div
+              <motion.div onClick={() => setCategoria({
+                  nome: "manutenção",
+                  setor: "Adiministração",
+                  localizacao: "Bloco ve ai",
+                  email: "email",
+                  descricao: "descricao"
+                })} 
                 className={styles.dsetores3}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -276,8 +315,23 @@ const Categorias = () => {
           </motion.div>
         </section>
       </section>
+      {categoriaSelecionada && (
+        <div className={styles.overlay}>
+          <div className={styles.modal}>
+            <h2>{categoriaSelecionada.nome}</h2>
+
+            <p>{categoriaSelecionada.setor}</p>
+            <p>{categoriaSelecionada.localizacao}</p>
+            <p>{categoriaSelecionada.email}</p>
+
+            <p>{categoriaSelecionada.descricao}</p>
+
+            <button onClick={() => setCategoria(null)}>Fechar</button>
+          </div>
+        </div>
+      )}
     </motion.div>
   );
-}
+};
 
-export default Categorias
+export default Categorias;

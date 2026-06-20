@@ -1,7 +1,8 @@
-import style from './Professores.module.scss'
-import ImgPessoa from '../../assets/icone-pessoa.png'
-import {Link} from 'react-router-dom'
+import style from "./Professores.module.scss";
+import ImgPessoa from "../../assets/icone-pessoa.png";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const cardVariants = {
   hidden: {
@@ -15,6 +16,8 @@ const cardVariants = {
   },
 };
 const Professores = () => {
+  const [professorSelecionado, setProfessor] = useState(null);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -104,7 +107,19 @@ const Professores = () => {
             participação em sala.
           </p>
           <div>
-            <Link to="/home">sabe mais ➜</Link>
+            <button
+              onClick={() =>
+                setProfessor({
+                  nome: "Romario",
+                  materia: "Matematica",
+                  area: "Exatas",
+                  email: "email",
+                  descricao: "Descrição",
+                })
+              }
+            >
+              sabe mais ➜
+            </button>
           </div>
         </motion.div>
         <motion.div
@@ -130,7 +145,19 @@ const Professores = () => {
             capacidade de argumentação.
           </p>
           <div>
-            <Link to="/home">sabe mais ➜</Link>
+            <button
+              onClick={() =>
+                setProfessor({
+                  nome: "Elen",
+                  materia: "Matematica",
+                  area: "Exatas",
+                  email: "email",
+                  descricao: "Descrição",
+                })
+              }
+            >
+              sabe mais ➜
+            </button>{" "}
           </div>
         </motion.div>
         <motion.div
@@ -157,7 +184,19 @@ const Professores = () => {
             o dia pode não estar dos melhores.
           </p>
           <div>
-            <Link>sabe mais ➜</Link>
+            <button
+              onClick={() =>
+                setProfessor({
+                  nome: "Romario",
+                  materia: "Matematica",
+                  area: "Exatas",
+                  email: "email",
+                  descricao: "Descrição",
+                })
+              }
+            >
+              sabe mais ➜
+            </button>
           </div>
         </motion.div>
       </motion.div>
@@ -200,7 +239,19 @@ const Professores = () => {
             atenção — principalmente quando alguém esquece o ponto e vírgula.
           </p>
           <div>
-            <Link to="/home">sabe mais ➜</Link>
+            <button
+              onClick={() =>
+                setProfessor({
+                  nome: "Romario",
+                  materia: "Matematica",
+                  area: "Exatas",
+                  email: "email",
+                  descricao: "Descrição",
+                })
+              }
+            >
+              sabe mais ➜
+            </button>
           </div>
         </motion.div>
         <div className={style.prof}>
@@ -216,7 +267,19 @@ const Professores = () => {
             para o mercado de tecnologia.
           </p>
           <div>
-            <Link to="/home">sabe mais ➜</Link>
+            <button
+              onClick={() =>
+                setProfessor({
+                  nome: "Romario",
+                  materia: "Matematica",
+                  area: "Exatas",
+                  email: "email",
+                  descricao: "Descrição",
+                })
+              }
+            >
+              sabe mais ➜
+            </button>
           </div>
         </div>
         <motion.div
@@ -242,13 +305,40 @@ const Professores = () => {
             trabalho em equipe e organização de projetos reais.
           </p>
           <div>
-            <Link to="/home">sabe mais ➜</Link>
+            <button
+              onClick={() =>
+                setProfessor({
+                  nome: "Romario",
+                  materia: "Matematica",
+                  area: "Exatas",
+                  email: "email",
+                  descricao: "Descrição",
+                })
+              }
+            >
+              sabe mais ➜
+            </button>
           </div>
         </motion.div>
       </motion.div>
+
+      {professorSelecionado && (
+        <div className={style.overlay}>
+          <div className={style.modal}>
+            <h2>{professorSelecionado.nome}</h2>
+
+            <p>{professorSelecionado.materia}</p>
+            <p>{professorSelecionado.area}</p>
+            <p>{professorSelecionado.email}</p>
+
+            <p>{professorSelecionado.descricao}</p>
+
+            <button onClick={() => setProfessor(null)}>Fechar</button>
+          </div>
+        </div>
+      )}
     </motion.div>
   );
-}
+};
 
-export default Professores
-
+export default Professores;

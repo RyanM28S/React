@@ -2,11 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Syne:wght@400..800&display=swap');
 
 
-  body {
-    background-color: black;
-    font-family: "Poppins", sans-serif;
-  }
-  
+
+
+.conteinerG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Sombra preta transparente */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+  z-index: 100000000;          
+}
   .logo {
     background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
     box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
@@ -149,3 +158,22 @@
     justify-content: space-between;
     margin: 2rem;
   }
+  .overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+}

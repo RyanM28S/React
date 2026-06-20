@@ -1,22 +1,39 @@
+/* Garante que a estrutura inteira ocupe toda a tela */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   overflow-y: auto;
 }
+
 html::-webkit-scrollbar {
   width: 0;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Modifique para usar height 100% em vez de min-height */
 .conteiner-principal {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  
+  height: 100%; 
 }
+
+/* Força o conteúdo principal a empurrar o footer para o rodapé */
 .conteiner-flexivel {
-  flex: 1;
-} 
+  flex: 1 0 auto; 
+}
+
+/* Garante que o footer não encolha e fique zerado na base */
+footer {
+  flex-shrink: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
