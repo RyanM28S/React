@@ -36,7 +36,7 @@ const Header = () => {
         <img src={ImgPredio} alt="icone-para-ir-para-tela-setores" />
         Categorias
       </Link>
-       <Link to="/home" className={style.btn5} id="entradah">
+       <Link to="/painel" className={style.btn5} id="entradah">
           <img
             src={ImgIncocolage}
             alt="icone-para-ir-para-tela-de-painel"

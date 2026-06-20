@@ -9,6 +9,7 @@ import Categorias from './paginas/Categorias/Categorias.jsx'
 import Perfil from './paginas/Perfil/Perfil.jsx'
 import Professores from './paginas/Professores/Professores.jsx'
 import Cadastro from './paginas/Acesso/Cadastro.jsx'
+import Painel from './paginas/Painel/Painel.jsx';
 import FormularioLogin from './paginas/Acesso/FormularioLogin.jsx'
 
 const App = () => {
@@ -34,7 +35,7 @@ const App = () => {
 
             <Route path="/perfil" element={<Perfil />} />
 
-            
+            <Route path="/painel" element={<Painel />} />
 
             <Route path="/professores" element={<Professores />} />
 

@@ -1,11 +1,11 @@
 import style from './Footer.module.scss'
 import ImgLogo from  '../../assets/icone_inicial_header1.svg'
-import imgwhat from '../../assets/whatssap.svg'
-import imgwhatsap from '../../assets/whatssap2.svg'
-import imggit from '../../assets/github.svg'
-import imggithub from '../../assets/github2.svg'
-import imgemail from '../../assets/gmail.svg'
-import imggmail2 from '../../assets/gmail2.svg'
+// import imgwhat from '../../assets/whatssap.svg'
+// import imgwhatsap from '../../assets/whatssap2.svg'
+// import imggit from '../../assets/github.svg'
+// import imggithub from '../../assets/github2.svg'
+// import imgemail from '../../assets/gmail.svg'
+// import imggmail2 from '../../assets/gmail2.svg'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
