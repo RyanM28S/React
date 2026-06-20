@@ -212,12 +212,13 @@
   
 .imagem_maiorsetor1 {
     position: relative; /* IMPORTANTE */
-  
+     overflow: hidden; /* IMPORTANTE */
+     border-radius: 1rem 0 0 1rem;
     img {
+       transition: transform 0.3s ease;
       height: 100%;
       width: 12rem;
       border-radius: 1rem 0 0 1rem;
-  
     }
   
     .pdaimagemmaior {
@@ -240,7 +241,10 @@
   
     }
 }
-  
+  .imagem_maiorsetor1:hover img {
+      transform: scale(1.1);
+  }
+
 .setorestexto {
     padding-bottom: 1rem;
 }
