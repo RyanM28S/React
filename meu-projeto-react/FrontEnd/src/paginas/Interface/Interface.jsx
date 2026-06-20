@@ -4,10 +4,16 @@ import Star from '../../assets/iconStar.svg'
 import Mensagem from '../../assets/iconBalaodemensagem.svg'
 import Grafico from '../../assets/iconLinhagrafico.svg'
 import { Link } from 'react-router-dom'
+import { motion } from "framer-motion";
 
 const Interface = () => {
   return (
-    <>
+     <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.4 }}
+>
         <section className={style.main}>
             <div className={style.comeco_conteiner}>
                 <div className={style.comeco_bemvindo}>
@@ -92,7 +98,7 @@ const Interface = () => {
             <p>Nenhuma atividade recentes para exibir</p>
             </div>
         </section>
-    </>
+    </motion.div>
   )
 }
 

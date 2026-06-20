@@ -1,6 +1,7 @@
 import styles from "./Acesso.module.scss"
 import image1 from "../../assets/icone_inicial_header1.svg";
 import image2 from "../../assets/icone_pessoas_header.svg";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Cadastro = () => {
@@ -17,7 +18,12 @@ const Cadastro = () => {
   }
 
   return (
-    <>
+     <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.4 }}
+>
       <div id="conteudo">
         <div className={styles.conteiner}>
           <h1>Bem-vindo de volta</h1>
@@ -86,7 +92,7 @@ const Cadastro = () => {
           </Link>
         </p>
       </div>
-    </>
+    </motion.div>
   );
 };
 

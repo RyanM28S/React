@@ -6,6 +6,38 @@
   display: block;
   margin: 1rem auto;
 }
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(192, 0, 255, 0.18),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at bottom left,
+      rgba(98, 0, 255, 0.12),
+      transparent 25%
+    ),
+
+    linear-gradient(
+      180deg,
+      #07000a 0%,
+      #050008 100%
+    );
+
+  background-attachment: fixed;
+
+  font-family: "Poppins", sans-serif;
+}
 .titulo {
   text-align: center;
   font-size: 3rem;
@@ -31,7 +63,7 @@
   border-radius: 1rem;
   padding: 1rem;
   border: #3a1f4a 1px solid;
-  margin: 4rem auto;
+  margin: 3rem auto;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   text-align: center;
 }
@@ -83,7 +115,7 @@
   margin: 1rem 0;
   color: white;
 }
-.conteiner input {
+input {
   padding: 1rem;
   width: 90%;
   background-color: #1a0f22;
@@ -160,22 +192,3 @@
   font-size: 1rem;
 }
 
-@view-transition {
-  navigation: auto;
-}
-::view-transition-old(root){
-  animation-name: sair;
-  animation-timing-function: ease;
-}
-
-
-@keyframes entrar {
-  to{
-    translate: 100vw;
-  }
-}
-@keyframes sair {
-  from{
-    translate: -100vw;
-  }
-}
