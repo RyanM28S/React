@@ -18,24 +18,24 @@ const Cadastro = () => {
   }
 
   return (
-     <motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  exit={{ opacity: 0 }}
-  transition={{ duration: 0.4 }}
->
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       <div id="conteudo">
         <div className={styles.conteiner}>
           <h1>Bem-vindo de volta</h1>
-          <p>login para continuar</p>
+          <p className={styles.plogin}>login para continuar</p>
           <div>
             <button className={styles["button-prof"]} id="professor">
               <img src={image1} alt="icone-para-login-professor" />
-              <p>Professor</p>
+              <p className={styles.descri}>Professor</p>
             </button>
             <button className={styles["button-aluno"]} id="aluno">
               <img src={image2} alt="icone-para-login-Alunos" />
-              <p>Alunos</p>
+              <p className={styles.descri}>Alunos</p>
             </button>
           </div>
 

@@ -27,10 +27,11 @@ const FormularioLogin = () => {
   exit={{ opacity: 0 }}
   transition={{ duration: 0.4 }}
 >
+<h1 className={styles.stitulo} >Salotti <span>Opina</span></h1>
       <div id="conteudo">
         <div className={styles.conteiner}>
           <h1>Bem-vindo de volta</h1>
-          <p>login para continuar</p>
+          <p className={styles.plogin}>login para continuar</p>
 
           <form onSubmit={handleLogin} id="formLogin">
             <label htmlFor="Email">Usuário</label>
@@ -46,7 +47,7 @@ const FormularioLogin = () => {
             <br />
 
             <label htmlFor="Senha">Senha</label>
-            <br />
+           
 
             <input
               id="Senha"
