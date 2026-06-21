@@ -161,6 +161,58 @@ const Perfil = () => {
               </div>
             </div>
           </motion.div>
+          <details>
+            <summary>
+              {" "}
+              <span>💜</span> Nossa Equipe
+            </summary>
+            <div className={styles.equipeConteudo}>
+              <div>
+                <h3>Vinicius Santos</h3>
+                <p>Front-End Desenvolvedor</p>
+                <Link
+                  className={styles.link}
+                  to="https://github.com/ViniSantosC"
+                >
+                  Github
+                </Link>
+              </div>
+
+              <div>
+                <h3>Ryan Matos</h3>
+                <p>Back-End Desenvolvedor</p>
+                <Link className={styles.link} to="https://github.com/RyanM28S">
+                  Github
+                </Link>
+              </div>
+
+              <div>
+                <h3>Lucas Lopes</h3>
+                <p>Back-End Desenvolvedor</p>
+                <Link
+                  className={styles.link}
+                  to="https://github.com/Lucas-Lopes-Alves"
+                >
+                  Github
+                </Link>
+              </div>
+
+              <div>
+                <h3>Guilherme Bueno</h3>
+                <p>Front-End Desenvolvedor</p>
+                <Link
+                  className={styles.link}
+                  to="https://github.com/GuilhermeBuenoDA"
+                >
+                  Github
+                </Link>
+              </div>
+
+              <p className={styles.frase}>
+                ✨ Obrigado por fazerem parte do Salotti Opina.
+              </p>
+            </div>
+          </details>
         </section>
       </section>
     </motion.div>
