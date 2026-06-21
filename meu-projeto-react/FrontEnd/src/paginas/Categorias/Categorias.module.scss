@@ -42,7 +42,6 @@
       color: rgb(127, 0, 255);
     }
 }
-  
 .conteiner_setores {
     display: flex;
     align-items: center;
@@ -178,7 +177,6 @@
      font-size: 0.9rem;
    }
 }
-  
 .dtexto_setores4 {
     padding: 2rem 1.5rem;
     h3{
@@ -305,8 +303,8 @@
     font-size: 2rem;
   }
   img {
-    width: 280px;
-  height: 100%;
+  width: 280px;
+  min-height: 100%;
   object-fit: cover;
   border-radius: 1rem 0 0 1rem;
   }
