@@ -2,7 +2,9 @@
 
 
   .header {
-    background-color: black;
+    background: rgba(10,10,10,.5);
+
+  backdrop-filter: blur(12px);
     border-bottom: 1px solid #1a1a2e;
     display: flex;
     justify-content: space-between;

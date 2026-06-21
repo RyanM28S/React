@@ -286,10 +286,55 @@
   z-index: 999;
 }
 
+
 .modal {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
+  background-color: rgb(48, 25, 52);
+    border: 0.1px solid #8000ff54;
+  
+  border-radius: 1rem;
+  display: flex;
+ 
   max-width: 600px;
+  border-color: #c014ff;
+  box-shadow: 0 0 22px rgba(192, 20, 255, 0.25);
   width: 90%;
+  color: white;
+  h2 {
+    text-align: center;
+    margin: 0.5rem;
+    font-size: 2rem;
+  }
+  img {
+    width: 280px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem 0 0 1rem;
+  }
+}
+
+.info {
+  margin: 1rem;
+  gap:1rem;
+p {
+  text-align: center;
+  letter-spacing: .1rem;
+  margin: 1rem auto;
+}
+  button {
+     background: #7a00ff;
+  color: white;
+  border: none;
+  display: block;
+  margin: auto;
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  }
+  button:hover {
+  background-color: #c014ff;
+  box-shadow: 0 0 12px rgba(193, 20, 255, 0.6);
+}
+
 }
