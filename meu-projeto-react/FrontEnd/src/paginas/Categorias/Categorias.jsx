@@ -383,7 +383,7 @@ const Categorias = () => {
               <p>{categoriaSelecionada.email}</p>
 
               <p>{categoriaSelecionada.descricao}</p>
-              <input type="text" placeholder="Digite sua Avalição" />
+              <textarea placeholder="Digite sua Avaliação"></textarea>
 
               <button onClick={() => setCategoria(null)}>Fechar</button>
             </div>
