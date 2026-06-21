@@ -1,10 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 .cont1 {
   width: 100%;
   margin: 1rem auto;
   display: block;
   border-radius: 1rem;
   padding: 2rem;
-  background-color: bisque;
+  color: white;
+  background: rgba(20, 0, 30, 0.9);
+  border: 1px solid rgba(192, 0, 255, 0.2);
+
+  box-shadow: 0 0 20px rgba(192, 0, 255, 0.15);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 24px;
+  transition: 0.3s;
+}
+.cont1:hover {
+  transform: scale(1.1);
+  transform: translateY(-8px);
 }
 .Painel {
   padding: 4rem;
@@ -13,7 +28,9 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-
+p{
+    color: #a1a1aa;
+}
   img {
     background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
     box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
@@ -26,6 +43,7 @@
 
   h1 {
     font-size: 4rem;
+    font-family: 'Sora', sans-serif;
   }
   span {
     color: #7a00ff;
@@ -43,26 +61,83 @@
     width: 20%;
     font-size: 1.5rem;
     height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.2rem;
+    background: linear-gradient(135deg, #c000ff, #7b00ff);
+
+    color: white;
+
+    border: none;
+
+    padding: 16px 28px;
+    transition: all 0.5s ease-in-out;
     border-radius: 1rem;
+  }
+  button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
+  }
+
+  button span {
+     color: white;
+  text-shadow:
+    0 0 10px rgba(161, 0, 255, 0.6),
+    0 0 20px rgba(161, 0, 255, 0.5),
+    0 0 40px rgba(161, 0, 255, 0.3),
+    0 0 80px rgba(161, 0, 255, 0.2);
+    animation: mais 0.8s infinite ease-in-out;
+    font-size: 3rem;
+  }
+}
+@keyframes mais {
+  0% {
+    scale: 0.5;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 0.5;
   }
 }
 .reg {
   color: white;
   font-size: 2.2rem;
   margin: 2rem 0;
+  font-family: 'Sora', sans-serif;
 }
 .flex3 {
   display: flex;
   gap: 2rem;
-  span{
-    font-size: 1.2rem;
+  span {
+    font-size: 1.3rem;
+    margin: auto 0.5rem;
     color: #a100ff;
+    font-family: 'Sora', sans-serif;
+  }
+  p {
+    font-size: 1.5rem;
   }
 }
 .cont2 {
-  background-color: antiquewhite;
+  color: white;
+  background: rgba(20, 0, 30, 0.9);
+  border: 1px solid rgba(192, 0, 255, 0.2);
+
+  box-shadow: 0 0 20px rgba(192, 0, 255, 0.15);
+
+  backdrop-filter: blur(10px);
+
   padding: 1rem;
   border-radius: 1rem;
+  transition: 0.3s;
+}
+.cont2:hover {
+  transform: scale(1.1);
+  transform: translateY(-8px);
 }
 .flex4 {
   display: flex;
@@ -73,33 +148,70 @@
     box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
     border-radius: 1rem;
     padding: 0.5rem;
-    height: 80px;
+    height: 90px;
     display: block;
     margin: 1rem auto;
   }
+  h1 {
+    font-family: 'sora','arial';
+  }
 }
 .flex5 {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
 .btn1 {
-    img {
-        height: 60px;
-       
-    }
-    background-color: transparent;
-    border-radius: 1rem;
+  img {
+    height: 50px;
+  }
+  background: rgba(255, 0, 60, 0.12);
+  border-radius: 1rem;
+   border: 1px solid rgba(255, 0, 60, 0.4);
+   transition: all 0.5s ease;
+}
+.btn1:hover {
+  background: rgba(255, 0, 60, 0.2);
+
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 15px rgba(255,0,60,.4),
+    0 0 30px rgba(255,0,60,.2);
 }
 .btn2 {
-    img {
-        height: 60px;
-    }
-     background-color: transparent;
-     border-radius: 1rem;
+  img {
+    height: 50px;
+  }
+   background: rgba(123, 0, 255, 0.12);
+
+  border: 1px solid rgba(123, 0, 255, 0.4);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.btn2:hover {
+  background: rgba(123, 0, 255, 0.2);
+
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 15px rgba(123,0,255,.4),
+    0 0 30px rgba(123,0,255,.2);
 }
 .descricao {
-    height: 100%;
-    background-color: #7a00ff;
-    padding: 1rem;
+  height: 100%;
+   background: rgba(15,15,20,.7);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+}
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
