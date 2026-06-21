@@ -239,7 +239,33 @@
 .info {
   margin: 1rem;
   gap:1rem;
+textarea {
+  display: block;
+  margin: 0.5rem auto;
+   background: rgba(20, 0, 30, 0.9);
 
+  color: #ffffff;
+resize: none;
+outline: none;
+  border: 1px solid rgba(192, 0, 255, 0.3);
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+textarea:focus {
+  border: 1px solid #c000ff;
+
+  box-shadow:
+    0 0 10px rgba(192, 0, 255, .5),
+    0 0 20px rgba(192, 0, 255, .2);
+
+  background: rgba(30, 0, 40, 0.95);
+}
+textarea::placeholder {
+   color: #9b6bb3;
+   font-size: 1rem;
+
+}
   button {
      background: #7a00ff;
   color: white;

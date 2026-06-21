@@ -380,7 +380,7 @@ const Professores = () => {
               <p className={style.sabe2}>{professorSelecionado.area}</p>
               <p className={style.sabe3}>{professorSelecionado.email}</p>
               <p className={style.sabe4}>{professorSelecionado.descricao}</p>
-              <input type="text" placeholder="Digite sua Avaliação" />
+              <textarea placeholder="Digite sua avaliação..."></textarea>
               <button onClick={() => setProfessor(null)}>Fechar</button>
             </div>
           </motion.div>
