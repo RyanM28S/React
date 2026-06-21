@@ -92,13 +92,17 @@ const Categorias = () => {
             viewport={{ once: true }}
           >
             <div className={styles.dsetores_linha1}>
-              <motion.div onClick={() => setCategoria({
-                  nome: "Secretaria",
-                  setor: "Adiministração",
-                  localizacao: "Bloco ve ai",
-                  email: "email",
-                  descricao: "descricao"
-                })} 
+              <motion.div
+                onClick={() =>
+                  setCategoria({
+                    foto: Secretaria,
+                    nome: "Secretaria",
+                    setor: "Adiministração",
+                    localizacao: "1° Anda",
+                    descricao:
+                      "Responsável pelo atendimento aos alunos, organização de documentos, matrículas e informações acadêmicas da escola.",
+                  })
+                }
                 className={styles.dsetores1}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -134,13 +138,17 @@ const Categorias = () => {
                 </div>
               </motion.div>
 
-              <motion.div onClick={() => setCategoria({
-                  nome: "Secretaria",
-                  setor: "Adiministração",
-                  localizacao: "Bloco ve ai",
-                  email: "email",
-                  descricao: "descricao"
-                })} 
+              <motion.div
+                onClick={() =>
+                  setCategoria({
+                    foto: Cantina,
+                    nome: "Cantina",
+                    setor: "Cozinha",
+                    localizacao: "1° Anda",
+                    descricao:
+                      "Espaço destinado à venda de alimentos e bebidas, oferecendo suporte à alimentação dos alunos e funcionários.",
+                  })
+                }
                 className={styles.dsetores2}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -170,13 +178,17 @@ const Categorias = () => {
               </motion.div>
             </div>
             <div className={styles.dsetores_linha1}>
-              <motion.div onClick={() => setCategoria({
-                  nome: "Secretaria",
-                  setor: "Adiministração",
-                  localizacao: "Bloco ve ai",
-                  email: "email",
-                  descricao: "descricao"
-                })} 
+              <motion.div
+                onClick={() =>
+                  setCategoria({
+                    foto: Cordenacao,
+                    nome: "Cordenação",
+                    setor: "Adiministração",
+                    localizacao: "1° Anda",
+                    descricao:
+                      "Setor que acompanha o desempenho escolar, auxilia professores e organiza atividades pedagógicas da instituição.",
+                  })
+                }
                 className={styles.dsetores3}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -205,13 +217,17 @@ const Categorias = () => {
                 </div>
               </motion.div>
 
-              <motion.div onClick={() => setCategoria({
-                  nome: "Secretaria",
-                  setor: "Adiministração",
-                  localizacao: "Bloco ve ai",
-                  email: "email",
-                  descricao: "descricao"
-                })} 
+              <motion.div
+                onClick={() =>
+                  setCategoria({
+                    foto: Biblioteca,
+                    nome: "Biblioteca",
+                    setor: "Cultura",
+                    localizacao: "1° Andar",
+                    descricao:
+                      "Ambiente voltado ao estudo e pesquisa, com livros, materiais educativos e apoio ao aprendizado dos alunos.",
+                  })
+                }
                 className={styles.dsetores4}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -242,13 +258,17 @@ const Categorias = () => {
               </motion.div>
             </div>
             <div className={styles.dsetores_linha1}>
-              <motion.div onClick={() => setCategoria({
-                  nome: "Secretaria",
-                  setor: "Adiministração",
-                  localizacao: "Bloco ve ai",
-                  email: "email",
-                  descricao: "descricao"
-                })} 
+              <motion.div
+                onClick={() =>
+                  setCategoria({
+                    foto: Orientacao,
+                    nome: "Orientação",
+                    setor: "Adiministração",
+                    localizacao: "1° andar",
+                    descricao:
+                      "Oferece apoio aos estudantes em questões escolares, pessoais e de convivência, ajudando no desenvolvimento educacional.",
+                  })
+                }
                 className={styles.dsetores3}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -277,13 +297,17 @@ const Categorias = () => {
                 </div>
               </motion.div>
 
-              <motion.div onClick={() => setCategoria({
-                  nome: "manutenção",
-                  setor: "Adiministração",
-                  localizacao: "Bloco ve ai",
-                  email: "email",
-                  descricao: "descricao"
-                })} 
+              <motion.div
+                onClick={() =>
+                  setCategoria({
+                    foto: Manutencao,
+                    nome: "Limpeza",
+                    setor: "Adiministração",
+                    localizacao: "1° Andar",
+                    descricao:
+                      "Responsável pela conservação, limpeza e bom funcionamento dos espaços da escola, garantindo um ambiente organizado e seguro.",
+                  })
+                }
                 className={styles.dsetores3}
                 variants={cardVariants}
                 transition={{ duration: 0.5 }}
@@ -316,19 +340,54 @@ const Categorias = () => {
         </section>
       </section>
       {categoriaSelecionada && (
-        <div className={styles.overlay}>
-          <div className={styles.modal}>
-            <h2>{categoriaSelecionada.nome}</h2>
+        <motion.div
+          className={styles.overlay}
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          exit={{
+            opacity: 0,
+          }}
+        >
+          <motion.div
+            className={styles.modal}
+            initial={{
+              opacity: 0,
+              scale: 0.7,
+              y: 80,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.7,
+              y: 80,
+            }}
+            transition={{
+              duration: 0.5,
+              type: "spring",
+            }}
+          >
+            <img src={categoriaSelecionada.foto} alt="" />
+            <div className={styles.info}>
+              <h2>{categoriaSelecionada.nome}</h2>
 
-            <p>{categoriaSelecionada.setor}</p>
-            <p>{categoriaSelecionada.localizacao}</p>
-            <p>{categoriaSelecionada.email}</p>
+              <p>{categoriaSelecionada.setor}</p>
+              <p>{categoriaSelecionada.localizacao}</p>
+              <p>{categoriaSelecionada.email}</p>
 
-            <p>{categoriaSelecionada.descricao}</p>
+              <p>{categoriaSelecionada.descricao}</p>
 
-            <button onClick={() => setCategoria(null)}>Fechar</button>
-          </div>
-        </div>
+              <button onClick={() => setCategoria(null)}>Fechar</button>
+            </div>
+          </motion.div>
+        </motion.div>
       )}
     </motion.div>
   );

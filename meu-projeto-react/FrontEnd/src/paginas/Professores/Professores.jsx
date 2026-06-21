@@ -1,6 +1,10 @@
 import style from "./Professores.module.scss";
 import ImgPessoa from "../../assets/icone-pessoa.png";
 import { Link } from "react-router-dom";
+import karen from "../../assets/karen.png";
+import romario from "../../assets/romario.png";
+import joao from "../../assets/joao.jpg";
+import sidney from "../../assets/sidney.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -110,11 +114,13 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
+                  foto: romario,
                   nome: "Romario",
                   materia: "Matematica",
                   area: "Exatas",
-                  email: "email",
-                  descricao: "Descrição",
+                  email: "Romario.educacao.prof@gmail.com",
+                  descricao:
+                    "Especialista em transformar conteúdos complexos de exatas em aulas dinâmicas e fáceis de entender. Sempre aberto a tirar dúvidas e a criar um ambiente leve e participativo em sala de aula.",
                 })
               }
             >
@@ -149,10 +155,11 @@ const Professores = () => {
               onClick={() =>
                 setProfessor({
                   nome: "Elen",
-                  materia: "Matematica",
-                  area: "Exatas",
-                  email: "email",
-                  descricao: "Descrição",
+                  materia: "Portugues",
+                  area: "Humanas",
+                  email: "elen.prof@gmail.com",
+                  descricao:
+                    "Especialista em língua portuguesa, com aulas focadas em interpretação de textos, gramática e produção escrita. Incentiva o pensamento crítico e a comunicação clara, tornando as aulas dinâmicas e envolventes.",
                 })
               }
             >
@@ -187,11 +194,13 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
-                  nome: "Romario",
-                  materia: "Matematica",
-                  area: "Exatas",
-                  email: "email",
-                  descricao: "Descrição",
+                  foto: karen,
+                  nome: "Karen",
+                  materia: "Educação Física",
+                  area: "Desenvolvimento Pessoal",
+                  email: "karen.prof@gmail.com",
+                  descricao:
+                    "A professora Karen é conhecida por sua energia contagiante e abordagem leve em sala de aula. Ela participa ativamente das discussões, tornando o ambiente mais descontraído, mas sem perder o foco no ensino.",
                 })
               }
             >
@@ -242,11 +251,13 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
-                  nome: "Romario",
-                  materia: "Matematica",
-                  area: "Exatas",
-                  email: "email",
-                  descricao: "Descrição",
+                  foto: joao,
+                  nome: "João Gabriel de Lucca",
+                  materia: "Banco de Dados",
+                  area: "Tecnologia da Informação",
+                  email: "João.Prof@gmail.com",
+                  descricao:
+                    "Especialista em banco de dados, conhecido por sua clareza e bom humor em sala de aula.Ele não é apenas um professor mas sim uma amigo.",
                 })
               }
             >
@@ -270,11 +281,13 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
-                  nome: "Romario",
-                  materia: "Matematica",
-                  area: "Exatas",
-                  email: "email",
-                  descricao: "Descrição",
+                  foto: sidney,
+                  nome: "Sidney",
+                  materia: "Desenvolvimento Back-End e Mobile",
+                  area: "Desenvolvimento de Sistemas",
+                  email: "Sidney.geek@gmail.com",
+                  descricao:
+                    "O professor Sidney é especialista em desenvolvimento back-end e mobile, com aulas focadas em lógica de programação, APIs e criação de aplicações.",
                 })
               }
             >
@@ -323,19 +336,54 @@ const Professores = () => {
       </motion.div>
 
       {professorSelecionado && (
-        <div className={style.overlay}>
-          <div className={style.modal}>
-            <h2>{professorSelecionado.nome}</h2>
-
-            <p>{professorSelecionado.materia}</p>
-            <p>{professorSelecionado.area}</p>
-            <p>{professorSelecionado.email}</p>
-
-            <p>{professorSelecionado.descricao}</p>
-
-            <button onClick={() => setProfessor(null)}>Fechar</button>
-          </div>
-        </div>
+        <motion.div
+          className={style.overlay}
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          exit={{
+            opacity: 0,
+          }}
+        >
+          <motion.div
+            className={style.modal}
+            initial={{
+              opacity: 0,
+              scale: 0.7,
+              y: 80,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.7,
+              y: 80,
+            }}
+            transition={{
+              duration: 0.5,
+              type: "spring",
+            }}
+          >
+            <div>
+              <img src={professorSelecionado.foto} alt="" />
+            </div>
+            <div className={style.info}>
+              {" "}
+              <h2>{professorSelecionado.nome}</h2>
+              <p className={style.sabe1}>{professorSelecionado.materia}</p>
+              <p className={style.sabe2}>{professorSelecionado.area}</p>
+              <p className={style.sabe3}>{professorSelecionado.email}</p>
+              <p className={style.sabe4}>{professorSelecionado.descricao}</p>
+              <button onClick={() => setProfessor(null)}>Fechar</button>
+            </div>
+          </motion.div>
+        </motion.div>
       )}
     </motion.div>
   );
