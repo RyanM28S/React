@@ -257,7 +257,7 @@ const Professores = () => {
                   area: "Tecnologia da Informação",
                   email: "João.Prof@gmail.com",
                   descricao:
-                    "Especialista em banco de dados, conhecido por sua clareza e bom humor em sala de aula.Ele não é apenas um professor mas sim uma amigo.",
+                    "Especialista em banco de dados, conhecido por sua clareza e bom humor em sala de aula.Ele não é apenas um professor mas sim um amigo.",
                 })
               }
             >
@@ -321,11 +321,11 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
-                  nome: "Romario",
-                  materia: "Matematica",
-                  area: "Exatas",
-                  email: "email",
-                  descricao: "Descrição",
+                  nome: "Gabriel",
+                  materia: "Versionamento",
+                  area: "Desenvolvimento de Sistemas",
+                  email: "Gabriel.educacao.sp.gov",
+                  descricao: "sempre preucupador em prepara as melhores aulas, e que seus alunos aprendam",
                 })
               }
             >
