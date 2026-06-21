@@ -104,7 +104,7 @@ src/
 ## 1️⃣ Clone o repositório
 
 ```bash
-git clone https://github.com/seuusuario/salotti-opina.git
+git clone https://github.com/RyanM28S/salotti-opina.git
 ```
 
 ---
