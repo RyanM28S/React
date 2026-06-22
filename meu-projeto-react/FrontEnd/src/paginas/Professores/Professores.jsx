@@ -5,6 +5,7 @@ import karen from "../../assets/karen.png";
 import romario from "../../assets/romario.png";
 import joao from "../../assets/joao.jpg";
 import sidney from "../../assets/sidney.png";
+import gabriel from "../../assets/gabriel.jpg";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -321,6 +322,7 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
+                  foto:gabriel,
                   nome: "Gabriel",
                   materia: "Versionamento",
                   area: "Desenvolvimento de Sistemas",
