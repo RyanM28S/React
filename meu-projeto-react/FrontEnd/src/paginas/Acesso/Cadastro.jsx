@@ -1,18 +1,35 @@
-import styles from "./Acesso.module.scss"
+import styles from "./Acesso.module.scss";
 import image1 from "../../assets/icone_inicial_header1.svg";
 import image2 from "../../assets/icone_pessoas_header.svg";
 import { Link } from "react-router-dom";
 
-const Cadastro = () => {
+const ip = "172.30.2.178";
 
+const Cadastro = () => {
   async function Cadastrar(event) {
     event.preventDefault();
-    
-    const form = event.currentTarget
-    const dados =  Object.fromEntries(new FormData(form))
 
-    if(!dados.Nome || !dados.Senha || !dados.Email){
-      alert("Falta informações!")
+    const form = event.currentTarget;
+    const dados = Object.fromEntries(new FormData(form));
+
+    if (!dados.nome || !dados.senha || !dados.email) {
+      return alert("Falta informações!");
+    }
+    try {
+      const res = await fetch(`http://${ip}:3001/cadastro`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dados),
+      });
+      if (!res.ok) {
+        throw new Error(`Server error: ${res.status}`);
+      }
+      const data = await res.json();
+      console.log("Login realizado:", data)
+    } catch (error) {
+      console.log("Falha no login:", error.message)
     }
   }
 
@@ -37,7 +54,7 @@ const Cadastro = () => {
             <label htmlFor="Nome">Usuário</label>
             <br />
             <input
-              name="Nome"
+              name="nome"
               id="Nome"
               type="text"
               placeholder="Digite seu usuário"
@@ -48,7 +65,7 @@ const Cadastro = () => {
             <br />
             <input
               id="Senha"
-              name="Senha"
+              name="senha"
               type="password"
               placeholder="Digite sua senha"
             />
@@ -58,7 +75,7 @@ const Cadastro = () => {
             <br />
             <input
               id="Email"
-              name="Email"
+              name="email"
               type="email"
               placeholder="Digite sua email"
             />
