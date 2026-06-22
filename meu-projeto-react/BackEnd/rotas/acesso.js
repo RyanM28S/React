@@ -68,5 +68,6 @@ async function Cadastro(req, res) {
 
 roteador.post("/login", Login);
 roteador.post("/cadastro", Cadastro);
+roteador.post("/cadastro", Cadastro);
 
 export default roteador;

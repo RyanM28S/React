@@ -9,34 +9,77 @@ import iconeMensagem from '../../assets/icone-mensagem.svg'
 import iconeSetaParaCima from '../../assets/icone-seta-para-cima.png'
 import style from './Inicial.module.scss'
 import { Link } from 'react-router-dom'
+import { motion } from "framer-motion";
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
 const Inicial = () => {
   return (
 
     <>
-    <section className={style.inicio}>
+      <motion.section
+        className={style.inicio}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
       <div className={style['parte-de-cima']}>
         <div className={style.parte1}>
           <div className={style.circulo}></div>
           <h2>O NOVO PADRÃO EM FEEDBACK ESCOLAR</h2>
         </div>
-        <h1 className={style['titulo-parte-cima']}>
+        <motion.h1
+          className={style['titulo-parte-cima']}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2
+          }}
+        >
           A Voz da Escola,<span className={style['span-parte-cima']}>
             <br />
             Elevada.</span>
-        </h1>
-        <h3 className={style['h3-parte-cima']}>
-          Salotti Opina é uma plataforma definitiva para avaliações <br />
+        </motion.h1>
+          <motion.h3
+            className={style['h3-parte-cima']}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.4
+            }}
+          >
+          Salotti Opina é uma plataforma definitiva para avaliações 
           institucionais. Uma interface premium projetada para conectar <br />
           alunos, professores e administração com clareza e sofisticação.
-        </h3>
+        </motion.h3>
         <div className={style['butoes-cima']}>
-          <button className={style['button1-cima']}>
-            Painel de Controle de Acesso <span className={style.seta}>⇨</span>
-          </button>
+          <motion.button
+            className={style['button1-cima']}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 0 25px rgba(192,0,255,.7)"
+            }}
+            whileTap={{
+              scale: 0.96
+            }}
+          >
+            Painel de Controle de Acesso <span className={style.seta}></span>
+          </motion.button>
           <button className={style['button2-cima']}>Explorar</button>
         </div>
       </div>
-    </section>
+    </motion.section>
     <hr className={style.divisa} />
     <section className={style.section2}>
       <div className={style.parte2}>
@@ -124,68 +167,192 @@ const Inicial = () => {
         <Link to="/home" className={style['a-parte3']}>Acessa Visão Geral </Link>
       </div>
 
-      <div className={style['direita-parte3']}>
-        <div className={style['caixas-parte3']}>
-          <div className={style['caixa1-parte3']}>
+      <motion.div
+
+          className={style['direita-parte3']}
+
+          variants={{
+            hidden: {},
+
+            visible: {
+              transition: {
+                staggerChildren: 0.15
+              }
+            }
+          }}
+
+          initial="hidden"
+
+          whileInView="visible"
+
+          viewport={{ once: true }}
+        >
+        < div className={style['caixas-parte3']}>
+          <motion.div
+
+            className={style['caixa1-parte3']}
+
+            variants={cardVariants}
+
+            transition={{
+              duration: 0.5
+            }}
+
+            whileHover={{
+              y: -10,
+              scale: 1.02
+            }}
+          >
             <img src={iconeInicialHeader} alt="icone-ilustrativo-para-aba-professores" />
             <h2>Avalie Professores</h2>
             <p>
               Compatilhe sua experiência e ajude os outros alunos a conhecerem
               os melhores professores.
             </p>
-          </div>
-          <div className={style['caixa2-parte3']}>
+          </motion.div>
+          <motion.div
+
+            className={style['caixa2-parte3']}
+
+            variants={cardVariants}
+
+            transition={{
+              duration: 0.5
+            }}
+
+            whileHover={{
+              y: -10,
+              scale: 1.02
+            }}
+          >
             <img src={iconePredio} alt="icone-ilustrativo-para-aba-setores" />
             <h2>Setores da Escola</h2>
             <p>
               Avalie Cantina, Secretaria e outros setores fundamentais para
               essa Escola.
             </p>
-          </div>
+          </motion.div>
         </div>
-        <div className={style['caixas-parte3']}>
-          <div className={style['caixa1-parte3']}>
+        < div className={style['caixas-parte3']}>
+          <motion.div
+
+            className={style['caixa1-parte3']}
+
+            variants={cardVariants}
+
+            transition={{
+              duration: 0.5
+            }}
+
+            whileHover={{
+              y: -10,
+              scale: 1.02
+            }}
+          >
             <img src={iconeLivro} alt="icone-ilustrativo-para-aba-professores" />
             <h2>Painel do Professor</h2>
             <p>
               Área exclusiva par professores registrarem observações e acompanharem alunos.
             </p>
-          </div>
-          <div className={style['caixa2-parte3']}>
+          </motion.div>
+          <motion.div
+
+            className={style['caixa2-parte3']}
+
+            variants={cardVariants}
+
+            transition={{
+              duration: 0.5
+            }}
+
+            whileHover={{
+              y: -10,
+              scale: 1.02
+            }}
+          >
             <img src={iconeEstrela} alt="icone-ilustrativo-para-aba-setores" />
             <h2>Sistema de hid</h2>
             <p>
               Avaliações elaboradas com notas, comentários e feedback construtivo.
             </p>
-          </div>
+          </motion.div>
         </div>
-        <div className={style['caixas-parte3']}>
-          <div className={style['caixa1-parte3']}>
+        < div className={style['caixas-parte3']}>
+          <motion.div
+
+            className={style['caixa1-parte3']}
+
+            variants={cardVariants}
+
+            transition={{
+              duration: 0.5
+            }}
+
+            whileHover={{
+              y: -10,
+              scale: 1.02
+            }}
+          >
             <img src={iconeMensagem} alt="icone-ilustrativo-para-aba-professores" />
             <h2>(i)</h2>
             <p>
               Deixe sua opinião de forma anônima e contribua para melhorias.
             </p>
-          </div>
-          <div className={style['caixa2-parte3']}>
+          </motion.div>
+          <motion.div
+
+            className={style['caixa2-parte3']}
+
+            variants={cardVariants}
+
+            transition={{
+              duration: 0.5
+            }}
+
+            whileHover={{
+              y: -10,
+              scale: 1.02
+            }}
+          >
             <img src={iconeSetaParaCima} alt="icone-ilustrativo-para-aba-setores" />
             <h2>Painel de controle Moderno</h2>
             <p>
               interface intuitiva e sofisticada para uma experiência premiun.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
      
     </section>
     <section className={style.parte4}>
-      <div className={style['caixa1-parte4']}>
+      <motion.div
+
+        className={style['caixa1-parte4']}
+
+        initial={{
+          opacity: 0,
+          scale: 0.9
+        }}
+
+        whileInView={{
+          opacity: 1,
+          scale: 1
+        }}
+
+        transition={{
+          duration: 0.7
+        }}
+
+        viewport={{
+          once: true
+        }}
+      >
         <img src={ImgPessoasRoxo} alt="icone-para-ilustrar-comunidade"/>
         <h1>Pronto para <span> evoluir? </span></h1>
         <p>Junte-se à plataforma e faça parte da construção de um ambiente escolar <br/> mais transparente, organizado e
           eficiente.</p>
         <button>Inicia Sessão</button>
-      </div>
+      </motion.div>
     </section>
     </>
   )

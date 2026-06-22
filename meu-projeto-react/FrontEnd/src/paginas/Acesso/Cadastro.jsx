@@ -1,6 +1,7 @@
 import styles from "./Acesso.module.scss";
 import image1 from "../../assets/icone_inicial_header1.svg";
 import image2 from "../../assets/icone_pessoas_header.svg";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const ip = "172.30.2.178";
@@ -34,19 +35,24 @@ const Cadastro = () => {
   }
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       <div id="conteudo">
         <div className={styles.conteiner}>
           <h1>Bem-vindo de volta</h1>
-          <p>login para continuar</p>
+          <p className={styles.plogin}>login para continuar</p>
           <div>
             <button className={styles["button-prof"]} id="professor">
               <img src={image1} alt="icone-para-login-professor" />
-              <p>Professor</p>
+              <p className={styles.descri}>Professor</p>
             </button>
             <button className={styles["button-aluno"]} id="aluno">
               <img src={image2} alt="icone-para-login-Alunos" />
-              <p>Alunos</p>
+              <p className={styles.descri}>Alunos</p>
             </button>
           </div>
 
@@ -103,7 +109,7 @@ const Cadastro = () => {
           </Link>
         </p>
       </div>
-    </>
+    </motion.div>
   );
 };
 
