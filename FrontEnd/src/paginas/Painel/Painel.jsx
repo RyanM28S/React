@@ -66,7 +66,7 @@ const Painel = () => {
           boxShadow: "0 0 25px rgba(195,0,255,0.35)",
         }}
       >
-        <div className={styles.flex5}>  
+        <div className={styles.flex5}>
           <div className={styles.flex4}>
             <div>
               <img src={pessoas} alt="" />
@@ -124,6 +124,7 @@ const Painel = () => {
             }}
           >
             <form className={styles.formulario}>
+              <button className={styles.x}>x</button>
               <div>
                 <label htmlFor="nome">Nome</label>
                 <input
@@ -154,12 +155,21 @@ const Painel = () => {
                   placeholder="Digite a Data"
                 />
               </div>
-              <div>
-                <input type="text" name="" id="" />
-                <input type="text" />
-                <input type="text" />
+              <div >
+                <label htmlFor="descricao">descrição</label>
+                <input className={styles.inpdescri} type="text" placeholder="Digite a Descrição" />
               </div>
-              <button>Atualizar</button>
+              <div className={styles.notas}>
+                <label htmlFor="notas">Notas</label>
+              </div>
+              <div className={styles.notas}>
+                <input type="numb" name="notas" placeholder="Nota 1°" />
+                <input type="text" placeholder="Nota 2°" />
+                <input type="text" placeholder="Nota 3°" />
+                <input type="text" placeholder="Nota 4°" />
+              </div>
+
+              <button className={styles.atual}>Atualizar</button>
             </form>
           </motion.div>
         </div>

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 .cont1 {
   width: 100%;
   margin: 1rem auto;
@@ -28,9 +28,9 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-p{
+  p {
     color: #a1a1aa;
-}
+  }
   img {
     background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
     box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
@@ -43,7 +43,7 @@ p{
 
   h1 {
     font-size: 4rem;
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
   }
   span {
     color: #7a00ff;
@@ -82,12 +82,12 @@ p{
   }
 
   button span {
-     color: white;
-  text-shadow:
-    0 0 10px rgba(161, 0, 255, 0.6),
-    0 0 20px rgba(161, 0, 255, 0.5),
-    0 0 40px rgba(161, 0, 255, 0.3),
-    0 0 80px rgba(161, 0, 255, 0.2);
+    color: white;
+    text-shadow:
+      0 0 10px rgba(161, 0, 255, 0.6),
+      0 0 20px rgba(161, 0, 255, 0.5),
+      0 0 40px rgba(161, 0, 255, 0.3),
+      0 0 80px rgba(161, 0, 255, 0.2);
     animation: mais 0.8s infinite ease-in-out;
     font-size: 3rem;
   }
@@ -107,7 +107,7 @@ p{
   color: white;
   font-size: 2.2rem;
   margin: 2rem 0;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
 }
 .flex3 {
   display: flex;
@@ -116,7 +116,7 @@ p{
     font-size: 1.3rem;
     margin: auto 0.5rem;
     color: #a100ff;
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
   }
   p {
     font-size: 1.5rem;
@@ -153,7 +153,7 @@ p{
     margin: 1rem auto;
   }
   h1 {
-    font-family: 'sora','arial';
+    font-family: "sora", "arial";
   }
 }
 .flex5 {
@@ -167,8 +167,8 @@ p{
   }
   background: rgba(255, 0, 60, 0.12);
   border-radius: 1rem;
-   border: 1px solid rgba(255, 0, 60, 0.4);
-   transition: all 0.5s ease;
+  border: 1px solid rgba(255, 0, 60, 0.4);
+  transition: all 0.5s ease;
 }
 .btn1:hover {
   background: rgba(255, 0, 60, 0.2);
@@ -176,20 +176,19 @@ p{
   transform: scale(1.08);
 
   box-shadow:
-    0 0 15px rgba(255,0,60,.4),
-    0 0 30px rgba(255,0,60,.2);
+    0 0 15px rgba(255, 0, 60, 0.4),
+    0 0 30px rgba(255, 0, 60, 0.2);
 }
 .btn2 {
   img {
     height: 50px;
   }
-   background: rgba(123, 0, 255, 0.12);
+  background: rgba(123, 0, 255, 0.12);
 
   border: 1px solid rgba(123, 0, 255, 0.4);
   border-radius: 1rem;
   margin-bottom: 1rem;
   transition: all 0.3s ease-in-out;
-  
 }
 
 .btn2:hover {
@@ -198,15 +197,15 @@ p{
   transform: scale(1.08);
 
   box-shadow:
-    0 0 15px rgba(123,0,255,.4),
-    0 0 30px rgba(123,0,255,.2);
+    0 0 15px rgba(123, 0, 255, 0.4),
+    0 0 30px rgba(123, 0, 255, 0.2);
 }
 .descricao {
   height: 100%;
-   background: rgba(15,15,20,.7);
+  background: rgba(15, 15, 20, 0.7);
   backdrop-filter: blur(10px);
   padding: 1rem;
-   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 1rem;
 }
@@ -215,24 +214,40 @@ p{
   flex-direction: column;
   gap: 1rem;
 }
+label {
+  font-size: 1.1rem;
+}
 .formulario {
-  background: #050505;
+  backdrop-filter: blur(14px);
+  background: rgba(20, 0, 30, 0.7);
   border: 1px solid rgba(180, 180, 180, 0.18);
-
+  font-family: 'Sora', sans-serif;
   border-radius: 1rem;
-  display: block;
-  margin: auto;
-  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
   padding: 1rem;
   border-color: #c014ff;
   box-shadow: 0 0 22px rgba(192, 20, 255, 0.25);
   width: 90%;
+  max-width: 700px;
   z-index: 9999999999999;
   color: white;
-
 }
-.nome {
+input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  color: white;
   width: 100%;
+
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #d000ff;
+  box-shadow: 0 0 15px rgba(208, 0, 255, 0.4);
+  transform: scale(1.01);
 }
 .overlay {
   position: fixed;
@@ -245,4 +260,43 @@ p{
   align-items: center;
 
   z-index: 99999999999;
+}
+
+.notas {
+  gap: 1rem;
+   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+}
+.atual {
+  width: 40%;
+  display: block;
+  margin: 1rem auto;
+  background: linear-gradient(90deg, #b300ff, #ff00ff);
+  color: white;
+  border: none;
+
+  padding: 1rem 2rem;
+  border-radius: 12px;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+.atual:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+.x {
+  position:absolute;
+  top: 0.2rem;
+  right: 1rem;
+  font-size: 2rem;
+  background-color: transparent;
+ border: none;
+  color:#d000ff ;
+  padding: 0.2rem;
+
 }
