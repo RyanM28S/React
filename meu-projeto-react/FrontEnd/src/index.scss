@@ -18,16 +18,19 @@ html::-webkit-scrollbar {
   box-sizing: border-box;
 }
 
+/* Modifique para usar height 100% em vez de min-height */
 .conteiner-principal {
   display: flex;
   flex-direction: column;
   height: 100%; 
 }
 
+/* Força o conteúdo principal a empurrar o footer para o rodapé */
 .conteiner-flexivel {
   flex: 1 0 auto; 
 }
 
+/* Garante que o footer não encolha e fique zerado na base */
 footer {
   flex-shrink: 0;
   margin-bottom: 0;
