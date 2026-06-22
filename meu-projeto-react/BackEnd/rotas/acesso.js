@@ -31,7 +31,7 @@ async function Login(req, res) {
       "process.env.JWT_SECRET",
       {
         expiresIn: "1h",
-      },
+      }
     );
     return res.status(200).json({ message: "Logado", token: token });
   } catch (error) {
@@ -68,6 +68,6 @@ async function Cadastro(req, res) {
 
 roteador.post("/login", Login);
 roteador.post("/cadastro", Cadastro);
-roteador.post("/cadastro", Cadastro);
+
 
 export default roteador;

@@ -1,45 +1,47 @@
-import styles from "./Acesso.module.scss"
+import styles from "./Acesso.module.scss";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const FormularioLogin = () => {
-
-
-  const ip = "172.30.2.178"
+  const ip = "172.30.2.178";
 
   async function handleLogin(event) {
-    event.preventDefault()
-    const dados = Object.fromEntries(
-      new FormData(event.target)
-    )
+    event.preventDefault();
+    const dados = Object.fromEntries(new FormData(event.target));
 
-    if(!dados.email || !dados.senha) {
-      alert("Falta informações!")
-      return
+    if (!dados.email || !dados.senha) {
+      alert("Falta informações!");
+      return;
     }
-    console.log("Dados validos", dados)
+    console.log("Dados validos", dados);
     try {
-      
+      const res = await fetch(`http://localhost:3001/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dados),
+      });
+      if (!res.ok) {
+        throw new Error("Servidor fail", res.message);
+      }
+      const data = await res.json();
+      console.log("Login realizado:", data)
     } catch (error) {
-        
-    const res = await fetch(`http://${ip}:3001/login`, {
-      
-    })
+      console.error("falha ao login", error.message)
     }
-
-
   }
 
-
-
   return (
-     <motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  exit={{ opacity: 0 }}
-  transition={{ duration: 0.4 }}
->
-<h1 className={styles.stitulo} >Salotti <span>Opina</span></h1>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <h1 className={styles.stitulo}>
+        Salotti <span>Opina</span>
+      </h1>
       <div id="conteudo">
         <div className={styles.conteiner}>
           <h1>Bem-vindo de volta</h1>
@@ -59,7 +61,6 @@ const FormularioLogin = () => {
             <br />
 
             <label htmlFor="Senha">Senha</label>
-           
 
             <input
               id="Senha"
@@ -79,7 +80,7 @@ const FormularioLogin = () => {
 
           <p id="p"></p>
 
-          <Link to='/cadastro' id="cadastro" className={styles.buttonnao}>
+          <Link to="/cadastro" id="cadastro" className={styles.buttonnao}>
             Não tem cadastro?
           </Link>
         </div>

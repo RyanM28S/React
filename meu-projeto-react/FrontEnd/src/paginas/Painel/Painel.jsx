@@ -63,7 +63,7 @@ const Painel = () => {
           boxShadow: "0 0 25px rgba(195,0,255,0.35)",
         }}
       >
-        <div className={styles.flex5}>
+        <div className={styles.flex5}>  
           <div className={styles.flex4}>
             <div>
               <img src={pessoas} alt="" />

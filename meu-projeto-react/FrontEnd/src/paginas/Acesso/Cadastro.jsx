@@ -4,7 +4,6 @@ import image2 from "../../assets/icone_pessoas_header.svg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const ip = "172.30.2.178";
 
 const Cadastro = () => {
   async function Cadastrar(event) {
@@ -17,7 +16,7 @@ const Cadastro = () => {
       return alert("Falta informações!");
     }
     try {
-      const res = await fetch(`http://${ip}:3001/cadastro`, {
+      const res = await fetch(`http://localhost:3001/cadastro`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
