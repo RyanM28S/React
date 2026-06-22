@@ -1,11 +1,14 @@
-import livro from "../../assets/icone-livro.png"
+import livro from "../../assets/icone-livro.png";
 import styles from "./Painel.module.scss";
-import lapis from "../../assets/lapis.png"
-import lixo from "../../assets/lixo.svg"
+import lapis from "../../assets/lapis.png";
+import lixo from "../../assets/lixo.svg";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import pessoas from "../../assets/icone-pessoas-roxo.png";
 
 const Painel = () => {
+  const [visivel, setvisivel] = useState(false);
+
   return (
     <div className={styles.Painel}>
       <motion.div
@@ -29,7 +32,7 @@ const Painel = () => {
               </p>
             </div>
           </div>
-          <button>
+          <button onClick={() => setvisivel(!visivel)}>
             <span>+</span> Novo Registro
           </button>
         </div>
@@ -96,8 +99,73 @@ const Painel = () => {
         </div>
         <h2 className={styles.descricao}>?</h2>
       </motion.div>
+      {visivel && (
+        <div className={styles.overlay}>
+          <motion.div
+            className={styles.modal}
+            initial={{
+              opacity: 0,
+              scale: 0.7,
+              y: 80,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.7,
+              y: 80,
+            }}
+            transition={{
+              duration: 0.5,
+              type: "spring",
+            }}
+          >
+            <form className={styles.formulario}>
+              <div>
+                <label htmlFor="nome">Nome</label>
+                <input
+                  className={styles.nome}
+                  id="nome"
+                  name="nome"
+                  type="text"
+                  placeholder="Digite o Nome"
+                />
+              </div>
+              <div>
+                <label htmlFor="turma">Turma</label>
+                <input
+                  className={styles.turma}
+                  id="turma"
+                  name="turma"
+                  type="text"
+                  placeholder="Digte a Turma"
+                />
+              </div>
+              <div>
+                <label htmlFor="data">Data</label>
+                <input
+                  id="data"
+                  name="data"
+                  className={styles.data}
+                  type="date"
+                  placeholder="Digite a Data"
+                />
+              </div>
+              <div>
+                <input type="text" name="" id="" />
+                <input type="text" />
+                <input type="text" />
+              </div>
+              <button>Atualizar</button>
+            </form>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
-}
+};
 
-export default Painel
+export default Painel;
