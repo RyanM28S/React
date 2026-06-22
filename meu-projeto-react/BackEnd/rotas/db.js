@@ -1,10 +1,10 @@
 import mysql from 'mysql2/promise'
 
 const db = mysql.createPool({
-    host: 'localhost',
+    host: '172.30.2.178',
     user: 'user',
-    password: 'exemplo',
-    database: 'db_exemplo'
+    password: 'usersenha',
+    database: 'opina'
 })
 
 export default db

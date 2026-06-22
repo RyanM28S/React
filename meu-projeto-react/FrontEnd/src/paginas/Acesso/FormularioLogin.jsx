@@ -5,17 +5,29 @@ import { motion } from "framer-motion";
 const FormularioLogin = () => {
 
 
-  function handleLogin(event) {
+  const ip = "172.30.2.178"
+
+  async function handleLogin(event) {
     event.preventDefault()
     const dados = Object.fromEntries(
       new FormData(event.target)
     )
 
-    if(!dados.Email || !dados.Senha) {
+    if(!dados.email || !dados.senha) {
       alert("Falta informações!")
       return
     }
     console.log("Dados validos", dados)
+    try {
+      
+    } catch (error) {
+        
+    const res = await fetch(`http://${ip}:3001/login`, {
+      
+    })
+    }
+
+
   }
 
 
@@ -39,7 +51,7 @@ const FormularioLogin = () => {
 
             <input
               id="Email"
-              name="Email"
+              name="email"
               type="email"
               placeholder="Digite seu email de usuário"
             />
@@ -51,7 +63,7 @@ const FormularioLogin = () => {
 
             <input
               id="Senha"
-              name="Senha"
+              name="senha"
               type="password"
               placeholder="Digite sua senha"
             />
