@@ -6,6 +6,7 @@ import db from "./db.js";
 const roteador = express.Router();
 
 async function Login(req, res) {
+
   const { email, senha } = req.body;
   if (!email || !senha) {
     return res.status(400).json({ message: "Falta informações" });
@@ -17,16 +18,15 @@ async function Login(req, res) {
     if (buscar.length === 0) {
       return res.status(400).json({ message: "email ou senha inválidos" });
     }
-    const usuario = buscar[0];
-    const senhaIgual = await bcrypt.compare(senha, usuario.senha);
+    const senhaIgual = await bcrypt.compare(senha, buscar.senha);
 
     if (!senhaIgual) {
       return res.status(400).json({ message: "email ou senha inválidos" });
     }
     const token = jwt.sign(
       {
-        id: usuario.id,
-        email: usuario.email,
+        id: buscar.id,
+        email: buscar.email,
       },
       "process.env.JWT_SECRET",
       {
@@ -53,7 +53,7 @@ async function Cadastro(req, res) {
     }
 
     const senhaCripto = await bcrypt.hash(senha, 10);
-    const [criar] = await db.query(
+    const criar = await db.query(
       "INSERT INTO usuarios(nome,senha,email) VALUES(?,?,?)",
       [nome, senhaCripto, email],
     );
