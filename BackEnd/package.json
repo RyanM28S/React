@@ -9,5 +9,8 @@
     "jsonwebtoken": "^9.0.3",
     "mariadb": "^3.5.3"
   },
-  "type": "module"
+  "type": "module",
+  "allowScripts": {
+    "bcrypt@6.0.0": true
+  }
 }
