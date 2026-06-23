@@ -9,6 +9,33 @@ import pessoas from "../../assets/icone-pessoas-roxo.png";
 const Painel = () => {
   const [visivel, setvisivel] = useState(false);
 
+  async function Registrar(event) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const dados = Object.fromEntries(new FormData(form));
+
+    if (!dados.nome || !dados.turma || !dados.data) {
+      return alert("Falta informações!");
+    }
+    try {
+      const res = await fetch("http://localhost:3001/registro", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dados),
+      });
+      if (!res.ok) {
+        throw new Error(res.message || "Erro ao registrar");
+      }
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
   return (
     <div className={styles.Painel}>
       <motion.div
@@ -123,8 +150,7 @@ const Painel = () => {
               type: "spring",
             }}
           >
-            <form className={styles.formulario}>
-              <button className={styles.x}>x</button>
+            <form onSubmit={Registrar} className={styles.formulario}>
               <div>
                 <label htmlFor="nome">Nome</label>
                 <input

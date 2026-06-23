@@ -22,6 +22,7 @@ const App = () => {
 
   return (
     <div className="conteiner-principal">
+
       {!hide && <Header />}
 
       <main className="conteiner-flexivel">
