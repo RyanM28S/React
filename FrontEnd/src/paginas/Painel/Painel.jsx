@@ -151,9 +151,17 @@ const Painel = () => {
             }}
           >
             <form onSubmit={Registrar} className={styles.formulario}>
+              <button
+                onClick={() => setvisivel(!visivel)}
+                type="button"
+                className={styles.x}
+              >
+                x
+              </button>
               <div>
                 <label htmlFor="nome">Nome</label>
                 <input
+                  required
                   className={styles.nome}
                   id="nome"
                   name="nome"
@@ -164,6 +172,7 @@ const Painel = () => {
               <div>
                 <label htmlFor="turma">Turma</label>
                 <input
+                  required
                   className={styles.turma}
                   id="turma"
                   name="turma"
@@ -172,18 +181,24 @@ const Painel = () => {
                 />
               </div>
               <div>
-                <label htmlFor="data">Data</label>
+                <label htmlFor="data">RA</label>
                 <input
-                  id="data"
-                  name="data"
+                  required
+                  id="ra"
+                  name="ra"
                   className={styles.data}
-                  type="date"
-                  placeholder="Digite a Data"
+                  type="text"
+                  placeholder="Digite o RA"
                 />
               </div>
-              <div >
-                <label htmlFor="descricao">descrição</label>
-                <input className={styles.inpdescri} type="text" placeholder="Digite a Descrição" />
+              <div>
+                <label htmlFor="descricao">Descrição</label>
+                <input
+                  required
+                  className={styles.inpdescri}
+                  type="text"
+                  placeholder="Digite a Descrição"
+                />
               </div>
               <div className={styles.notas}>
                 <label htmlFor="notas">Notas</label>
@@ -195,7 +210,9 @@ const Painel = () => {
                 <input type="text" placeholder="Nota 4°" />
               </div>
 
-              <button className={styles.atual}>Atualizar</button>
+              <button type="submit" className={styles.atual}>
+                Atualizar
+              </button>
             </form>
           </motion.div>
         </div>
