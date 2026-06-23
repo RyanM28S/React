@@ -1,10 +1,11 @@
-import mysql from 'mysql2/promise'
+import mariadb from 'mariadb'
 
-const db = mysql.createPool({
-    host: '10.158.64.76',
+const db = mariadb.createPool({
+    host:'localhost',
     user: 'user',
+    database: 'opina',
     password: 'usersenha',
-    database: 'opina'
+    port: "3306"
 })
 
 export default db
