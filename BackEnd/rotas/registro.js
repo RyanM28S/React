@@ -6,8 +6,8 @@ const router = express.Router()
 async function registrarAlunos(req, res) {
     const { nome, turma, ra, descricao, nota1, nota2, nota3, nota4 } = req.body
     if (!nome || !turma || !ra || !descricao) {
-        res.status(400).json({ message: "Falta informações" })
-        return
+        return res.status(400).json({ message: "Falta informações" })
+
     }
 
     try {
@@ -15,29 +15,27 @@ async function registrarAlunos(req, res) {
             [nome, turma, descricao, ra])
 
         if (registro.affectedRows < 1) {
-            res.status(500).json({ message: "Não foi possivel registrar o aluno" })
-            return
+            return res.status(500).json({ message: "Não foi possivel registrar o aluno" })
         }
         const pegar = await db.query("SELECT id FROM alunos WHERE ra = ?", [ra])
-        
+
         if (pegar.length < 1) {
-            res.status(400).json({message: "Erro no banco de dados"})
+            return res.status(400).json({ message: "Erro no banco de dados" })
         }
 
-        const registroNotas = await db.query("INSERT INTO notasAlunos(id_aluno, nota_1,nota_2,nota_3,nota_4)",[pegar[0].id, nota1, nota2, nota3, nota4]) 
+        const registroNotas = await db.query("INSERT INTO notasAlunos(id_aluno, nota_1,nota_2,nota_3,nota_4) VALUES (?,?,?,?,?)", [pegar[0].id, nota1, nota2, nota3, nota4])
 
         if (registroNotas.affectedRows < 1) {
-            res.status(500).json({message: "Não foi possivel regsitrar as notas"})
+            return res.status(500).json({ message: "Não foi possivel regsitrar as notas" })
         }
-        
-        return res.status(201).json({message: "Aluno registrado com sucesso"})
+
+        return res.status(201).json({ message: "Aluno registrado com sucesso" })
     } catch (error) {
         if (error.code === "ER_DUP_ENTRY") {
-            res.status(409).json({message: "Aluno já cadastrado"})
-            return
+            return res.status(409).json({ message: "Aluno já cadastrado" })
         }
         console.error(error)
-        res.status(500).json({ message: "Erro interno!" })
+        return res.status(500).json({ message: "Erro interno!" })
     }
 
 
