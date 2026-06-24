@@ -1,21 +1,24 @@
 import styles from "./Acesso.module.scss";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
+import { useState } from "react";
+
 
 const FormularioLogin = () => {
-  const ip = "172.30.2.178";
+  const [loading, setLoading] = useState(false);
 
   async function handleLogin(event) {
     event.preventDefault();
     const dados = Object.fromEntries(new FormData(event.target));
 
     if (!dados.email || !dados.senha) {
-      alert("Falta informações!");
+     toast.error("Preencha todos os campos!");
       return;
     }
     console.log("Dados validos", dados);
     try {
-      const res = await fetch(`http://localhost:3001/login`, {
+      const res = await fetch(`http://${ip}:3001/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,8 +29,10 @@ const FormularioLogin = () => {
         throw new Error("Servidor fail", res.message);
       }
       const data = await res.json();
+      toast.success("Login realizado com sucesso!");
       console.log("Login realizado:", data)
     } catch (error) {
+      toast.error("Erro ao fazer login!");
       console.error("falha ao login", error.message)
     }
   }
@@ -71,9 +76,20 @@ const FormularioLogin = () => {
 
             <br />
 
-            <button type="submit" className={styles["button-entrar"]}>
-              Entrar na Plataforma
-            </button>
+            <motion.button
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 25px rgba(192,0,255,.6)",
+              }}
+              whileTap={{
+                scale: 0.97,
+              }}
+              disabled={loading}
+              type="submit"
+              className={styles["button-entrar"]}
+            >
+              {loading ? "Entrando..." : "Entrar na Plataforma"}
+            </motion.button>
 
             <br />
           </form>

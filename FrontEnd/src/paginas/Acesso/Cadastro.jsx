@@ -3,7 +3,7 @@ import image1 from "../../assets/icone_inicial_header1.svg";
 import image2 from "../../assets/icone_pessoas_header.svg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
+import toast from "react-hot-toast";
 
 const Cadastro = () => {
   async function Cadastrar(event) {
@@ -12,9 +12,10 @@ const Cadastro = () => {
     const form = event.currentTarget;
     const dados = Object.fromEntries(new FormData(form));
 
-    if (!dados.nome || !dados.senha || !dados.email) {
-      return alert("Falta informações!");
-    }
+   if (!dados.email || !dados.senha) {
+     toast.error("Preencha todos os campos!");
+     return;
+   }
     try {
       const res = await fetch(`http://localhost:3001/cadastro`, {
         method: "POST",
@@ -27,8 +28,10 @@ const Cadastro = () => {
         throw new Error(`Server error: ${res.status}`);
       }
       const data = await res.json();
+      toast.success("Cadastro realizado com sucesso!");
       console.log("Login realizado:", data)
     } catch (error) {
+      toast.error("Erro ao cadastrar usuário!");
       console.log("Falha no login:", error.message)
     }
   }
@@ -42,7 +45,7 @@ const Cadastro = () => {
     >
       <div id="conteudo">
         <div className={styles.conteiner}>
-          <h1>Bem-vindo de volta</h1>
+          <h1>Crie sua Conta</h1>
           <p className={styles.plogin}>login para continuar</p>
           <div>
             <button className={styles["button-prof"]} id="professor">
