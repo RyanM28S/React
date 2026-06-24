@@ -226,7 +226,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-  margin-bottom: 1.5rem;
+
   padding: 1rem;
   border-color: #c014ff;
   box-shadow: 0 0 22px rgba(192, 20, 255, 0.25);
@@ -276,8 +276,9 @@ input:focus {
   background: linear-gradient(90deg, #b300ff, #ff00ff);
   color: white;
   border: none;
-
+ font-family: 'sora',arial;
   padding: 1rem 2rem;
+  font-size: 1rem;
   border-radius: 12px;
 
   font-weight: 600;
