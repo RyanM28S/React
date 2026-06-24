@@ -271,6 +271,33 @@
 
   transition: 0.3s;
 }
+.criar {
+    width: 40%;
+  display: block;
+  margin: 1rem auto;
+   background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: white;
+  border: none;
+  font-family: "sora", arial;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+    box-shadow: 0 4px 14px rgba(168, 85, 247, 0.4);
+  border-radius: 12px;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+.criar:hover {
+ transform: translateY(-2px); 
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6); 
+  filter: brightness(1.1); 
+}
+.ali {
+  display: flex;
+  justify-content: space-around;
+}
 .atual:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
