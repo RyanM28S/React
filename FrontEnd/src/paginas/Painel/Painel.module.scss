@@ -214,21 +214,19 @@
   flex-direction: column;
   gap: 1rem;
 }
-label {
-  font-size: 1.1rem;
-}
+
 .formulario {
   backdrop-filter: blur(14px);
   border: 1px solid rgba(180, 180, 180, 0.18);
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-  padding: 1rem;
-  background: rgba(15,15,20,.75);
-backdrop-filter: blur(18px);
-border: 1px solid rgba(255,255,255,.08);
+  padding: 1.5rem;
+  background: rgba(15, 15, 20, 0.75);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-color: #c014ff;
   box-shadow: 0 0 22px rgba(192, 20, 255, 0.25);
   width: 90%;
@@ -236,20 +234,7 @@ border: 1px solid rgba(255,255,255,.08);
   z-index: 9999999999999;
   color: white;
 }
-input {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 0, 255, 0.2);
-  color: white;
-  width: 100%;
 
-  transition: 0.3s;
-}
-
-input:focus {
-  border-color: #d000ff;
-  box-shadow: 0 0 15px rgba(208, 0, 255, 0.4);
-  transform: scale(1.01);
-}
 .overlay {
   position: fixed;
   inset: 0;
@@ -265,10 +250,9 @@ input:focus {
 
 .notas {
   gap: 1rem;
-   display: grid;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-
 }
 .atual {
   width: 40%;
@@ -277,7 +261,7 @@ input:focus {
   background: linear-gradient(90deg, #b300ff, #ff00ff);
   color: white;
   border: none;
- font-family: 'sora',arial;
+  font-family: "sora", arial;
   padding: 1rem 2rem;
   font-size: 1rem;
   border-radius: 12px;
@@ -292,13 +276,92 @@ input:focus {
   box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
 }
 .x {
-  position:absolute;
-  top: 0.2rem;
+  position: absolute;
+  top: 0rem;
   right: 1rem;
   font-size: 2rem;
   background-color: transparent;
- border: none;
-  color:#d000ff ;
+  border: none;
+  color: #d000ff;
   padding: 0.2rem;
+}
 
+.inputGroup {
+  position: relative;
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding: 1.4rem 1rem 0.7rem;
+
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: white;
+    font-size: 1rem;
+
+    outline: none;
+
+    transition: 0.3s;
+  }
+
+  label {
+    position: absolute;
+
+    left: 1rem;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #999;
+
+    pointer-events: none;
+
+    transition: 0.25s ease;
+
+    background: transparent;
+
+    padding: 0 0.4rem;
+  }
+
+  input:focus {
+    border-color: #c014ff;
+
+    box-shadow:
+      0 0 10px rgba(192, 20, 255, 0.2),
+      0 0 30px rgba(192, 20, 255, 0.08);
+  }
+
+  input:focus + label,
+  input:valid + label {
+    top: 0;
+
+    font-size: 1rem;
+
+    color: #d946ef;
+  }
+}
+
+select {
+  width: 100%;
+  padding: 1rem;
+
+  background: #0d0d0d;
+  color: white;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  outline: none;
+
+  transition: 0.3s;
+
+  &:focus {
+    border-color: #c014ff;
+
+    box-shadow:
+      0 0 12px rgba(192,20,255,0.25);
+  }
 }
