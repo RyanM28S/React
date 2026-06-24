@@ -346,8 +346,8 @@ const Inicial = () => {
             Junte-se à plataforma e faça parte da construção de um ambiente
             escolar <br /> mais transparente, organizado e eficiente.
           </p>
-          <Link to="login">
-            <button>Inicia Sessão</button>
+          <Link to="login" className={style.buttonL}>
+            Inicia Sessão
           </Link>
         </motion.div>
       </section>
