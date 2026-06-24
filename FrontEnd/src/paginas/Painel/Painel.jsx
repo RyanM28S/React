@@ -14,9 +14,18 @@ const Painel = () => {
     event.preventDefault();
 
     const form = event.currentTarget;
+    // const notas = {
+    //   nota1: form.nota1.value,
+    //   nota2: form.nota2.value,
+    //   nota3: form.nota3.value,
+    //   nota4: form.nota4.value
+    // }
+    
     const dados = Object.fromEntries(new FormData(form));
 
-    if (!dados.nome || !dados.turma || !dados.data) {
+    // dados.notas = notas;
+
+    if (!dados.nome || !dados.turma || !dados.ra || !dados.nota1 || !dados.nota2 || !dados.nota3 || !dados.nota4) {
       return alert("Falta informações!");
     }
     try {
@@ -25,7 +34,7 @@ const Painel = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(dados),
+        body: JSON.stringify(dados)
       });
       if (!res.ok) {
         throw new Error(res.message || "Erro ao registrar");
@@ -180,10 +189,10 @@ const Painel = () => {
                   <label htmlFor="notas">Notas</label>
                 </div>
                 <div className={styles.notas}>
-                  <input type="numb" name="notas" placeholder="Nota 1°" />
-                  <input type="text" placeholder="Nota 2°" />
-                  <input type="text" placeholder="Nota 3°" />
-                  <input type="text" placeholder="Nota 4°" />
+                  <input type="numb" name="nota1" placeholder="Nota 1°" />
+                  <input type="text" name="nota2" placeholder="Nota 2°" />
+                  <input type="text" name="nota3" placeholder="Nota 3°" />
+                  <input type="text" name="nota4" placeholder="Nota 4°" />
                 </div>
 
                 <button className={styles.atual}>Atualizar</button>
