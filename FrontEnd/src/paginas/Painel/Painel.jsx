@@ -162,44 +162,20 @@ const Painel = () => {
                 <button type="button" className={styles.x}>
                   x
                 </button>
-                <div>
+                <div className={styles.inputGroup}>
+                  <input id="nome" name="nome" type="text" required />
                   <label htmlFor="nome">Nome</label>
-                  <input
-                    className={styles.nome}
-                    id="nome"
-                    name="nome"
-                    type="text"
-                    placeholder="Digite o Nome"
-                  />
                 </div>
-                <div>
-                  <label htmlFor="turma">Turma</label>
-                  <input
-                    className={styles.turma}
-                    id="turma"
-                    name="turma"
-                    type="text"
-                    placeholder="Digte a Turma"
-                  />
+
+                <div className={styles.inputGroup}>
+                  <input id="turma" name="turma" type="text" required />
+                  <label htmlFor="turma">turma</label>
                 </div>
-                <div>
-                  <label htmlFor="data">Data</label>
-                  <input
-                    id="data"
-                    name="data"
-                    className={styles.data}
-                    type="date"
-                    placeholder="Digite a Data"
-                  />
+                <div className={styles.inputGroup}>
+                  <input id="ra" name="ra" type="text" required />
+                  <label htmlFor="ra">Ra</label>
                 </div>
-                <div>
-                  <label htmlFor="descricao">descrição</label>
-                  <input
-                    className={styles.inpdescri}
-                    type="text"
-                    placeholder="Digite a Descrição"
-                  />
-                </div>
+
                 <div className={styles.notas}>
                   <label htmlFor="notas">Notas</label>
                 </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { useState } from "react";
-const [loading, setLoading] = useState(false);
+
 
 const FormularioLogin = () => {
   const ip = "172.30.2.178";

@@ -69,19 +69,22 @@ const Footer = () => {
         </div>
         <div className={style["links-rapidos"]}>
           <h2>Recursos</h2>
-          <Link to="/areaAluno">Área do Aluno</Link>
+
+          <Link to="/painel">Painel do Professor</Link>
           <br />
-          <Link to="/painelProfessores">Painel do Professor</Link>
-          <br />
-          <Link to="/meuPerfil">Meu perfil</Link>
+          <Link to="/perfil">Meu perfil</Link>
         </div>
         <div className={style["links-rapidos"]}>
           <h2>Contato</h2>
-          <Link to="/emial">contato@salottiopina.edu.br</Link>
+          <Link to="mailto:contato@salottipina.edu.br">
+            contato@salottiopina.edu.br
+          </Link>
           <br />
-          <Link to="/numero">(11) 9999-9999</Link>
+          <Link to="https://wa.me/5511999999999">(11) 9999-9999</Link>
           <br />
-          <Link to="/cidade">São Paulo, SP - Brasil</Link>
+          <Link to="https://maps.google.com/?q=São+Paulo+SP+Brasil">
+            São Paulo, SP - Brasil
+          </Link>
           <br />
         </div>
       </div>
