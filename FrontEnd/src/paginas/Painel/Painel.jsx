@@ -3,8 +3,9 @@ import styles from "./Painel.module.scss";
 import lapis from "../../assets/lapis.png";
 import lixo from "../../assets/lixo.svg";
 import { useState } from "react";
-import { motion } from "framer-motion";
+
 import pessoas from "../../assets/icone-pessoas-roxo.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Painel = () => {
   const [visivel, setvisivel] = useState(false);
@@ -126,80 +127,95 @@ const Painel = () => {
         </div>
         <h2 className={styles.descricao}>?</h2>
       </motion.div>
-      {visivel && (
-        <div className={styles.overlay}>
+      <AnimatePresence>
+        {visivel && (
           <motion.div
-            className={styles.modal}
-            initial={{
-              opacity: 0,
-              scale: 0.7,
-              y: 80,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0.7,
-              y: 80,
-            }}
-            transition={{
-              duration: 0.5,
-              type: "spring",
-            }}
+            className={styles.overlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <form onSubmit={Registrar} className={styles.formulario}>
-              <div>
-                <label htmlFor="nome">Nome</label>
-                <input
-                  className={styles.nome}
-                  id="nome"
-                  name="nome"
-                  type="text"
-                  placeholder="Digite o Nome"
-                />
-              </div>
-              <div>
-                <label htmlFor="turma">Turma</label>
-                <input
-                  className={styles.turma}
-                  id="turma"
-                  name="turma"
-                  type="text"
-                  placeholder="Digte a Turma"
-                />
-              </div>
-              <div>
-                <label htmlFor="data">Data</label>
-                <input
-                  id="data"
-                  name="data"
-                  className={styles.data}
-                  type="date"
-                  placeholder="Digite a Data"
-                />
-              </div>
-              <div >
-                <label htmlFor="descricao">descrição</label>
-                <input className={styles.inpdescri} type="text" placeholder="Digite a Descrição" />
-              </div>
-              <div className={styles.notas}>
-                <label htmlFor="notas">Notas</label>
-              </div>
-              <div className={styles.notas}>
-                <input type="numb" name="notas" placeholder="Nota 1°" />
-                <input type="text" placeholder="Nota 2°" />
-                <input type="text" placeholder="Nota 3°" />
-                <input type="text" placeholder="Nota 4°" />
-              </div>
+            <motion.div
+              className={styles.modal}
+              initial={{
+                opacity: 0,
+                scale: 0.8,
+                y: 50,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.8,
+                y: 50,
+              }}
+              transition={{
+                duration: 0.4,
+                type: "spring",
+                stiffness: 120,
+              }}
+            >
+              <form onSubmit={Registrar} className={styles.formulario}>
+                <button type="button" className={styles.x}>
+                  x
+                </button>
+                <div>
+                  <label htmlFor="nome">Nome</label>
+                  <input
+                    className={styles.nome}
+                    id="nome"
+                    name="nome"
+                    type="text"
+                    placeholder="Digite o Nome"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="turma">Turma</label>
+                  <input
+                    className={styles.turma}
+                    id="turma"
+                    name="turma"
+                    type="text"
+                    placeholder="Digte a Turma"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="data">Data</label>
+                  <input
+                    id="data"
+                    name="data"
+                    className={styles.data}
+                    type="date"
+                    placeholder="Digite a Data"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="descricao">descrição</label>
+                  <input
+                    className={styles.inpdescri}
+                    type="text"
+                    placeholder="Digite a Descrição"
+                  />
+                </div>
+                <div className={styles.notas}>
+                  <label htmlFor="notas">Notas</label>
+                </div>
+                <div className={styles.notas}>
+                  <input type="numb" name="notas" placeholder="Nota 1°" />
+                  <input type="text" placeholder="Nota 2°" />
+                  <input type="text" placeholder="Nota 3°" />
+                  <input type="text" placeholder="Nota 4°" />
+                </div>
 
-              <button className={styles.atual}>Atualizar</button>
-            </form>
+                <button className={styles.atual}>Atualizar</button>
+              </form>
+            </motion.div>
           </motion.div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </div>
   );
 };

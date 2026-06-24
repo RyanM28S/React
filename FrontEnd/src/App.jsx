@@ -1,6 +1,7 @@
 import { useLocation} from 'react-router-dom'
 import { Route, Routes } from 'react-router-dom'
 import { AnimatePresence } from "framer-motion";
+import { Toaster } from "react-hot-toast";
 import Footer from './componentes/footer/Footer.jsx'
 import Header from './componentes/Header/Header.jsx'
 import Inicial from './paginas/Inicial/Inicial.jsx'
@@ -22,6 +23,37 @@ const App = () => {
 
   return (
     <div className="conteiner-principal">
+      <Toaster
+        position="top-right"
+        gutter={12}
+        toastOptions={{
+          duration: 3000,
+
+          style: {
+            background: "rgba(20, 0, 30, 0.95)",
+            color: "#fff",
+            border: "1px solid #d000ff",
+            padding: "16px",
+            borderRadius: "14px",
+            backdropFilter: "blur(10px)",
+            boxShadow: "0 0 20px rgba(208,0,255,0.35)",
+          },
+
+          success: {
+            iconTheme: {
+              primary: "#d000ff",
+              secondary: "#fff",
+            },
+          },
+
+          error: {
+            iconTheme: {
+              primary: "#ff2e63",
+              secondary: "#fff",
+            },
+          },
+        }}
+      />
 
       {!hide && <Header />}
 
