@@ -478,7 +478,7 @@ body,
   display: block;
   margin: auto;
 }
-.caixa1-parte4 button {
+.caixa1-parte4 .buttonL {
   display: block;
   margin: 3rem auto;
   border: 2px solid rgba(255, 255, 255, 0.18);
@@ -487,6 +487,9 @@ body,
   font-size: 2rem;
   border-radius: 1rem;
   color: #ffff;
+  width: 20%;
+  text-decoration: none;
+  text-align: center;
   box-shadow:
     0 0 10px rgba(177, 0, 255, 0.45),
     0 0 25px rgba(177, 0, 255, 0.25),
@@ -505,7 +508,7 @@ body,
     box-shadow: 0 0 10px rgba(177, 0, 255, 0.3);
   }
 }
-.caixa1-parte4 button:hover {
+.caixa1-parte4 .buttonL:hover {
   transform: translateY(-2px) scale(1.03);
 
   box-shadow:
