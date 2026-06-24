@@ -24,29 +24,40 @@ const App = () => {
   return (
     <div className="conteiner-principal">
       <Toaster
-        position="top-right"
+        position="top-left"
         gutter={12}
         toastOptions={{
           duration: 3000,
-
           style: {
-            background: "rgba(20, 0, 30, 0.95)",
-            color: "#fff",
-            border: "1px solid #d000ff",
-            padding: "16px",
-            borderRadius: "14px",
-            backdropFilter: "blur(10px)",
-            boxShadow: "0 0 20px rgba(208,0,255,0.35)",
+            background: "rgba(15, 2, 22, 0.85)", 
+            minWidth:"325px",
+            color: "#f5f0f8", 
+            border: "1px solid rgba(208, 0, 255, 0.3)", 
+            padding: "12px 20px", 
+            borderRadius: "12px", 
+            backdropFilter: "blur(12px)",
+            boxShadow: "0 8px 32px 0 rgba(208, 0, 255, 0.15)",
+            fontSize: "1rem", 
+            fontWeight: "500", 
+            fontFamily: "sans-serif", 
           },
-
           success: {
+           
+            style: {
+              border: "1px solid rgba(0, 255, 136, 0.3)",
+              boxShadow: "0 8px 32px 0 rgba(0, 255, 136, 0.15)",
+            },
             iconTheme: {
-              primary: "#d000ff",
-              secondary: "#fff",
+              primary: "#00ff88",
+              secondary: "#0f0216",
             },
           },
-
           error: {
+           
+            style: {
+              border: "1px solid rgba(255, 46, 99, 0.4)",
+              boxShadow: "0 8px 32px 0 rgba(255, 46, 99, 0.2)",
+            },
             iconTheme: {
               primary: "#ff2e63",
               secondary: "#fff",
