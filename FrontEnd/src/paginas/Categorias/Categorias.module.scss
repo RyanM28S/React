@@ -25,7 +25,6 @@
       .titulo {
    
   }
-  
   .titulo span {
     background: rgb(127, 0, 255);
     -webkit-background-clip: text;
@@ -110,7 +109,9 @@
     }
 }
   
-  
+  .main {
+     overflow-y: hidden;
+  }
 .dtexto_setores1 {
     height: 100%;
     width: 50%;
