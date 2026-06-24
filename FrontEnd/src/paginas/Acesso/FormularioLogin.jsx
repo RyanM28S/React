@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 const FormularioLogin = () => {
-  const ip = "172.30.2.178";
+  const [loading, setLoading] = useState(false);
 
   async function handleLogin(event) {
     event.preventDefault();
