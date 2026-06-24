@@ -219,15 +219,16 @@ label {
 }
 .formulario {
   backdrop-filter: blur(14px);
-  background: rgba(20, 0, 30, 0.7);
   border: 1px solid rgba(180, 180, 180, 0.18);
   font-family: 'Sora', sans-serif;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-
   padding: 1rem;
+  background: rgba(15,15,20,.75);
+backdrop-filter: blur(18px);
+border: 1px solid rgba(255,255,255,.08);
   border-color: #c014ff;
   box-shadow: 0 0 22px rgba(192, 20, 255, 0.25);
   width: 90%;
