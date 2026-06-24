@@ -159,7 +159,7 @@ const Painel = () => {
               }}
             >
               <form onSubmit={Registrar} className={styles.formulario}>
-                <button type="button" className={styles.x}>
+                <button onClick={() => setvisivel(false)} type="button" className={styles.x}>
                   x
                 </button>
                 <div>
