@@ -189,3 +189,13 @@
   transition: 0.3s;
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .começo {
+    transition: 0.3s;
+    margin-left: 1rem;
+  }
+  .começo:hover {
+    transform: translateY(-4px);
+  }
+}

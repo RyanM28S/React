@@ -123,7 +123,7 @@ input:hover {
   margin: 1rem 1rem;
   border-radius: 1rem;
 }
-.button-aluno img,
+.butt .button-aluno img,
 .button-prof img {
   height: 30px;
 }
@@ -136,6 +136,9 @@ input:hover {
   margin: 1rem 1rem;
   transition: 0.3s all ease;
 }
+.button-aluno.active {
+  background-color: #05010a;
+}
 .button-aluno:hover,
 .button-prof:hover {
   background-color: #7b2cbf;
@@ -143,7 +146,7 @@ input:hover {
 .button-aluno:focus,
 .button-prof:focus {
   outline: none;
-  border: 1px solid #a100ff;
+  border: 2px solid #a100ff;
 
   box-shadow:
     0 0 8px #a100ff,
@@ -252,4 +255,98 @@ input {
   text-decoration: none;
   color: #7a00ff;
   font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .conteiner {
+    background: rgba(35, 10, 45, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(162, 0, 255, 0.4);
+    box-shadow:
+      0 0 10px rgba(162, 0, 255, 0.2),
+      0 0 40px rgba(162, 0, 255, 0.08);
+    width: 70%;
+    display: block;
+    border-radius: 1rem;
+    padding: 1rem;
+    border: #3a1f4a 1px solid;
+    margin: 3rem auto;
+
+    text-align: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .conteiner {
+    background: rgba(35, 10, 45, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(162, 0, 255, 0.4);
+    box-shadow:
+      0 0 10px rgba(162, 0, 255, 0.2),
+      0 0 40px rgba(162, 0, 255, 0.08);
+    width: 70%;
+    display: block;
+    border-radius: 1rem;
+    padding: 1rem;
+    border: #3a1f4a 1px solid;
+    margin: 3rem auto;
+
+    text-align: center;
+  }
+
+  .stitulo {
+    text-align: center;
+    font-size: 3rem;
+    color: aliceblue;
+    margin: 1rem 0;
+    font-weight: 600;
+    span {
+      text-shadow:
+        0 0 10px #7a00ff,
+        0 0 30px #a100ff;
+    }
+  }
+  .p-footer {
+    color: #a1a1aa;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+  }
+  .a-footer {
+    text-decoration: none;
+    color: #7a00ff;
+    font-size: 1.2rem;
+  }
+  .conteiner h1 {
+    color: azure;
+    font-weight: 200;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  .conteiner p {
+    color: #9d8ca8;
+    font-size: 1.2rem;
+  }
+  .button-entrar {
+    background: linear-gradient(90deg, #7b2cbf, #c77dff);
+    box-shadow: 0 5px 15px rgba(160, 32, 240, 0.3);
+    color: white;
+    font-size: 1rem;
+    padding: 1rem .5rem;
+    width: 80%;
+    margin: 1rem auto;
+    border: none;
+    border-radius: 1rem;
+    transition: 0.3s all ease;
+  }
+  .button-entrar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(160, 32, 240, 0.5);
+  }
+  .conteiner input::placeholder {
+    color: #8a7a99;
+    font-size: 1rem;
+  }
 }
