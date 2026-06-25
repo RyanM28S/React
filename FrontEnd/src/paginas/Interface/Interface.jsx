@@ -1,9 +1,9 @@
-import style from './Interface.module.scss'
-import Collage from '../../assets/iconcollage.svg'
-import Star from '../../assets/iconStar.svg'
-import Mensagem from '../../assets/iconBalaodemensagem.svg'
-import Grafico from '../../assets/iconLinhagrafico.svg'
-import { Link } from 'react-router-dom'
+import style from "./Interface.module.scss";
+import Collage from "../../assets/iconcollage.svg";
+import Star from "../../assets/iconStar.svg";
+import Mensagem from "../../assets/iconBalaodemensagem.svg";
+import Grafico from "../../assets/iconLinhagrafico.svg";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const cardVariants = {
@@ -28,28 +28,24 @@ const Interface = () => {
     >
       <section className={style.main}>
         <div className={style.comeco_conteiner}>
-
-
           <div className={style.comeco_bemvindo}>
-
             <div className={style.bemvindo_imagem}>
               <img src={Collage} alt="" />
             </div>
             <div className={style.bemvindo_texto}>
               <motion.h2
-                      
-                      initial={{
-                        opacity: 0,
-                        y: 20,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      transition={{
-                        duration: 0.6,
-                      }}
-                    >
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.6,
+                }}
+              >
                 Bem-vindo, <span id="nome">jurandirbueno02010</span>!
               </motion.h2>{" "}
               <p>
@@ -57,9 +53,7 @@ const Interface = () => {
                 funcionalidades plataforma.
               </p>
             </div>
-            
           </div>
-
         </div>
         <motion.div
           className={style.titulos}
@@ -215,7 +209,7 @@ const Interface = () => {
             <img alt="" />
             <h4>Avaliar Professores</h4>
             <p>Compartilhe suas experiências com os professores.</p>
-            <Link to="/home">
+            <Link to="/professores">
               <h5>Acessar</h5>
             </Link>
           </motion.div>
@@ -223,7 +217,7 @@ const Interface = () => {
             <img alt="" />
             <h4>Avaliar Setores</h4>
             <p>Avalie diferentes setores da escola.</p>
-            <Link to="/home">
+            <Link to="/categorias">
               <h5>Acessar</h5>
             </Link>
           </div>
@@ -231,7 +225,7 @@ const Interface = () => {
             <img alt="" />
             <h4>Painel de Professores</h4>
             <p>Veja a categoria de professores.</p>
-            <Link to="/home">
+            <Link to="/painel">
               <h5>Acessar</h5>
             </Link>
           </div>
@@ -264,6 +258,6 @@ const Interface = () => {
       </section>
     </motion.div>
   );
-}
+};
 
-export default Interface
+export default Interface;
