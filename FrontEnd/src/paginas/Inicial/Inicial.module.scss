@@ -497,6 +497,7 @@ body,
   transition: all 0.3s ease;
   animation: pulso 2.5s infinite;
 }
+
 @keyframes pulso {
   0% {
     box-shadow: 0 0 10px rgba(177, 0, 255, 0.3);

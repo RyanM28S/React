@@ -20,30 +20,56 @@ const Painel = () => {
     //   nota3: form.nota3.value,
     //   nota4: form.nota4.value
     // }
-    
     const dados = Object.fromEntries(new FormData(form));
 
-    // dados.notas = notas;
+    const botaoClicado = event.nativeEvent.submitter.value;
 
-    if (!dados.nome || !dados.turma || !dados.ra || !dados.nota1 || !dados.nota2 || !dados.nota3 || !dados.nota4) {
-      return alert("Falta informações!");
-    }
-    try {
-      const res = await fetch("http://localhost:3001/registro", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dados)
-      });
-      if (!res.ok) {
-        throw new Error(res.message || "Erro ao registrar");
+    if (botaoClicado === "atualizar") {
+      if (!dados.ra) {
+        return alert("Falta informações!");
       }
-      const data = await res.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error.message);
+      try {
+        const res = await fetch("http://localhost:3001/atualizar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dados),
+        });
+        if (!res.ok) {
+          const data = await res.json();
+          throw new Error(data.message || "Erro ao atualizar");
+        }
+        const data = await res.json();
+        console.log(data);
+      } catch (error) {
+        console.error(error.message);
+      }
     }
+    if (botaoClicado === "criar") {
+      if (!dados.nome || !dados.turma || !dados.ra) {
+        return alert("Falta informações!");
+      }
+      try {
+        const res = await fetch("http://localhost:3001/registrar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dados),
+        });
+        if (!res.ok) {
+          const data = await res.json();
+          throw new Error(data.message || "Erro ao registrar");
+        }
+        const data = await res.json();
+        console.log(data);
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+
+    // dados.notas = notas;
   }
 
   return (
@@ -176,20 +202,20 @@ const Painel = () => {
                   x
                 </button>
                 <div className={styles.inputGroup}>
-                  <input id="nome" name="nome" type="text" required />
+                  <input id="nome" name="nome" type="text" />
                   <label htmlFor="nome">Nome</label>
                 </div>
 
                 <div className={styles.inputGroup}>
-                  <input id="turma" name="turma" type="text" required />
+                  <input id="turma" name="turma" type="text" />
                   <label htmlFor="turma">turma</label>
                 </div>
                 <div className={styles.inputGroup}>
-                  <input id="ra" name="ra" type="text" required />
+                  <input id="ra" name="ra" type="text" />
                   <label htmlFor="ra">Ra</label>
                 </div>
                 <div className={styles.inputGroup}>
-                  <input id="descricao" name="descricao" type="text" required />
+                  <input id="descricao" name="descricao" type="text"  />
                   <label htmlFor="ra">Descrição</label>
                 </div>
                 <div className={styles.notas}>
@@ -197,14 +223,28 @@ const Painel = () => {
                 </div>
 
                 <div className={styles.notas}>
-                  <input type="numb" name="nota1" placeholder="Nota 1°" />
-                  <input type="text" name="nota2" placeholder="Nota 2°" />
-                  <input type="text" name="nota3" placeholder="Nota 3°" />
-                  <input type="text" name="nota4" placeholder="Nota 4°" />
+                  <input type="number" name="nota1" placeholder="Nota 1°" />
+                  <input type="number" name="nota2" placeholder="Nota 2°" />
+                  <input type="number" name="nota3" placeholder="Nota 3°" />
+                  <input type="number" name="nota4" placeholder="Nota 4°" />
                 </div>
                 <div className={styles.ali}>
-                  <button className={styles.criar}>Criar</button>
-                  <button className={styles.atual}>Atualizar</button>
+                  <button
+                    type="submit"
+                    name="acao"
+                    value="criar"
+                    className={styles.criar}
+                  >
+                    Criar
+                  </button>
+                  <button
+                    type="submit"
+                    name="acao"
+                    value="atualizar"
+                    className={styles.atual}
+                  >
+                    Atualizar
+                  </button>
                 </div>
               </form>
             </motion.div>
