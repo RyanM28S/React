@@ -1,11 +1,11 @@
-import livro from "../../assets/icone-livro.png";
-import styles from "./Painel.module.scss";
-import lapis from "../../assets/lapis.png";
-import lixo from "../../assets/lixo.svg";
-import { useState } from "react";
+import livro from '../../assets/icone-livro.png';
+import styles from './Painel.module.scss';
+import lapis from '../../assets/lapis.png';
+import lixo from '../../assets/lixo.svg';
+import { useState } from 'react';
 
-import pessoas from "../../assets/icone-pessoas-roxo.png";
-import { motion, AnimatePresence } from "framer-motion";
+import pessoas from '../../assets/icone-pessoas-roxo.png';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Painel = () => {
   const [visivel, setvisivel] = useState(false);
@@ -14,62 +14,27 @@ const Painel = () => {
     event.preventDefault();
 
     const form = event.currentTarget;
-    // const notas = {
-    //   nota1: form.nota1.value,
-    //   nota2: form.nota2.value,
-    //   nota3: form.nota3.value,
-    //   nota4: form.nota4.value
-    // }
     const dados = Object.fromEntries(new FormData(form));
 
-    const botaoClicado = event.nativeEvent.submitter.value;
-
-    if (botaoClicado === "atualizar") {
-      if (!dados.ra) {
-        return alert("Falta informações!");
-      }
-      try {
-        const res = await fetch("http://localhost:3001/atualizar", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dados),
-        });
-        if (!res.ok) {
-          const data = await res.json();
-          throw new Error(data.message || "Erro ao atualizar");
-        }
-        const data = await res.json();
-        console.log(data);
-      } catch (error) {
-        console.error(error.message);
-      }
+    if (!dados.nome || !dados.turma || !dados.data) {
+      return alert('Falta informações!');
     }
-    if (botaoClicado === "criar") {
-      if (!dados.nome || !dados.turma || !dados.ra) {
-        return alert("Falta informações!");
+    try {
+      const res = await fetch('http://localhost:3001/registro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dados),
+      });
+      if (!res.ok) {
+        throw new Error(res.message || 'Erro ao registrar');
       }
-      try {
-        const res = await fetch("http://localhost:3001/registrar", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dados),
-        });
-        if (!res.ok) {
-          const data = await res.json();
-          throw new Error(data.message || "Erro ao registrar");
-        }
-        const data = await res.json();
-        console.log(data);
-      } catch (error) {
-        console.error(error.message);
-      }
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error.message);
     }
-
-    // dados.notas = notas;
   }
 
   return (
@@ -126,7 +91,7 @@ const Painel = () => {
         }}
         whileHover={{
           y: -5,
-          boxShadow: "0 0 25px rgba(195,0,255,0.35)",
+          boxShadow: '0 0 25px rgba(195,0,255,0.35)',
         }}
       >
         <div className={styles.flex5}>
@@ -138,7 +103,7 @@ const Painel = () => {
               <h1>?</h1>
               <div className={styles.flex3}>
                 <p>
-                  {" "}
+                  {' '}
                   <span>Turma:</span> ?
                 </p>
                 <br />
@@ -146,7 +111,7 @@ const Painel = () => {
                   <span>Nota:</span>?
                 </p>
                 <p>
-                  <span>Ra:</span>?
+                  <span>Data:</span>?
                 </p>
               </div>
             </div>
@@ -189,7 +154,7 @@ const Painel = () => {
               }}
               transition={{
                 duration: 0.4,
-                type: "spring",
+                type: 'spring',
                 stiffness: 120,
               }}
             >
@@ -202,50 +167,30 @@ const Painel = () => {
                   x
                 </button>
                 <div className={styles.inputGroup}>
-                  <input id="nome" name="nome" type="text" />
+                  <input id="nome" name="nome" type="text" required />
                   <label htmlFor="nome">Nome</label>
                 </div>
 
                 <div className={styles.inputGroup}>
-                  <input id="turma" name="turma" type="text" />
+                  <input id="turma" name="turma" type="text" required />
                   <label htmlFor="turma">turma</label>
                 </div>
                 <div className={styles.inputGroup}>
-                  <input id="ra" name="ra" type="text" />
+                  <input id="ra" name="ra" type="text" required />
                   <label htmlFor="ra">Ra</label>
-                </div>
-                <div className={styles.inputGroup}>
-                  <input id="descricao" name="descricao" type="text"  />
-                  <label htmlFor="ra">Descrição</label>
-                </div>
-                <div className={styles.notas}>
-                  <label htmlFor="notas">Notas</label>
                 </div>
 
                 <div className={styles.notas}>
-                  <input type="number" name="nota1" placeholder="Nota 1°" />
-                  <input type="number" name="nota2" placeholder="Nota 2°" />
-                  <input type="number" name="nota3" placeholder="Nota 3°" />
-                  <input type="number" name="nota4" placeholder="Nota 4°" />
+                  <label htmlFor="notas">Notas</label>
                 </div>
-                <div className={styles.ali}>
-                  <button
-                    type="submit"
-                    name="acao"
-                    value="criar"
-                    className={styles.criar}
-                  >
-                    Criar
-                  </button>
-                  <button
-                    type="submit"
-                    name="acao"
-                    value="atualizar"
-                    className={styles.atual}
-                  >
-                    Atualizar
-                  </button>
+                <div className={styles.notas}>
+                  <input type="numb" name="notas" placeholder="Nota 1°" />
+                  <input type="text" placeholder="Nota 2°" />
+                  <input type="text" placeholder="Nota 3°" />
+                  <input type="text" placeholder="Nota 4°" />
                 </div>
+
+                <button className={styles.atual}>Atualizar</button>
               </form>
             </motion.div>
           </motion.div>
