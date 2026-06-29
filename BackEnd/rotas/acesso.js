@@ -46,12 +46,6 @@ async function Cadastro(req, res) {
     return res.status(400).json({ message: "Falta informações" });
   }
   try {
-    const [buscar] = await db.query("SELECT * FROM usuarios WHERE email = ?",
-      [email]);
-    if (buscar.length > 0) {
-      return res.status(409).json({ message: "Usuario ja existente" });
-    }
-
     const senhaCripto = await bcrypt.hash(senha, 10);
     const criar = await db.query(
       "INSERT INTO usuarios(nome,senha,email) VALUES(?,?,?)",
@@ -61,6 +55,9 @@ async function Cadastro(req, res) {
       return res.status(201).json({ message: "Usuario criado com sucesso" });
     }
   } catch (error) {
+    if (error.code == "ER_DUP_ENTRY"){
+      return res.status(409).json({ message: "Usúario já cadastrado" });
+    }
     console.log(error);
     return res.status(500).json({ message: "Erro interno!" });
   }
