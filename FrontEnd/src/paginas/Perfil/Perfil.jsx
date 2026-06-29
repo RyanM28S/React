@@ -55,10 +55,13 @@ const Perfil = () => {
                 <p>guitzn9@gmail.com</p>
               </div>
               <div>
-                <button type="submit">
-                  <img src={Sair} alt="" />
-                  Sair
-                </button>
+                <Link to="/login">
+                  <button type="submit">
+                    <img src={Sair} alt="" />
+                    Sair
+                  </button>
+                  </Link>
+                
               </div>
             </div>
           </motion.div>
