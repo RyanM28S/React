@@ -1,11 +1,11 @@
-import livro from "../../assets/icone-livro.png";
-import styles from "./Painel.module.scss";
-import lapis from "../../assets/lapis.png";
-import lixo from "../../assets/lixo.svg";
-import { useState } from "react";
+import livro from '../../assets/icone-livro.png';
+import styles from './Painel.module.scss';
+import lapis from '../../assets/lapis.png';
+import lixo from '../../assets/lixo.svg';
+import { useState } from 'react';
 
-import pessoas from "../../assets/icone-pessoas-roxo.png";
-import { motion, AnimatePresence } from "framer-motion";
+import pessoas from '../../assets/icone-pessoas-roxo.png';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Painel = () => {
   const [visivel, setvisivel] = useState(false);
@@ -17,18 +17,18 @@ const Painel = () => {
     const dados = Object.fromEntries(new FormData(form));
 
     if (!dados.nome || !dados.turma || !dados.data) {
-      return alert("Falta informações!");
+      return alert('Falta informações!');
     }
     try {
-      const res = await fetch("http://localhost:3001/registro", {
-        method: "POST",
+      const res = await fetch('http://localhost:3001/registro', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(dados),
       });
       if (!res.ok) {
-        throw new Error(res.message || "Erro ao registrar");
+        throw new Error(res.message || 'Erro ao registrar');
       }
       const data = await res.json();
       console.log(data);
@@ -91,7 +91,7 @@ const Painel = () => {
         }}
         whileHover={{
           y: -5,
-          boxShadow: "0 0 25px rgba(195,0,255,0.35)",
+          boxShadow: '0 0 25px rgba(195,0,255,0.35)',
         }}
       >
         <div className={styles.flex5}>
@@ -103,7 +103,7 @@ const Painel = () => {
               <h1>?</h1>
               <div className={styles.flex3}>
                 <p>
-                  {" "}
+                  {' '}
                   <span>Turma:</span> ?
                 </p>
                 <br />
@@ -154,12 +154,16 @@ const Painel = () => {
               }}
               transition={{
                 duration: 0.4,
-                type: "spring",
+                type: 'spring',
                 stiffness: 120,
               }}
             >
               <form onSubmit={Registrar} className={styles.formulario}>
-                <button onClick={() => setvisivel(false)} type="button" className={styles.x}>
+                <button
+                  onClick={() => setvisivel(false)}
+                  type="button"
+                  className={styles.x}
+                >
                   x
                 </button>
                 <div className={styles.inputGroup}>

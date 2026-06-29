@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 .cont1 {
   width: 100%;
   margin: 1rem auto;
@@ -9,7 +9,6 @@
   color: white;
   background: rgba(20, 0, 30, 0.9);
   border: 1px solid rgba(192, 0, 255, 0.2);
-
   box-shadow: 0 0 20px rgba(192, 0, 255, 0.15);
 
   backdrop-filter: blur(10px);
@@ -43,7 +42,7 @@
 
   h1 {
     font-size: 4rem;
-    font-family: "Sora", sans-serif;
+    font-family: 'Sora', sans-serif;
   }
   span {
     color: #7a00ff;
@@ -83,10 +82,8 @@
 
   button span {
     color: white;
-    text-shadow:
-      0 0 10px rgba(161, 0, 255, 0.6),
-      0 0 20px rgba(161, 0, 255, 0.5),
-      0 0 40px rgba(161, 0, 255, 0.3),
+    text-shadow: 0 0 10px rgba(161, 0, 255, 0.6),
+      0 0 20px rgba(161, 0, 255, 0.5), 0 0 40px rgba(161, 0, 255, 0.3),
       0 0 80px rgba(161, 0, 255, 0.2);
     animation: mais 0.8s infinite ease-in-out;
     font-size: 3rem;
@@ -107,7 +104,7 @@
   color: white;
   font-size: 2.2rem;
   margin: 2rem 0;
-  font-family: "Sora", sans-serif;
+  font-family: 'Sora', sans-serif;
 }
 .flex3 {
   display: flex;
@@ -116,7 +113,7 @@
     font-size: 1.3rem;
     margin: auto 0.5rem;
     color: #a100ff;
-    font-family: "Sora", sans-serif;
+    font-family: 'Sora', sans-serif;
   }
   p {
     font-size: 1.5rem;
@@ -153,7 +150,7 @@
     margin: 1rem auto;
   }
   h1 {
-    font-family: "sora", "arial";
+    font-family: 'sora', 'arial';
   }
 }
 .flex5 {
@@ -175,9 +172,7 @@
 
   transform: scale(1.08);
 
-  box-shadow:
-    0 0 15px rgba(255, 0, 60, 0.4),
-    0 0 30px rgba(255, 0, 60, 0.2);
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.4), 0 0 30px rgba(255, 0, 60, 0.2);
 }
 .btn2 {
   img {
@@ -196,9 +191,7 @@
 
   transform: scale(1.08);
 
-  box-shadow:
-    0 0 15px rgba(123, 0, 255, 0.4),
-    0 0 30px rgba(123, 0, 255, 0.2);
+  box-shadow: 0 0 15px rgba(123, 0, 255, 0.4), 0 0 30px rgba(123, 0, 255, 0.2);
 }
 .descricao {
   height: 100%;
@@ -218,7 +211,7 @@
 .formulario {
   backdrop-filter: blur(14px);
   border: 1px solid rgba(180, 180, 180, 0.18);
-  font-family: "Sora", sans-serif;
+  font-family: 'Sora', sans-serif;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -261,7 +254,7 @@
   background: linear-gradient(90deg, #b300ff, #ff00ff);
   color: white;
   border: none;
-  font-family: "sora", arial;
+  font-family: 'sora', arial;
   padding: 1rem 2rem;
   font-size: 1rem;
   border-radius: 12px;
@@ -329,8 +322,7 @@
   input:focus {
     border-color: #c014ff;
 
-    box-shadow:
-      0 0 10px rgba(192, 20, 255, 0.2),
+    box-shadow: 0 0 10px rgba(192, 20, 255, 0.2),
       0 0 30px rgba(192, 20, 255, 0.08);
   }
 
@@ -352,7 +344,7 @@ select {
   color: white;
 
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   outline: none;
 
@@ -361,7 +353,95 @@ select {
   &:focus {
     border-color: #c014ff;
 
-    box-shadow:
-      0 0 12px rgba(192,20,255,0.25);
+    box-shadow: 0 0 12px rgba(192, 20, 255, 0.25);
+  }
+}
+
+@media (max-width: 768px) {
+  .cont1 {
+    width: 100%;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 1rem;
+    padding: 2rem;
+    color: white;
+    background: rgba(20, 0, 30, 0.9);
+    border: 1px solid rgba(192, 0, 255, 0.2);
+    box-shadow: 0 0 20px rgba(192, 0, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 24px;
+    transition: 0.3s;
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    p {
+      color: #a1a1aa;
+      font-size: 0.9rem;
+    }
+    img {
+      background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
+      box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
+      border-radius: 1rem;
+      padding: 0.5rem;
+      height: 65px;
+      display: block;
+      margin: 1rem auto;
+    }
+    h1 {
+      font-size: 2rem;
+      font-family: 'Sora', sans-serif;
+    }
+    span {
+      color: #7a00ff;
+    }
+  }
+  .flex2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      width: 20%;
+      font-size: 1rem;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 0.2rem;
+      background: linear-gradient(135deg, #c000ff, #7b00ff);
+
+      color: white;
+
+      border: none;
+
+      padding: 16px 100px 16px 28px;
+      transition: all 0.5s ease-in-out;
+      border-radius: 1rem;
+    }
+    button:hover {
+      transform: translateY(-3px);
+
+      box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
+    }
+
+    button span {
+      color: white;
+      text-shadow: 0 0 10px rgba(161, 0, 255, 0.6),
+        0 0 20px rgba(161, 0, 255, 0.5), 0 0 40px rgba(161, 0, 255, 0.3),
+        0 0 80px rgba(161, 0, 255, 0.2);
+      animation: mais 0.8s infinite ease-in-out;
+      font-size: 1.7rem;
+    }
+
+    .reg {
+      color: white;
+      font-size: 1.5rem;
+      margin: 2rem 0;
+      font-family: 'Sora', sans-serif;
+    }
   }
 }
