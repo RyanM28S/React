@@ -15,17 +15,11 @@ body,
 #root {
   margin: 0;
   padding: 0;
-   scroll-behavior: smooth;
+  scroll-behavior: smooth;
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  background: linear-gradient(
-    135deg,
-    #050008,
-    #120018,
-    #220033,
-    #120018
-  );
+  background: linear-gradient(135deg, #050008, #120018, #220033, #120018);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -70,35 +64,25 @@ body,
   min-width: 100vh;
   min-height: 89.9vh;
   padding: 2rem;
-  background:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    radial-gradient(
-      circle at 40% 30%,
-      rgba(161, 0, 255, 0.12),
-      transparent 35%
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
     ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 40% 30%, rgba(161, 0, 255, 0.12), transparent 35%),
     linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
-  background-size:
-    40px 40px,
-    40px 40px,
-    auto,
-    auto;
+  background-size: 40px 40px, 40px 40px, auto, auto;
 }
 .titulo-parte-cima {
   font-size: 10rem;
   text-align: center;
   color: white;
-  text-shadow:
-    0 0 10px rgba(161, 0, 255, 0.6),
-    0 0 20px rgba(161, 0, 255, 0.5),
-    0 0 40px rgba(161, 0, 255, 0.3),
-    0 0 80px rgba(161, 0, 255, 0.2);
+  text-shadow: 0 0 10px rgba(161, 0, 255, 0.6), 0 0 20px rgba(161, 0, 255, 0.5),
+    0 0 40px rgba(161, 0, 255, 0.3), 0 0 80px rgba(161, 0, 255, 0.2);
 }
 .span-parte-cima {
-  text-shadow:
-    0 0 8px rgba(161, 0, 255, 0.45),
-    0 0 24px rgba(161, 0, 255, 0.35),
+  text-shadow: 0 0 8px rgba(161, 0, 255, 0.45), 0 0 24px rgba(161, 0, 255, 0.35),
     0 0 60px rgba(161, 0, 255, 0.18);
   color: #b100ff;
 }
@@ -108,9 +92,7 @@ body,
   font-weight: 400;
   text-align: center;
   font-size: 1.5rem;
-  text-shadow:
-    0 0 5px rgba(161, 0, 255, 0.4),
-    0 0 10px rgba(161, 0, 255, 0.3);
+  text-shadow: 0 0 5px rgba(161, 0, 255, 0.4), 0 0 10px rgba(161, 0, 255, 0.3);
 }
 .butoes-cima {
   display: flex;
@@ -163,15 +145,13 @@ body,
   letter-spacing: -1px;
   font-size: 5rem;
   text-align: start;
-   color: #a1a1aa;
+  color: #a1a1aa;
 }
 .titulo2-parte2 {
   letter-spacing: -1px;
   font-size: 5rem;
   text-align: start;
-   text-shadow:
-    0 0 8px rgba(161, 0, 255, 0.45),
-    0 0 24px rgba(161, 0, 255, 0.35),
+  text-shadow: 0 0 8px rgba(161, 0, 255, 0.45), 0 0 24px rgba(161, 0, 255, 0.35),
     0 0 60px rgba(161, 0, 255, 0.18);
   color: #b100ff;
 }
@@ -179,10 +159,10 @@ body,
 .topico2 {
   display: flex;
   margin-top: 2rem;
-  border: 2px solid rgba(255,255,255,.05);
+  border: 2px solid rgba(255, 255, 255, 0.05);
   padding: 1rem;
   border-radius: 1rem;
-   transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .topico1 img,
 .topico2 img {
@@ -190,7 +170,7 @@ body,
   display: block;
   margin: auto 1rem;
   padding: 0.5rem;
-  border: 1px solid rgba(255,255,255,.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   background-color: #1a0f2e;
   border-radius: 0.5rem;
   transition: all 0.5s ease;
@@ -200,7 +180,7 @@ body,
 .topico1:hover img,
 .topico2:hover img {
   transform: translateY(-4px);
-  border-color: rgba(192,0,255,.4);
+  border-color: rgba(192, 0, 255, 0.4);
 }
 .esquerda {
   background-color: black;
@@ -235,9 +215,7 @@ body,
   background: radial-gradient(circle at top left, #3b004f, #120016);
   border: 1px solid rgba(255, 255, 255, 0.05);
   display: block;
-  box-shadow:
-    0 0 40px rgba(192, 0, 255, 0.15),
-    0 20px 80px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 40px rgba(192, 0, 255, 0.15), 0 20px 80px rgba(0, 0, 0, 0.6);
   margin: 1rem auto;
   padding: 6rem 0 0 0;
   transition: all 1s ease-in-out;
@@ -287,8 +265,7 @@ body,
   margin: 3rem auto;
   transition: 0.3s;
   border-radius: 1rem;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.05),
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05),
     0 10px 30px rgba(168, 0, 255, 0.15);
 }
 .conteudo1:hover {
@@ -307,9 +284,7 @@ body,
 }
 .parte3-titulo2 {
   color: #b100ff;
-  text-shadow:
-    0 0 8px rgba(177, 0, 255, 0.35),
-    0 0 22px rgba(177, 0, 255, 0.22),
+  text-shadow: 0 0 8px rgba(177, 0, 255, 0.35), 0 0 22px rgba(177, 0, 255, 0.22),
     0 0 45px rgba(177, 0, 255, 0.12);
   text-align: start;
   font-size: 6rem;
@@ -332,7 +307,6 @@ body,
   color: #7a00ff;
   transform: translateY(-2px) scale(1.02);
 }
-
 
 .parte3 {
   padding: 1rem 3rem;
@@ -358,8 +332,7 @@ body,
   );
   transition: all 0.5s ease;
 
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.25),
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
     inset 0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 .caixa1-parte3:hover,
@@ -369,9 +342,7 @@ body,
   transform: translateY(-10px) scale(1.02);
   border: 1px solid rgba(161, 0, 255, 0.6);
 
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35),
-    0 0 20px rgba(161, 0, 255, 0.25),
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 20px rgba(161, 0, 255, 0.25),
     0 0 60px rgba(161, 0, 255, 0.18);
 }
 
@@ -413,8 +384,7 @@ body,
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.35s ease;
 
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.25),
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
     inset 0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 .caixas-parte3 {
@@ -443,9 +413,7 @@ body,
     rgba(63, 0, 71, 0.9),
     rgba(25, 0, 30, 0.95)
   );
-  box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.5),
-    0 0 50px rgba(161, 0, 255, 0.12),
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 50px rgba(161, 0, 255, 0.12),
     inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -454,18 +422,13 @@ body,
   font-size: 7rem;
   color: white;
   text-align: center;
-  text-shadow:
-    0 0 10px rgba(161, 0, 255, 0.6),
-    0 0 20px rgba(161, 0, 255, 0.5),
-    0 0 40px rgba(161, 0, 255, 0.3),
-    0 0 80px rgba(161, 0, 255, 0.2);
+  text-shadow: 0 0 10px rgba(161, 0, 255, 0.6), 0 0 20px rgba(161, 0, 255, 0.5),
+    0 0 40px rgba(161, 0, 255, 0.3), 0 0 80px rgba(161, 0, 255, 0.2);
 }
 .caixa1-parte4 span {
   color: #b100ff;
 
-  text-shadow:
-    0 0 6px rgba(177, 0, 255, 0.35),
-    0 0 18px rgba(177, 0, 255, 0.2),
+  text-shadow: 0 0 6px rgba(177, 0, 255, 0.35), 0 0 18px rgba(177, 0, 255, 0.2),
     0 0 35px rgba(177, 0, 255, 0.1);
 }
 .caixa1-parte4 p {
@@ -490,9 +453,7 @@ body,
   width: 20%;
   text-decoration: none;
   text-align: center;
-  box-shadow:
-    0 0 10px rgba(177, 0, 255, 0.45),
-    0 0 25px rgba(177, 0, 255, 0.25),
+  box-shadow: 0 0 10px rgba(177, 0, 255, 0.45), 0 0 25px rgba(177, 0, 255, 0.25),
     0 8px 25px rgba(90, 0, 140, 0.35);
   transition: all 0.3s ease;
   animation: pulso 2.5s infinite;
@@ -512,8 +473,319 @@ body,
 .caixa1-parte4 .buttonL:hover {
   transform: translateY(-2px) scale(1.03);
 
-  box-shadow:
-    0 0 18px rgba(177, 0, 255, 0.6),
-    0 0 40px rgba(177, 0, 255, 0.35),
+  box-shadow: 0 0 18px rgba(177, 0, 255, 0.6), 0 0 40px rgba(177, 0, 255, 0.35),
     0 12px 35px rgba(90, 0, 140, 0.45);
+}
+@media (max-width: 768px) {
+  .circulo {
+    margin-left: 10px;
+    width: 25px;
+    height: 15px;
+    background-color: #9c03f4;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    animation: pulsar 2s infinite ease-out;
+    box-shadow: 0 0 15px #03e9f4;
+  }
+  .parte1 {
+    display: flex;
+    background-color: #1a0f2e;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    width: 40%;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    font-size: 1rem;
+    font-weight: normal;
+    box-shadow: 0 0 10px rgba(188, 19, 254, 0.5);
+    padding: 0 30px;
+  }
+  .parte1 h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: antiquewhite;
+  }
+  .parte-de-cima {
+    min-width: 10vh;
+    min-height: 89.9vh;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      radial-gradient(
+        circle at 40% 30%,
+        rgba(161, 0, 255, 0.12),
+        transparent 35%
+      ),
+      linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+    background-size: 40px 40px, 40px 40px, auto, auto;
+  }
+  .titulo-parte-cima {
+    font-size: 7rem;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 10px rgba(161, 0, 255, 0.6),
+      0 0 20px rgba(161, 0, 255, 0.5), 0 0 40px rgba(161, 0, 255, 0.3),
+      0 0 80px rgba(161, 0, 255, 0.2);
+  }
+  .span-parte-cima {
+    text-shadow: 0 0 8px rgba(161, 0, 255, 0.45),
+      0 0 24px rgba(161, 0, 255, 0.35), 0 0 60px rgba(161, 0, 255, 0.18);
+    color: #b100ff;
+  }
+  .h3-parte-cima {
+    color: #a1a1aa;
+    margin: 3rem auto;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.3rem;
+    text-shadow: 0 0 5px rgba(161, 0, 255, 0.4), 0 0 10px rgba(161, 0, 255, 0.3);
+  }
+  .butoes-cima {
+    display: flex;
+    margin: 1rem auto;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .button1-cima {
+    padding: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    background: linear-gradient(90deg, #7b2cff, #a100ff);
+    box-shadow: 0 0 25px rgba(161, 0, 255, 0.6);
+    color: aliceblue;
+    transition: 0.3s ease-in-out;
+  }
+  .button1-cima:hover,
+  .button2-cima:hover {
+    transform: translateY(-2px) scale(1.03);
+    background-color: rgb(146, 39, 104);
+  }
+  .button2-cima {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 1rem;
+    background-color: rgb(117, 31, 83);
+    color: aliceblue;
+    transition: 0.3s ease-in-out;
+  }
+  /*parte2*/
+  .titulo1-parte2 {
+    letter-spacing: -1px;
+    font-size: 3.3rem;
+    text-align: start;
+    color: #a1a1aa;
+  }
+  .titulo2-parte2 {
+    letter-spacing: -1px;
+    font-size: 3.5rem;
+    text-align: start;
+    text-shadow: 0 0 8px rgba(161, 0, 255, 0.45),
+      0 0 24px rgba(161, 0, 255, 0.35), 0 0 60px rgba(161, 0, 255, 0.18);
+    color: #b100ff;
+  }
+  .direita {
+    background-color: black;
+    width: 50%;
+  }
+  .esquerda {
+    background-color: black;
+    width: 50%;
+  }
+  .topico1,
+  .topico2 {
+    display: flex;
+    margin-top: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+    font-size: 0.9rem;
+  }
+  .topico1 img,
+  .topico2 img {
+    height: 50px;
+    display: block;
+    margin: auto 1rem;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #1a0f2e;
+    border-radius: 0.5rem;
+    transition: all 0.5s ease;
+  }
+  .topico1:hover,
+  .topico2:hover,
+  .topico1:hover img,
+  .topico2:hover img {
+    transform: translateY(-4px);
+    border-color: rgba(192, 0, 255, 0.4);
+  }
+  .p-topico {
+    margin: 1rem 0;
+    color: #a1a1aa;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .subtitulo {
+    margin: 1rem 0;
+    color: #a1a1aa;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+  .barrinha2 {
+    margin-top: 1rem;
+    height: 0.8rem;
+    width: 8rem;
+    background: #3a3a3a;
+    border-radius: 0.5rem;
+  }
+  /*parte3*/
+  .parte3 {
+    padding: 1rem 3rem;
+    background-color: #050305;
+    background: radial-gradient(
+      circle at 20% 30%,
+      rgba(161, 0, 255, 0.18),
+      transparent 40%
+    );
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .parte3-titulo1 {
+    color: #f2f2f2;
+    text-align: start;
+    font-size: 3rem;
+    margin: 0;
+    align-items: center;
+  }
+  .parte3-titulo2 {
+    color: #b100ff;
+    text-shadow: 0 0 8px rgba(177, 0, 255, 0.35),
+      0 0 22px rgba(177, 0, 255, 0.22), 0 0 45px rgba(177, 0, 255, 0.12);
+    text-align: start;
+    font-size: 3rem;
+    margin-right: 40px;
+  }
+  .p-parte3 {
+    font-size: 1.2rem;
+    color: #a1a1aa;
+    font-weight: 350;
+    margin: 1.5rem 0;
+  }
+  .a-parte3 {
+    font-size: 1.2rem;
+    text-decoration-line: none;
+    font-weight: 300;
+    color: #b100ff;
+    transition: all 0.3s ease;
+  }
+  .a-parte3:hover {
+    color: #7a00ff;
+    transform: translateY(-2px) scale(1.02);
+  }
+  .caixa1-parte3 {
+    width: 40%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    padding: 1rem;
+    background: linear-gradient(
+      180deg,
+      rgba(63, 0, 71, 0.95) 0%,
+      rgba(31, 0, 35, 0.98) 100%
+    );
+    transition: all 0.5s ease;
+    height: 40%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  }
+  .caixa2-parte3 {
+    width: 40%;
+    border-radius: 1rem;
+    padding: 1rem;
+    background: linear-gradient(
+      180deg,
+      rgba(63, 0, 71, 0.95) 0%,
+      rgba(31, 0, 35, 0.98) 100%
+    );
+    height: 40%;
+    margin-top: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.35s ease;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  }
+  .caixa1-parte3:hover,
+  .caixa1-parte3:hover img,
+  .caixa2-parte3:hover img,
+  .caixa2-parte3:hover {
+    transform: translateY(-10px) scale(1.02);
+    border: 1px solid rgba(161, 0, 255, 0.6);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35),
+      0 0 20px rgba(161, 0, 255, 0.25), 0 0 60px rgba(161, 0, 255, 0.18);
+  }
+
+  .caixa1-parte3 img,
+  .caixa2-parte3 img {
+    height: 50px;
+    transition: all 0.5s ease;
+    padding: 0.5rem;
+    background: #090909;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+  .caixa1-parte3 h2,
+  .caixa2-parte3 h2 {
+    color: #f2f2f2;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-right: 30px;
+  }
+  .caixa1-parte3 p,
+  .caixa2-parte3 p {
+    color: #a1a1aa;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 1rem 0;
+    display: none;
+  }
+  .caixas-parte3 {
+    display: flex;
+    gap: 2rem;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  /*parte4*/
+  .caixa1-parte4 {
+    width: 100%;
+    min-width: 10vh;
+    display: block;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(63, 0, 71, 0.9),
+      rgba(25, 0, 30, 0.95)
+    );
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 50px rgba(161, 0, 255, 0.12),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
 }
