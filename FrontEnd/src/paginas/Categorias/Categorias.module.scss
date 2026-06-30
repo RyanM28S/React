@@ -210,8 +210,8 @@
 }
   
 .imagem_maiorsetor1 {
-    position: relative; /* IMPORTANTE */
-     overflow: hidden; /* IMPORTANTE */
+    // position: relative; /* IMPORTANTE */
+    //  overflow: hidden; /* IMPORTANTE */
      border-radius: 1rem 0 0 1rem;
     img {
        transition: transform 0.3s ease;
@@ -240,9 +240,6 @@
   
     }
 }
-  .imagem_maiorsetor1:hover img {
-      transform: scale(1.1);
-  }
 
 .setorestexto {
     padding-bottom: 1rem;
@@ -273,43 +270,9 @@
   padding: 0 2% 0 2%;
   color: white;
 }
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.6);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  z-index: 999;
-}
 
 
-.modal {
-  background-color: rgb(48, 25, 52);
-    border: 0.1px solid #8000ff54;
-  
-  border-radius: 1rem;
-  display: flex;
- 
-  max-width: 600px;
-  border-color: #c014ff;
-  box-shadow: 0 0 22px rgba(192, 20, 255, 0.25);
-  width: 90%;
-  color: white;
-  h2 {
-    text-align: center;
-    margin: 0.5rem;
-    font-size: 2rem;
-  }
-  img {
-  width: 280px;
-  min-height: 100%;
-  object-fit: cover;
-  border-radius: 1rem 0 0 1rem;
-  }
-}
+
 input {
   transition: .3s;
 }
@@ -327,39 +290,14 @@ input:focus {
   margin: 1rem;
   gap:1rem;
 p {
-  text-align: center;
+
   letter-spacing: .1rem;
   margin: 1rem auto;
 }
-textarea {
-  display: block;
-  margin: 0.5rem auto;
-   background: rgba(20, 0, 30, 0.9);
 
-  color: #ffffff;
-resize: none;
-outline: none;
-  border: 1px solid rgba(192, 0, 255, 0.3);
-  border-radius: 1rem;
-  padding: 1rem;
-  font-size: 1rem;
-}
-textarea:focus {
-  border: 1px solid #c000ff;
 
-  box-shadow:
-    0 0 10px rgba(192, 0, 255, .5),
-    0 0 20px rgba(192, 0, 255, .2);
-
-  background: rgba(30, 0, 40, 0.95);
-}
-textarea::placeholder {
-   color: #9b6bb3;
-   font-size: 1rem;
-
-}
   button {
-     background: #7a00ff;
+  background: #7a00ff;
   color: white;
   border: none;
   display: block;

@@ -146,7 +146,7 @@ const Categorias = () => {
                     setor: "Cozinha",
                     localizacao: "1° Anda",
                     descricao:
-                      "Espaço destinado à venda de alimentos e bebidas, oferecendo suporte à alimentação dos alunos e funcionários.",
+                      "Espaço destinado à venda de alimentos e bebidas para alunos e funcionários durante o horário do intervalo.",
                   })
                 }
                 className={styles.dsetores2}
@@ -159,6 +159,9 @@ const Categorias = () => {
               >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Cantina} alt="" />
+                  <div className={styles.pdaimagemmaior}>
+                    <p>Ativo</p>
+                  </div>
                 </div>
                 <div className={styles.dtexto_setores2}>
                   <h3>Cantina</h3>
@@ -199,6 +202,9 @@ const Categorias = () => {
               >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Cordenacao} alt="" />
+                  <div className={styles.pdaimagemmaior}>
+                    <p>Ativo</p>
+                  </div>
                 </div>
                 <div className={styles.dtexto_setores3}>
                   <h3>Coordenação Pedagógica</h3>
@@ -238,6 +244,9 @@ const Categorias = () => {
               >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Biblioteca} alt="" />
+                  <div className={styles.pdaimagemmaior}>
+                    <p>Ativo</p>
+                  </div>
                 </div>
                 <div className={styles.dtexto_setores4}>
                   <h3>Biblioteca</h3>
@@ -279,6 +288,9 @@ const Categorias = () => {
               >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Orientacao} alt="" />
+                  <div className={styles.pdaimagemmaior}>
+                    <p>Ativo</p>
+                  </div>
                 </div>
                 <div className={styles.dtexto_setores3}>
                   <h3>Orientação Educacional</h3>
@@ -318,6 +330,9 @@ const Categorias = () => {
               >
                 <div className={styles.imagem_maiorsetor1}>
                   <img src={Manutencao} alt="" />
+                  <div className={styles.pdaimagemmaior}>
+                    <p>Ativo</p>
+                  </div>
                 </div>
                 <div className={styles.dtexto_setores3}>
                   <h3>Manutenção e Limpeza</h3>
@@ -341,10 +356,7 @@ const Categorias = () => {
       </section>
       {categoriaSelecionada && (
         <motion.div
-          className={styles.overlay}
-          initial={{
-            opacity: 0,
-          }}
+  
           animate={{
             opacity: 1,
           }}
@@ -352,28 +364,24 @@ const Categorias = () => {
             opacity: 0,
           }}
         >
-          <motion.div
-            className={styles.modal}
-            initial={{
-              opacity: 0,
-              scale: 0.7,
-              y: 80,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0.7,
-              y: 80,
-            }}
-            transition={{
-              duration: 0.5,
-              type: "spring",
-            }}
-          >
+          <motion.div>
+            <section>
+              <div>
+                <button>Voltar para categorias</button>
+                <div>
+                  <div>
+                    <img src={Cantina} alt="" />
+                  </div>
+                  <div>
+                    <h2>{categoriaSelecionada.nome}</h2>
+                    <p>{categoriaSelecionada.descricao}</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              
+            </section>
             <img src={categoriaSelecionada.foto} alt="" />
             <div className={styles.info}>
               <h2>{categoriaSelecionada.nome}</h2>
