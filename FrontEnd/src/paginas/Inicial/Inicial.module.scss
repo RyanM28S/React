@@ -97,12 +97,13 @@ body,
 .butoes-cima {
   display: flex;
   margin: 1rem auto;
+  align-items: center;
   justify-content: center;
   gap: 1.5rem;
 }
 .button1-cima {
   padding: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 1.5rem;
   border-radius: 1rem;
   background: linear-gradient(90deg, #7b2cff, #a100ff);
@@ -113,14 +114,13 @@ body,
 .button1-cima:hover,
 .button2-cima:hover {
   transform: translateY(-2px) scale(1.03);
-  background-color: rgb(146, 39, 104);
 }
 .button2-cima {
-  padding: 1.5rem;
+  padding: 1.2rem;
   font-size: 1.5rem;
-  border: 2px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 1rem;
-  background-color: rgb(117, 31, 83);
+  background: linear-gradient(135deg, #a62d77, rgb(117, 31, 83));
   color: aliceblue;
   transition: 0.3s ease-in-out;
 }

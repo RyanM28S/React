@@ -274,6 +274,15 @@ input {
 
     text-align: center;
   }
+
+   .button-prof {
+   height: 100px;
+   width: 200px;
+  }
+  .button-aluno {
+    height: 100px;
+    width: 200px;
+  }
 }
 
 @media (max-width: 425px) {
@@ -293,6 +302,12 @@ input {
     margin: 3rem auto;
 
     text-align: center;
+  }
+  .button-prof {
+    height: 100px;
+  }
+  .button-aluno{
+    height: 100px;
   }
 
   .stitulo {
