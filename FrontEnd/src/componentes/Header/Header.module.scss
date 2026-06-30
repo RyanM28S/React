@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
 * {
   text-decoration: none;
 }
@@ -10,17 +10,19 @@
   display: flex;
   justify-content: space-between;
   min-width: 101%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   position: sticky;
   top: 0;
   z-index: 1;
   justify-content: space-between;
-  box-shadow: 0 1px 0 rgba(161, 0, 255, 0.18), 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-shadow:
+    0 1px 0 rgba(161, 0, 255, 0.18),
+    0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .h1 {
   color: #ededed;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-weight: 700;
   text-align: center;
   display: block;
@@ -66,7 +68,9 @@
 .btn2:hover,
 .btn3:hover,
 .btn5:hover {
-  animation: animação 1s forwards ease-in-out, ease-in-out;
+  animation:
+    animação 1s forwards ease-in-out,
+    ease-in-out;
   background-color: #602c68;
 }
 .btn1:focus,
@@ -117,7 +121,9 @@
   box-shadow: 0 0 15px rgba(161, 0, 255, 0.6);
   transform: translateY(-2px);
 }
-
+.hamburguer {
+  display: none;
+}
 .btn1:focus,
 .btn2:focus,
 .btn3:focus {
@@ -145,7 +151,10 @@
   height: 4px;
   background-color: #a020f0;
 
-  box-shadow: 0 0 10px #a020f0, 0 0 20px #a020f0, 0 0 40px #a020f0;
+  box-shadow:
+    0 0 10px #a020f0,
+    0 0 20px #a020f0,
+    0 0 40px #a020f0;
 
   border-radius: 2px;
 }
@@ -185,14 +194,54 @@
   text-decoration: none;
 }
 @media (max-width: 768px) {
+  .header {
+    display: flex;
+    padding: 15px 0 15px 0;
+  }
+  .pro {
+  }
   .btn1,
   .btn2,
   .btn3,
   .btn5 {
-    display: none;
+    background-color: black;
   }
   .começo {
     text-decoration: none;
+  }
+
+  .hamburguer {
+    display: flex;
+    color: white;
+    cursor: pointer;
+  }
+  .pro {
+    display: none;
+
+    &.aberto {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      padding: 20px;
+      box-shadow:
+        0 1px 0 rgba(161, 0, 255, 0.18),
+        0 10px 30px rgba(0, 0, 0, 0.45);
+      background: rgba(10, 10, 10, 0.5);
+
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1a1a2e;
+      display: flex;
+      justify-content: space-between;
+      font-family: "Poppins", sans-serif;
+      justify-content: space-between;
+    }
+    &.fechado {
+      display: none;
+    }
   }
 }
 
@@ -214,4 +263,10 @@
   .começo:hover {
     transform: translateY(-4px);
   }
+}
+
+.pro {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
