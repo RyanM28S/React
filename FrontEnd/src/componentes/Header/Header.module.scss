@@ -63,6 +63,7 @@
 }
 .meio {
   gap: 1.2rem;
+  margin: 0 18rem;
 }
 .btn1:hover,
 .btn2:hover,
@@ -194,11 +195,15 @@
   text-decoration: none;
 }
 @media (max-width: 768px) {
+
   .header {
     display: flex;
+    justify-content: space-between;
     padding: 15px 0 15px 0;
   }
   .pro {
+    display: flex;
+    
   }
   .btn1,
   .btn2,
@@ -212,7 +217,10 @@
 
   .hamburguer {
     display: flex;
+    height: 40px;
+
     color: white;
+    margin-left:20rem ;
     cursor: pointer;
   }
   .pro {
@@ -220,6 +228,7 @@
 
     &.aberto {
       display: flex;
+      align-items: center;
       flex-direction: column;
       position: absolute;
       top: 60px;
@@ -267,6 +276,4 @@
 
 .pro {
   display: flex;
-  gap: 20px;
-  align-items: center;
 }
