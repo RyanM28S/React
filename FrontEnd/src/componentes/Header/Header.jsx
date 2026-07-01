@@ -2,17 +2,19 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import style from "./Header.module.scss";
 import ImgInicial from "../../assets/icone_inicial_header1.svg";
-import imgmenu from "../../assets/menu.svg"
+import imgmenu from "../../assets/menu.svg";
 import ImgPessoas from "../../assets/icone_pessoas_header.svg";
 import ImgPessoa from "../../assets/icone-pessoa.png";
 import ImgPredio from "../../assets/icone-predio.png";
 import ImgIncocolage from "../../assets/iconcollage.svg";
 import ImgEntrar from "../../assets/icone-entrar.png";
+import { jwtDecode } from "jwt-decode";
 
 const Header = () => {
   const [visivel, setVisivel] = useState(false);
   const [logado, setLogado] = useState("Logar");
-  const token = !!localStorage.getItem("token");
+  const token = jwtDecode(localStorage.getItem("token"));
+  const nome = token.nome;
 
   return (
     <header className={style.header}>
@@ -58,7 +60,7 @@ const Header = () => {
                 src={ImgPessoa}
                 alt="icone-para-representa-pessoa-para-acessa-o-perfil"
               />
-              Gui_tzn
+              {nome}
             </Link>
           )}
           <Link
@@ -79,7 +81,6 @@ const Header = () => {
           alt=""
         />
       </div>
-      
     </header>
   );
 };

@@ -5,6 +5,7 @@ import Mensagem from "../../assets/iconBalaodemensagem.svg";
 import Grafico from "../../assets/iconLinhagrafico.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { jwtDecode } from "jwt-decode";
 
 const cardVariants = {
   hidden: {
@@ -19,6 +20,9 @@ const cardVariants = {
 };
 
 const Interface = () => {
+  const token = jwtDecode(localStorage.getItem("token"))
+  const nome = token.nome
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -46,7 +50,7 @@ const Interface = () => {
                   duration: 0.6,
                 }}
               >
-                Bem-vindo, <span id="nome">jurandirbueno02010</span>!
+                Bem-vindo, <span id="nome">{nome}</span>!
               </motion.h2>{" "}
               <p>
                 Este é seu painel de controle. Aqui você pode acessar todas as

@@ -27,6 +27,7 @@ async function Login(req, res) {
       {
         id: buscar.id,
         email: buscar.email,
+        nome : buscar.nome
       },
       "process.env.JWT_SECRET",
       {
