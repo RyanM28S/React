@@ -99,6 +99,7 @@ const Categorias = () => {
                     nome: "Secretaria",
                     setor: "Adiministração",
                     localizacao: "1° Anda",
+                    email: "Secretaria@gmail.com",
                     descricao:
                       "Responsável pelo atendimento aos alunos, organização de documentos, matrículas e informações acadêmicas da escola.",
                   })
@@ -145,6 +146,7 @@ const Categorias = () => {
                     nome: "Cantina",
                     setor: "Cozinha",
                     localizacao: "1° Anda",
+                    email: "Cantina@gmail.com",
                     descricao:
                       "Espaço destinado à venda de alimentos e bebidas para alunos e funcionários durante o horário do intervalo.",
                   })
@@ -188,6 +190,7 @@ const Categorias = () => {
                     nome: "Cordenação",
                     setor: "Adiministração",
                     localizacao: "1° Anda",
+                    email: "Cordenação@gmail.com",
                     descricao:
                       "Setor que acompanha o desempenho escolar, auxilia professores e organiza atividades pedagógicas da instituição.",
                   })
@@ -230,6 +233,7 @@ const Categorias = () => {
                     nome: "Biblioteca",
                     setor: "Cultura",
                     localizacao: "1° Andar",
+                    email: "Biblioteca@gmail.com",
                     descricao:
                       "Ambiente voltado ao estudo e pesquisa, com livros, materiais educativos e apoio ao aprendizado dos alunos.",
                   })
@@ -274,6 +278,7 @@ const Categorias = () => {
                     nome: "Orientação",
                     setor: "Adiministração",
                     localizacao: "1° andar",
+                    email: "Administração@gmail.com",
                     descricao:
                       "Oferece apoio aos estudantes em questões escolares, pessoais e de convivência, ajudando no desenvolvimento educacional.",
                   })
@@ -316,6 +321,7 @@ const Categorias = () => {
                     nome: "Limpeza",
                     setor: "Adiministração",
                     localizacao: "1° Andar",
+                    email: "limpeza@gmail.com",
                     descricao:
                       "Responsável pela conservação, limpeza e bom funcionamento dos espaços da escola, garantindo um ambiente organizado e seguro.",
                   })
@@ -354,50 +360,84 @@ const Categorias = () => {
           </motion.div>
         </section>
       </section>
-      {categoriaSelecionada && (
-        <motion.div
-  
-          animate={{
-            opacity: 1,
-          }}
-          exit={{
-            opacity: 0,
-          }}
-        >
-          <motion.div>
-            <section>
-              <div>
-                <button>Voltar para categorias</button>
-                <div>
-                  <div>
-                    <img src={Cantina} alt="" />
-                  </div>
-                  <div>
-                    <h2>{categoriaSelecionada.nome}</h2>
-                    <p>{categoriaSelecionada.descricao}</p>
-                  </div>
+        {categoriaSelecionada && (
+          <motion.div
+            className={styles.overlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className={styles.modal}
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <button
+                className={styles.voltar}
+                onClick={() => setCategoria(null)}
+              >
+                ← Voltar para categorias
+              </button>
+
+              <div className={styles.banner}>
+                <img
+                  src={categoriaSelecionada.foto}
+                  alt={categoriaSelecionada.nome}
+                />
+
+                <div className={styles.status}>
+                  Ativo
                 </div>
               </div>
-            </section>
-            <section>
-              
-            </section>
-            <img src={categoriaSelecionada.foto} alt="" />
-            <div className={styles.info}>
-              <h2>{categoriaSelecionada.nome}</h2>
 
-              <p>{categoriaSelecionada.setor}</p>
-              <p>{categoriaSelecionada.localizacao}</p>
-              <p>{categoriaSelecionada.email}</p>
+              <div className={styles.conteudo}>
+                <h1>{categoriaSelecionada.nome}</h1>
 
-              <p>{categoriaSelecionada.descricao}</p>
-              <textarea placeholder="Digite sua Avaliação"></textarea>
+                <p className={styles.descricao}>
+                  {categoriaSelecionada.descricao}
+                </p>
 
-              <button onClick={() => setCategoria(null)}>Fechar</button>
-            </div>
+                <div className={styles.cardsInfo}>
+                  <div className={styles.cardInfo}>
+                    <span>Localização</span>
+                    <strong>
+                      {categoriaSelecionada.localizacao}
+                    </strong>
+                  </div>
+
+                  <div className={styles.cardInfo}>
+                    <span>E-mail de Contato</span>
+                    <strong>
+                      {categoriaSelecionada.email || "Não informado"}
+                    </strong>
+                  </div>
+                </div>
+
+                <div className={styles.areaAvaliacao}>
+                  <h2>Avaliar Setor</h2>
+
+                  <p>Sua avaliação</p>
+
+                  <div className={styles.estrelas}>
+                    ☆ ☆ ☆ ☆ ☆
+                  </div>
+
+                  <label>Seu comentário</label>
+
+                  <textarea
+                    placeholder="Compartilhe sua experiência com este setor..."
+                  />
+
+                  <button className={styles.btnEnviar}>
+                    Enviar Avaliação
+                  </button>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
+        )}
     </motion.div>
   );
 };

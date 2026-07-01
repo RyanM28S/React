@@ -338,56 +338,95 @@ const Professores = () => {
       </motion.div>
 
       {professorSelecionado && (
-        <motion.div
-          className={style.overlay}
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          exit={{
-            opacity: 0,
-          }}
-        >
           <motion.div
-            className={style.modal}
-            initial={{
-              opacity: 0,
-              scale: 0.7,
-              y: 80,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0.7,
-              y: 80,
-            }}
-            transition={{
-              duration: 0.5,
-              type: "spring",
-            }}
+            className={style.overlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <div>
-              <img src={professorSelecionado.foto} alt="" />
-            </div>
-            <div className={style.info}>
-              {" "}
-              <h2>{professorSelecionado.nome}</h2>
-              <p className={style.sabe1}>{professorSelecionado.materia}</p>
-              <p className={style.sabe2}>{professorSelecionado.area}</p>
-              <p className={style.sabe3}>{professorSelecionado.email}</p>
-              <p className={style.sabe4}>{professorSelecionado.descricao}</p>
-              <textarea placeholder="Digite sua avaliação..."></textarea>
-              <button onClick={() => setProfessor(null)}>Fechar</button>
-            </div>
+            <motion.div
+              className={style.modal}
+              initial={{
+                opacity: 0,
+                scale: 0.95,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.95,
+                y: 20,
+              }}
+              transition={{
+                duration: 0.35,
+              }}
+            >
+              <button
+                className={style.voltar}
+                onClick={() => setProfessor(null)}
+              >
+                ← Voltar para professores
+              </button>
+
+              <div className={style.topo}>
+                <div className={style.foto}>
+                  <img
+                    src={professorSelecionado.foto}
+                    alt={professorSelecionado.nome}
+                  />
+                </div>
+
+                <div className={style.info}>
+                  <h1>{professorSelecionado.nome}</h1>
+
+                  <p className={style.materia}>
+                    {professorSelecionado.materia}
+                  </p>
+
+                  <p className={style.area}>
+                    {professorSelecionado.area}
+                  </p>
+
+                  <p className={style.email}>
+                    {professorSelecionado.email}
+                  </p>
+
+                  <p className={style.descricao}>
+                    {professorSelecionado.descricao}
+                  </p>
+                </div>
+              </div>
+
+              <div className={style.avaliacao}>
+                <h2>Avaliar Professor</h2>
+
+                <p className={style.subtitulo}>
+                  Sua avaliação
+                </p>
+
+                <div className={style.estrelas}>
+                  ☆ ☆ ☆ ☆ ☆
+                </div>
+
+                <label>
+                  Seu comentário
+                </label>
+
+                <textarea
+                  placeholder="Compartilhe sua experiência com este professor..."
+                ></textarea>
+
+                <button className={style.enviar}>
+                  Enviar Avaliação
+                </button>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
+        )}
     </motion.div>
   );
 };
