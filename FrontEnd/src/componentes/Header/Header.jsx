@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import style from "./Header.module.scss";
 import ImgInicial from "../../assets/icone_inicial_header1.svg";
+import imgmenu from "../../assets/menu.svg"
 import ImgPessoas from "../../assets/icone_pessoas_header.svg";
 import ImgPessoa from "../../assets/icone-pessoa.png";
 import ImgPredio from "../../assets/icone-predio.png";
@@ -71,24 +72,12 @@ const Header = () => {
       </div>
 
       <div>
-        <svg
-          onClick={() => setVisivel(!visivel)}
+        <img
           className={style.hamburguer}
-          xmlns="http://www.w3.org/2000/svg"
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-menu-icon lucide-menu"
-        >
-          <path d="M4 5h16" />
-          <path d="M4 12h16" />
-          <path d="M4 19h16" />
-        </svg>
+          onClick={() => setVisivel(!visivel)}
+          src={imgmenu}
+          alt=""
+        />
       </div>
       <hr />
     </header>

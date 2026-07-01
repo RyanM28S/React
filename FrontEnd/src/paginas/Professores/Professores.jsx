@@ -237,7 +237,7 @@ const Professores = () => {
           }}
         >
           <h1 className={style["prof-inicial"]}>J</h1>
-          <h2>João Gabriel de Lucca</h2>
+          <h2>João Gabriel</h2>
           <p className={style.p2}>Técnico em Banco de Dados</p>
           <p className={style.p2}>Tecnologia da Informação</p>
           <p className={style.p2}>joao.lucca@salotti.com</p>
@@ -309,7 +309,7 @@ const Professores = () => {
         >
           <h1 className={style["prof-inicial"]}>G</h1>
           <h2>Gabriel Silva</h2>
-          <p className={style.p2}>Versionamento de Código / Projetos</p>
+          <p className={style.p2}>Versionamento de Código e Projetos</p>
           <p className={style.p2}>Engenharia de Software</p>
           <p className={style.p2}>gabriel.silva@salotti.com</p>
           <p className={style.pd}>
