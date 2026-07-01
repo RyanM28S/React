@@ -1,0 +1,33 @@
+html, body,#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-y: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.conteiner-principal {
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+}
+
+.conteiner-flexivel {
+  flex: 1 0 auto; 
+}
