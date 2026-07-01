@@ -1,10 +1,11 @@
-import styles from './Perfil.module.scss'
-import { Link } from 'react-router-dom'
-import Sair from '../../assets/iconSair.png'
-import Carta from '../../assets/iconcarta.png'
-import Escudo from '../../assets/iconEscudo.png'
+import styles from "./Perfil.module.scss";
+import { Link } from "react-router-dom";
+import Sair from "../../assets/iconSair.png";
+import Carta from "../../assets/iconcarta.png";
+import Escudo from "../../assets/iconEscudo.png";
 import { motion } from "framer-motion";
-import Calendario from '../../assets/iconCalendario.png'
+import Calendario from "../../assets/iconCalendario.png";
+import { jwtDecode } from "jwt-decode";
 
 const cardVariants = {
   hidden: {
@@ -19,6 +20,10 @@ const cardVariants = {
 };
 
 const Perfil = () => {
+  const token = jwtDecode(localStorage.getItem("token"));
+  const nome = token.nome;
+  const email = token.email;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -47,12 +52,12 @@ const Perfil = () => {
           >
             <div className={styles.ddivs_perfil1}>
               <div className={styles.dimagem_perfil}>
-                <h1>G</h1>
+                <h1>{nome[0]}</h1>
               </div>
 
               <div className={styles.dtexto_perfil}>
-                <h3>Gui_tzn 1</h3>
-                <p>guitzn9@gmail.com</p>
+                <h3>{nome}</h3>
+                <p>{email}</p>
               </div>
               <div>
                 <Link to="/login">
@@ -60,8 +65,7 @@ const Perfil = () => {
                     <img src={Sair} alt="" />
                     Sair
                   </button>
-                  </Link>
-                
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -87,9 +91,9 @@ const Perfil = () => {
                   <h3>Informações de Contato</h3>
                 </div>
                 <h4>Email</h4>
-                <p>guitzn9@gmail.com</p>
+                <p>{email}</p>
                 <h4>Nome</h4>
-                <p>Gui_tzn1</p>
+                <p>{nome}</p>
                 <h4>Celular</h4>
                 <p>+55 11 998867112</p>
               </div>
@@ -220,6 +224,6 @@ const Perfil = () => {
       </section>
     </motion.div>
   );
-}
+};
 
-export default Perfil
+export default Perfil;

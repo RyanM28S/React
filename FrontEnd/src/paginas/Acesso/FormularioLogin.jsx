@@ -25,7 +25,7 @@ const FormularioLogin = () => {
         body: JSON.stringify(dados),
       });
       if (!res.ok) {
-        throw new Error("Servidor fail", res.message);
+        throw new Error(res.message || "Servidor fail");
       }
       const data = await res.json();
       toast.success("Login realizado com sucesso!");
