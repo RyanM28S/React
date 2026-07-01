@@ -81,6 +81,26 @@
   border-color: #c014ff;
   box-shadow: 0 0 22px rgba(192, 20, 255, 0.25);
 }
+.prof h1 {
+  text-align: center;
+  font-size: 4rem;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7b2cff, #c014ff);
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite ease-in-out;
+  padding: 0.5rem;
+
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.55);
+  background-color: #7a00ff;
+  margin-top: 1rem;
+  transition: 0.3s all ease;
+}
 
 .prof:hover h1 {
   transform: scale(1.1);
@@ -124,27 +144,6 @@
   font-size: 1.1rem;
   line-height: 1.7;
   margin: 1rem;
-}
-
-.prof h1 {
-  text-align: center;
-  font-size: 4rem;
-  width: 90px;
-  display: flex;
-  align-items: center;
-  height: 90px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #7b2cff, #c014ff);
-  color: #ffffff;
-  align-items: center;
-  justify-content: center;
-  animation: pulse 2s infinite ease-in-out;
-  padding: 0.5rem;
-
-  box-shadow: 0 0 18px rgba(168, 85, 247, 0.55);
-  background-color: #7a00ff;
-  margin-top: 1rem;
-  transition: 0.3s all ease;
 }
 
 @keyframes pulse {
