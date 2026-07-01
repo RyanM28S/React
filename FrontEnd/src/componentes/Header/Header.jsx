@@ -79,7 +79,7 @@ const Header = () => {
           alt=""
         />
       </div>
-      <hr />
+      
     </header>
   );
 };
