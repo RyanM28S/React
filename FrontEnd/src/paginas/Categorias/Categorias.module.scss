@@ -210,8 +210,8 @@ span {
 }
 
 .imagem_maiorsetor1 {
-    // position: relative; /* IMPORTANTE */
-    //  overflow: hidden; /* IMPORTANTE */
+      position: relative; /* IMPORTANTE */
+      overflow: hidden; /* IMPORTANTE */
      border-radius: 1rem 0 0 1rem;
     img {
        transition: transform 0.3s ease;
@@ -237,6 +237,7 @@ span {
       width: 4rem;
       color: rgb(34, 197, 94);
     }
+  }
 }
 
 .setorestexto {
@@ -252,16 +253,17 @@ span {
   align-items: center;
   gap: 0.5rem;
   padding-bottom: 0.8rem;
-  img {
-    height: 1.1rem;
-    width: 1.1rem;
-  }
+
   p {
     font-size: 0.9rem;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 500;
     color: #9d9aa8;
   }
+}
+
+.dados_setores img {
+  height: 1rem;
 }
 
 .main {
