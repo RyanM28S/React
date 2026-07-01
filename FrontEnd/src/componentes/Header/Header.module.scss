@@ -9,7 +9,7 @@
   border-bottom: 1px solid #1a1a2e;
   display: flex;
   justify-content: space-between;
-  min-width: 101%;
+  min-width: 100%;
   font-family: "Poppins", sans-serif;
   position: sticky;
   top: 0;
@@ -60,11 +60,13 @@
 }
 .fim {
   gap: 1rem;
-  margin-right: 1rem;
+  margin-left: 5rem;
+  margin-right: 0.5rem;
 }
 .meio {
   gap: 1.2rem;
-  margin: 0 18rem;
+  display: flex;
+
 }
 .btn1:hover,
 .btn2:hover,
@@ -169,7 +171,7 @@
   display: flex;
   border-radius: 0.5rem;
   margin: 1.2rem auto ;
-  margin-left: 80rem;
+
 
   justify-content: center;
   align-items: center;
