@@ -198,8 +198,7 @@
     display: flex;
     padding: 15px 0 15px 0;
   }
-  .pro {
-  }
+
   .btn1,
   .btn2,
   .btn3,
@@ -210,11 +209,6 @@
     text-decoration: none;
   }
 
-  .hamburguer {
-    display: flex;
-    color: white;
-    cursor: pointer;
-  }
   .pro {
     display: none;
 
@@ -225,23 +219,25 @@
       top: 60px;
       left: 0;
       width: 100%;
-      background-color: black;
       padding: 20px;
       box-shadow:
         0 1px 0 rgba(161, 0, 255, 0.18),
         0 10px 30px rgba(0, 0, 0, 0.45);
-      background: rgba(10, 10, 10, 0.5);
 
+      background: transparent;
       backdrop-filter: blur(12px);
       border-bottom: 1px solid #1a1a2e;
-      display: flex;
       justify-content: space-between;
       font-family: "Poppins", sans-serif;
-      justify-content: space-between;
     }
     &.fechado {
       display: none;
     }
+  }
+  .hamburguer {
+    display: flex;
+    color: white;
+    cursor: pointer;
   }
 }
 
@@ -252,7 +248,7 @@
   .btn5,
   .fim,
   .btn6 {
-    display: none;
+    background-color: black;
   }
   .começo {
     transition: 0.3s;
@@ -268,5 +264,5 @@
 .pro {
   display: flex;
   gap: 20px;
-  align-items: center;
+  justify-content: space-between;
 }

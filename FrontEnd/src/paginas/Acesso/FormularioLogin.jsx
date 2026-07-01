@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { useState } from "react";
 
-
 const FormularioLogin = () => {
   const [loading, setLoading] = useState(false);
 
@@ -13,12 +12,12 @@ const FormularioLogin = () => {
     const dados = Object.fromEntries(new FormData(event.target));
 
     if (!dados.email || !dados.senha) {
-     toast.error("Preencha todos os campos!");
+      toast.error("Preencha todos os campos!");
       return;
     }
     console.log("Dados validos", dados);
     try {
-      const res = await fetch(`http://${ip}:3001/login`, {
+      const res = await fetch(`http://localhost:3001/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,10 +29,14 @@ const FormularioLogin = () => {
       }
       const data = await res.json();
       toast.success("Login realizado com sucesso!");
-      console.log("Login realizado:", data)
+      console.log("Login realizado:", data);
+      localStorage.setItem("token", data.token);
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 3000);
     } catch (error) {
       toast.error("Erro ao fazer login!");
-      console.error("falha ao login", error.message)
+      console.error("falha ao login", error.message);
     }
   }
 
