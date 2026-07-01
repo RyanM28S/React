@@ -107,4 +107,4 @@ npm run dev
 Este projeto foi desenvolvido para fins educacionais. Sinta-se à vontade para explorar e contribuir!
 
 ---
-<p align="center">Desenvolvido com ❤️ por <strong>Ryan e Equipe Salotti</strong></p>
+<p align="center">Desenvolvido com ❤️ por <strong>Equipe Salotti</strong></p>
