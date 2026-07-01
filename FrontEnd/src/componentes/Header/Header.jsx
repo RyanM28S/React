@@ -11,6 +11,8 @@ import ImgEntrar from "../../assets/icone-entrar.png";
 
 const Header = () => {
   const [visivel, setVisivel] = useState(false);
+  const [logado, setLogado] = useState("Logar");
+  const token = !!localStorage.getItem("token");
 
   return (
     <header className={style.header}>
@@ -25,37 +27,46 @@ const Header = () => {
         </h1>
       </Link>
       <div className={`${style.pro} ${visivel ? style.aberto : style.fechado}`}>
-        <div className={`${style.meio} `}>
-          <Link to="/interface" className={style.btn1} id="naoh">
-            <img src={ImgInicial} alt="icone-para-ir-para-tela-inicial" />
-            Inicial
-          </Link>
-          <Link to="/professores" className={style.btn2} id="professoresh">
-            <img src={ImgPessoas} alt="icone-para-ir-para-tela-professores" />
-            Professores
-          </Link>
-          <Link to="/categorias" className={style.btn3} id="categoriash">
-            <img src={ImgPredio} alt="icone-para-ir-para-tela-setores" />
-            Categorias
-          </Link>
-          <Link to="/painel" className={style.btn5} id="entradah">
-            <img src={ImgIncocolage} alt="icone-para-ir-para-tela-de-painel" />
-            Painel
-          </Link>
-        </div>
+        {token && (
+          <div className={`${style.meio} `}>
+            <Link to="/interface" className={style.btn1} id="naoh">
+              <img src={ImgInicial} alt="icone-para-ir-para-tela-inicial" />
+              Inicial
+            </Link>
+            <Link to="/professores" className={style.btn2} id="professoresh">
+              <img src={ImgPessoas} alt="icone-para-ir-para-tela-professores" />
+              Professores
+            </Link>
+            <Link to="/categorias" className={style.btn3} id="categoriash">
+              <img src={ImgPredio} alt="icone-para-ir-para-tela-setores" />
+              Categorias
+            </Link>
+            <Link to="/painel" className={style.btn5} id="entradah">
+              <img
+                src={ImgIncocolage}
+                alt="icone-para-ir-para-tela-de-painel"
+              />
+              Painel
+            </Link>
+          </div>
+        )}
 
         <div className={style.fim}>
-          <Link to="/perfil" className={style["btn-perfil"]}>
-            <img
-              src={ImgPessoa}
-              alt="icone-para-representa-pessoa-para-acessa-o-perfil"
-            />
-            Gui_tzn
-          </Link>
-
-          <Link to="/login" className={style.btn6}>
+          {token && (
+            <Link to="/perfil" className={style["btn-perfil"]}>
+              <img
+                src={ImgPessoa}
+                alt="icone-para-representa-pessoa-para-acessa-o-perfil"
+              />
+              Gui_tzn
+            </Link>
+          )}
+          <Link
+            to="/login"
+            className={`${style.btn6} ${token ? "Sair" : "Logar"}`}
+          >
             <img src={ImgEntrar} alt="icone-para-ir-para-tela-cadastro" />
-            Sair
+            {logado}
           </Link>
         </div>
       </div>
