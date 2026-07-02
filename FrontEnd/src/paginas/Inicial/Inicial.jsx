@@ -292,7 +292,7 @@ const Inicial = () => {
                 src={iconeMensagem}
                 alt="icone-ilustrativo-para-aba-professores"
               />
-              <h2>(i)</h2>
+              <h2>Opinião pública</h2>
               <p>
                 Deixe sua opinião de forma anônima e contribua para melhorias.
               </p>
@@ -312,7 +312,7 @@ const Inicial = () => {
                 src={iconeSetaParaCima}
                 alt="icone-ilustrativo-para-aba-setores"
               />
-              <h2>Painel de controle Moderno</h2>
+              <h2>Painel de controle</h2>
               <p>
                 interface intuitiva e sofisticada para uma experiência premiun.
               </p>

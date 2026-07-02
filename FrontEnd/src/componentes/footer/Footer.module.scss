@@ -49,7 +49,7 @@ align-items: center;
   color: #f2f2f2;
   margin-bottom: 1rem;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: "Syne", sans-serif;
 }
 
@@ -118,3 +118,207 @@ align-items: center;
   background-image: url("../../assets/gmail2.svg");
 }
 
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 80px 0px 20px;
+    background: linear-gradient(180deg, #120014 0%, #1a001f 40%, #0b0010 100%);
+    border-top: 1px solid rgba(255, 0, 255, 0.15);
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0 0 40px rgba(192, 0, 255, 0.2);
+  }
+  
+  .inicial1 {
+    background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
+    box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
+    border-radius: 0.5rem;
+    height: 70px;
+    padding: 0.2rem;
+  }
+  .footer-flex {
+    display: flex;
+    gap: 1rem;
+  align-items: center;
+  }
+  
+  .footer-flex h1 {
+    color: #f2f2f2;
+    text-align: center;
+    font-size: 3rem;
+  }
+  
+  .footer-flex span {
+    background: rgb(127, 0, 255);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-footer {
+    margin: 1rem 0;
+    color: #a1a1aa;
+    font-size: 1.1rem;
+    display: none;
+  }
+  .icone-redes2 {
+    background-image: url("../../assets/whatssap2.svg");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    transition: background-image 0.3s ease;
+  }
+  
+  .redes-sociais {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .icone-redes2:hover {
+    background-image: url("../../assets/whatssap.svg");
+  }
+  .icone-redes {
+    background-image: url("../../assets/github.svg");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    transition: background-image 0.3s ease;
+  }
+  .icone-redes:hover {
+    background-image: url("../../assets/github2.svg");
+  }
+  .icone-redes3 {
+    background-image: url("../../assets/gmail.svg");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    transition: background-image 0.3s ease;
+  }
+  .icone-redes3:hover {
+    background-image: url("../../assets/gmail2.svg");
+  }
+  .links-rapidos h2 {
+    color: #f2f2f2;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    font-size: 1.8rem;
+    font-family: "Syne", sans-serif;
+  }
+  .links-rapidos {
+    padding: 0 1rem;
+    display: none;
+  }
+  .links-rapidos a {
+    text-decoration: none;
+    color: #a1a1aa;
+    font-size: 1.1rem;
+    display: block;
+  }
+  
+  .links-rapidos a:hover {
+    color: #7a00ff;
+    animation: moverParaDireita 0.8s ease forwards;
+  }
+}
+@media (max-width: 425px) {
+  .footer {
+    padding: 20px 80px 0px 20px;
+    background: linear-gradient(180deg, #120014 0%, #1a001f 40%, #0b0010 100%);
+    border-top: 1px solid rgba(255, 0, 255, 0.15);
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0 0 40px rgba(192, 0, 255, 0.2);
+  }
+  
+  .inicial1 {
+    background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
+    box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
+    border-radius: 0.5rem;
+    height: 50px;
+    width: 50px;
+    padding: 0.2rem;
+  }
+  .footer-flex {
+    display: flex;
+    gap: 1rem;
+  align-items: center;
+  }
+  
+  .footer-flex h1 {
+    color: #f2f2f2;
+    text-align: center;
+    font-size: 2.4rem;
+  }
+  
+  .footer-flex span {
+    background: rgb(127, 0, 255);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-footer {
+    margin: 1rem 0;
+    color: #a1a1aa;
+    font-size: 1.1rem;
+    display: none;
+  }
+  .icone-redes2 {
+    background-image: url("../../assets/whatssap2.svg");
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    transition: background-image 0.3s ease;
+  }
+  
+  .redes-sociais {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .icone-redes2:hover {
+    background-image: url("../../assets/whatssap.svg");
+  }
+  .icone-redes {
+    background-image: url("../../assets/github.svg");
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    transition: background-image 0.3s ease;
+  }
+  .icone-redes:hover {
+    background-image: url("../../assets/github2.svg");
+  }
+  .icone-redes3 {
+    background-image: url("../../assets/gmail.svg");
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    transition: background-image 0.3s ease;
+  }
+  .icone-redes3:hover {
+    background-image: url("../../assets/gmail2.svg");
+  }
+  .links-rapidos h2 {
+    color: #f2f2f2;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    font-size: 1.8rem;
+    font-family: "Syne", sans-serif;
+  }
+  .links-rapidos {
+    padding: 0 1rem;
+    display: none;
+  }
+  .links-rapidos a {
+    text-decoration: none;
+    color: #a1a1aa;
+    font-size: 1.1rem;
+    display: block;
+  }
+  
+  .links-rapidos a:hover {
+    color: #7a00ff;
+    animation: moverParaDireita 0.8s ease forwards;
+  }
+  .direitos {
+    color: #a1a1aa;
+    margin: 1rem 0;
+    font-size: .8rem;
+  }
+}
