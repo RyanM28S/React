@@ -445,31 +445,31 @@ span {
     max-width: 900px;
   }
 
-  .cardsInfo {
-    margin-top: 45px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
+.Informacoes{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+}
 
-  .cardInfo {
-    background: #211225;
-    border-radius: 18px;
-    padding: 28px;
-  }
+.dados{
+    background:#211225;
+    border-radius:18px;
+    padding:28px;
+}
 
-  .cardInfo span {
-    display: block;
-    color: #b9b9b9;
-    margin-bottom: 10px;
-    font-size: 15px;
-  }
+.dados span{
+    display:block;
+    color:#b9b9b9;
+    margin-bottom:10px;
+    font-size:15px;
+}
 
-  .cardInfo strong {
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-  }
+.dados strong{
+    color:white;
+    font-size:24px;
+    font-weight:600;
+}
 
   .areaAvaliacao {
     margin-top: 55px;
@@ -520,21 +520,21 @@ span {
     color: #8f8f8f;
   }
 
-  .btnEnviar {
-    margin-top: 30px;
-    width: 100%;
-    height: 70px;
-    border: none;
-    border-radius: 18px;
-    background: linear-gradient(90deg, #6d16d8, #8d2cff);
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+.botaoEnviar{
+    margin-top:30px;
+    width:100%;
+    height:70px;
+    border:none;
+    border-radius:18px;
+    background:linear-gradient(90deg,#6d16d8,#8d2cff);
+    color:white;
+    font-size:20px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
 
-.btnEnviar:hover{
+.botaoEnviar:hover{
     transform:translateY(-2px);
     box-shadow:0 10px 30px rgba(132,56,255,.4);
 }

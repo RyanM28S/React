@@ -399,15 +399,15 @@ const Categorias = () => {
                   {categoriaSelecionada.descricao}
                 </p>
 
-                <div className={styles.cardsInfo}>
-                  <div className={styles.cardInfo}>
+                <div className={styles.Informacoes}>
+                  <div className={styles.dados}>
                     <span>Localização</span>
                     <strong>
                       {categoriaSelecionada.localizacao}
                     </strong>
                   </div>
 
-                  <div className={styles.cardInfo}>
+                  <div className={styles.dados}>
                     <span>E-mail de Contato</span>
                     <strong>
                       {categoriaSelecionada.email || "Não informado"}
@@ -430,7 +430,7 @@ const Categorias = () => {
                     placeholder="Compartilhe sua experiência com este setor..."
                   />
 
-                  <button className={styles.btnEnviar}>
+                  <button className={styles.botaoEnviar}>
                     Enviar Avaliação
                   </button>
                 </div>
