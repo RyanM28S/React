@@ -4,6 +4,7 @@ import roteadorAcesso from './rotas/acesso.js'
 import roteadorRegistro from './rotas/registro.js'
 import roteadorAvaliacao from "./rotas/avaliacao.js"
 import rotaAvalicacao from "./rotas/avaliacao.js"
+import rotaPefil from "./rotas/perfil.js"
 
 const app = express()
 

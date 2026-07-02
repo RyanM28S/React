@@ -3,7 +3,8 @@ create table usuarios(
 	nome varchar(100),
 	email varchar(256) not null unique,
 	senha varchar(256),
-	telefone varchar(20) unique
+	telefone varchar(20) unique,
+	cargo varchar(15) not null,
 );
 
 create table alunos(
