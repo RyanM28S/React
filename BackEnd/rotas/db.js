@@ -1,7 +1,7 @@
 import mariadb from 'mariadb'
 
 const db = mariadb.createPool({
-    host:'10.162.186.76',
+    host:'172.30.1.52',
     user: 'user',
     database: 'opina',
     password: 'usersenha',

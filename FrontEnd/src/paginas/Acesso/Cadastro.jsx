@@ -1,4 +1,5 @@
 import styles from "./Acesso.module.scss";
+import { useState } from "react";
 import image1 from "../../assets/icone_inicial_header1.svg";
 import image2 from "../../assets/icone_pessoas_header.svg";
 import { motion } from "framer-motion";
@@ -6,33 +7,35 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Cadastro = () => {
+  const [cargo, setCargo] = useState("visitante");
+
   async function Cadastrar(event) {
     event.preventDefault();
 
     const form = event.currentTarget;
     const dados = Object.fromEntries(new FormData(form));
 
-   if (!dados.email || !dados.senha) {
-     toast.error("Preencha todos os campos!");
-     return;
-   }
+    if (!dados.nome || !dados.email || !dados.senha || !cargo) {
+      toast.error("Preencha todos os campos!");
+      return;
+    }
     try {
       const res = await fetch(`http://localhost:3001/cadastro`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(dados),
+        body: JSON.stringify({ ...dados, cargo }),
       });
       if (!res.ok) {
         throw new Error(`Server error: ${res.status}`);
       }
       const data = await res.json();
       toast.success("Cadastro realizado com sucesso!");
-      console.log("Login realizado:", data)
+      console.log("Login realizado:", data);
     } catch (error) {
       toast.error("Erro ao cadastrar usuário!");
-      console.log("Falha no login:", error.message)
+      console.log("Falha no login:", error.message);
     }
   }
 
@@ -48,11 +51,19 @@ const Cadastro = () => {
           <h1>Crie sua Conta</h1>
           <p className={styles.plogin}>login para continuar</p>
           <div>
-            <button className={styles["button-prof"]} id="professor">
+            <button
+              onClick={() => setCargo("Professor")}
+              className={styles["button-prof"]}
+              id="professor"
+            >
               <img src={image1} alt="icone-para-login-professor" />
               <p className={styles.descri}>Professor</p>
             </button>
-            <button className={styles["button-aluno"]} id="aluno">
+            <button
+              onClick={() => setCargo("Aluno")}
+              className={styles["button-aluno"]}
+              id="aluno"
+            >
               <img src={image2} alt="icone-para-login-Alunos" />
               <p className={styles.descri}>Alunos</p>
             </button>
@@ -78,6 +89,18 @@ const Cadastro = () => {
               placeholder="Digite sua senha"
             />
             <br />
+
+            {cargo === "Aluno" &&(<>
+              <label htmlFor="RA">RA</label>
+              <br />
+              <input
+                id="RA"
+                name="RA"
+                type="text"
+                placeholder="Digite sua RA"
+              />
+              <br />
+            </>)}
 
             <label htmlFor="Email">Email</label>
             <br />

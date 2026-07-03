@@ -12,7 +12,6 @@ import { jwtDecode } from "jwt-decode";
 
 const Header = () => {
   const [visivel, setVisivel] = useState(false);
-  const [logado, setLogado] = useState("Logar");
   const token = jwtDecode(localStorage.getItem("token"));
   const nome = token.nome;
 
@@ -68,7 +67,7 @@ const Header = () => {
             className={`${style.btn6} ${token ? "Sair" : "Logar"}`}
           >
             <img src={ImgEntrar} alt="icone-para-ir-para-tela-cadastro" />
-            {logado}
+            {token ? "sair" : "logar"}
           </Link>
         </div>
       </div>

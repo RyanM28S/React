@@ -16,7 +16,7 @@ async function Login(req, res) {
       email,
     ]);
     if (buscar.length === 0) {
-      return res.status(400).json({ message: "email ou senha inválidos" });
+      return res.status(400).json({ message: "email ou senha inválizdos" });
     }
     const senhaIgual = await bcrypt.compare(senha, buscar.senha);
 
@@ -42,15 +42,15 @@ async function Login(req, res) {
 }
 
 async function Cadastro(req, res) {
-  const { nome, senha, email } = req.body;
-  if (!nome || !senha || !email) {
+  const { nome, senha, email, cargo } = req.body;
+  if (!nome || !senha || !email || !cargo) {
     return res.status(400).json({ message: "Falta informações" });
   }
   try {
     const senhaCripto = await bcrypt.hash(senha, 10);
     const criar = await db.query(
-      "INSERT INTO usuarios(nome,senha,email) VALUES(?,?,?)",
-      [nome, senhaCripto, email],
+      "INSERT INTO usuarios(nome,senha,email,cargo) VALUES(?,?,?,?)",
+      [nome, senhaCripto, email, cargo],
     );
     if (criar.affectedRows > 0) {
       return res.status(201).json({ message: "Usuario criado com sucesso" });
