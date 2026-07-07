@@ -384,91 +384,180 @@ select {
   }
 }
 
+/* ===========================
+   TABLET (≤ 768px)
+   =========================== */
 @media (max-width: 768px) {
-  .cont1 {
-    width: 100%;
-    margin: 1rem auto;
-    display: block;
-    border-radius: 1rem;
-    padding: 2rem;
-    color: white;
-    background: rgba(20, 0, 30, 0.9);
-    border: 1px solid rgba(192, 0, 255, 0.2);
-    box-shadow: 0 0 20px rgba(192, 0, 255, 0.15);
-
-    backdrop-filter: blur(10px);
-
-    border-radius: 24px;
-    transition: 0.3s;
+  .Painel {
+    padding: 2rem 1.5rem;
   }
+
   .flex {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    p {
-      color: #a1a1aa;
-      font-size: 0.9rem;
-    }
     img {
-      background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
-      box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
-      border-radius: 1rem;
-      padding: 0.5rem;
       height: 65px;
-      display: block;
-      margin: 1rem auto;
     }
+
     h1 {
       font-size: 2rem;
-      font-family: 'Sora', sans-serif;
     }
-    span {
-      color: #7a00ff;
+
+    p {
+      font-size: 1rem;
     }
   }
+
   .flex2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     button {
-      width: 20%;
       font-size: 1rem;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      gap: 0.2rem;
-      background: linear-gradient(135deg, #c000ff, #7b00ff);
-
-      color: white;
-
-      border: none;
-
-      padding: 16px 100px 16px 28px;
-      transition: all 0.5s ease-in-out;
-      border-radius: 1rem;
-    }
-    button:hover {
-      transform: translateY(-3px);
-
-      box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
+      height: 48px;
+      padding: 0 1.2rem;
     }
 
     button span {
-      color: white;
-      text-shadow: 0 0 10px rgba(161, 0, 255, 0.6),
-        0 0 20px rgba(161, 0, 255, 0.5), 0 0 40px rgba(161, 0, 255, 0.3),
-        0 0 80px rgba(161, 0, 255, 0.2);
-      animation: mais 0.8s infinite ease-in-out;
-      font-size: 1.7rem;
+      font-size: 2rem;
+    }
+  }
+
+  .reg {
+    font-size: 1.5rem;
+  }
+
+  .flex3 {
+    gap: 1rem;
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .flex4 {
+    img {
+      height: 65px;
+    }
+  }
+
+  .flex5 {
+    gap: 0.8rem;
+  }
+
+  .notas {
+    grid-template-columns: 1fr;
+  }
+
+  .formulario {
+    width: 95%;
+    padding: 1.2rem;
+  }
+}
+
+/* ===========================
+   CELULAR (≤ 480px)
+   =========================== */
+@media (max-width: 480px) {
+  .Painel {
+    padding: 1.5rem 1rem;
+  }
+
+  .cont1 {
+    padding: 1.2rem;
+    border-radius: 16px;
+  }
+
+  .flex {
+    gap: 0.8rem;
+
+    img {
+      height: 52px;
     }
 
-    .reg {
-      color: white;
-      font-size: 1.5rem;
-      margin: 2rem 0;
-      font-family: 'Sora', sans-serif;
+    h1 {
+      font-size: 1.6rem;
     }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .flex2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+
+    button {
+      width: 100%;
+      font-size: 1rem;
+      height: 46px;
+      justify-content: center;
+    }
+  }
+
+  .reg {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+  }
+
+  .cont2 {
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+  }
+
+  .flex3 {
+    flex-direction: column;
+    gap: 0.5rem;
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .flex4 {
+    gap: 0.8rem;
+
+    img {
+      height: 52px;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+    }
+  }
+
+  .flex5 {
+    flex-direction: row;
+    gap: 0.6rem;
+  }
+
+  .btn1 img,
+  .btn2 img {
+    height: 36px;
+  }
+
+  .formulario {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    max-height: 95vh;
+  }
+
+  .notas {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .ali {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .atual,
+  .criar {
+    width: 100%;
+    flex: unset;
+    margin: 0.3rem 0;
+  }
+
+  select {
+    padding: 0.8rem;
   }
 }

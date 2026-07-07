@@ -210,3 +210,145 @@
     }
   }
   
+  @media (max-width: 768px) {
+  .main {
+    padding: 4rem 3% 4% 3%;
+  }
+
+  .comeco_conteiner {
+    padding: 1.5rem 2rem;
+  }
+
+  .comeco_bemvindo {
+    gap: 1.2rem;
+  }
+
+  .bemvindo_imagem {
+    height: 4rem;
+    width: 4rem;
+
+    img {
+      height: 2.2rem;
+    }
+  }
+
+  .bemvindo_texto {
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  .titulos {
+    padding: 2rem 0 1rem 0;
+  }
+
+  .container_estatisticas {
+    gap: 1rem;
+  }
+
+  .destatistica {
+    height: auto;
+    padding: 1.5rem;
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 140px;
+  }
+
+  .container_acoes {
+    gap: 1rem;
+  }
+
+  .dacoes {
+    height: auto;
+    padding: 1.5rem;
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 140px;
+  }
+
+  .datividade {
+    height: 10rem;
+  }
+}
+
+/* ===========================
+   CELULAR (≤ 480px)
+   =========================== */
+@media (max-width: 480px) {
+  .main {
+    padding: 3rem 4% 4% 4%;
+  }
+
+  .comeco_conteiner {
+    padding: 1.2rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .comeco_bemvindo {
+    gap: 0.8rem;
+  }
+
+  .bemvindo_imagem {
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 0.8rem;
+
+    img {
+      height: 1.8rem;
+    }
+  }
+
+  .bemvindo_texto {
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .titulos {
+    padding: 1.5rem 0 0.8rem 0;
+
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .container_estatisticas {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .destatistica {
+    width: 100%;
+    flex: unset;
+    height: auto;
+    padding: 1.2rem;
+
+    h4 {
+      font-size: 1.6rem;
+    }
+  }
+
+  .container_acoes {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .dacoes {
+    width: 100%;
+    flex: unset;
+    height: auto;
+    padding: 1.2rem;
+  }
+
+  .datividade {
+    height: 8rem;
+  }
+}
