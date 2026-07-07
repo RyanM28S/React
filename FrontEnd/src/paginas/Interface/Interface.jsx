@@ -20,9 +20,14 @@ const cardVariants = {
 };
 
 const Interface = () => {
-  const token = jwtDecode(localStorage.getItem("token"))
-  const nome = token.nome
+  // Antes:
+  // const token = jwtDecode(localStorage.getItem("token"));
+  // const nome = token.nome;
 
+  // Depois (Forma segura):
+  const storedToken = localStorage.getItem("token");
+  const token = storedToken ? jwtDecode(storedToken) : null;
+  const nome = token ? token.nome : "";
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -262,6 +267,6 @@ const Interface = () => {
       </section>
     </motion.div>
   );
-};
+};;
 
 export default Interface;
