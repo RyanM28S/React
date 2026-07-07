@@ -258,112 +258,94 @@ input {
   color: #7a00ff;
   font-size: 1rem;
 }
-
+/* ===========================
+   TABLET (≤ 768px)
+   =========================== */
 @media (max-width: 768px) {
   .conteiner {
-    background: rgba(35, 10, 45, 0.72);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(162, 0, 255, 0.4);
-    box-shadow:
-      0 0 10px rgba(162, 0, 255, 0.2),
-      0 0 40px rgba(162, 0, 255, 0.08);
     width: 70%;
-    display: block;
-    border-radius: 1rem;
-    padding: 1rem;
-    border: #3a1f4a 1px solid;
-    margin: 3rem auto;
-
-    text-align: center;
+    min-width: 280px;
+    padding: 1.2rem;
   }
 
-   .button-prof {
-   height: 100px;
-   width: 200px;
-  }
+  .button-prof,
   .button-aluno {
-    height: 100px;
-    width: 200px;
-  }
-}
-
-@media (max-width: 425px) {
-  .conteiner {
-    background: rgba(35, 10, 45, 0.72);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(162, 0, 255, 0.4);
-    box-shadow:
-      0 0 10px rgba(162, 0, 255, 0.2),
-      0 0 40px rgba(162, 0, 255, 0.08);
-    width: 70%;
-    display: block;
-    border-radius: 1rem;
-    padding: 1rem;
-    border: #3a1f4a 1px solid;
-    margin: 3rem auto;
-
-    text-align: center;
-  }
-  .button-prof {
-    height: 100px;
-  }
-  .button-aluno{
-    height: 100px;
+    padding: 0.8rem 2rem;
   }
 
   .stitulo {
-    text-align: center;
-    font-size: 3rem;
-    color: aliceblue;
-    margin: 1rem 0;
-    font-weight: 600;
-    span {
-      text-shadow:
-        0 0 10px #7a00ff,
-        0 0 30px #a100ff;
-    }
+    font-size: 2.8rem;
   }
-  .p-footer {
-    color: #a1a1aa;
-    text-align: center;
-    margin: 2rem 0;
-    font-size: 1.2rem;
+}
+
+/* ===========================
+   CELULAR (≤ 480px)
+   =========================== */
+@media (max-width: 480px) {
+  .conteiner {
+    width: 90%;
+    min-width: unset;
+    padding: 1rem;
+    margin: 2rem auto;
+    border-radius: 0.8rem;
   }
-  .a-footer {
-    text-decoration: none;
-    color: #7a00ff;
-    font-size: 1.2rem;
-  }
+
   .conteiner h1 {
-    color: azure;
-    font-weight: 200;
-    font-size: 1.5rem;
-    margin: 1rem 0;
+    font-size: 1.4rem;
   }
+
   .conteiner p {
-    color: #9d8ca8;
-    font-size: 1.2rem;
-  }
-  .button-entrar {
-    background: linear-gradient(90deg, #7b2cbf, #c77dff);
-    box-shadow: 0 5px 15px rgba(160, 32, 240, 0.3);
-    color: white;
     font-size: 1rem;
-    padding: 1rem .5rem;
-    width: 80%;
-    margin: 1rem auto;
-    border: none;
-    border-radius: 1rem;
-    transition: 0.3s all ease;
   }
-  .button-entrar:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(160, 32, 240, 0.5);
+
+  .conteiner input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin: 0.6rem 0;
   }
+
   .conteiner input::placeholder {
-    color: #8a7a99;
+    font-size: 0.95rem;
+  }
+
+  .stitulo {
+    font-size: 2.2rem;
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+    margin: 1.2rem 0;
+  }
+
+  .plogin {
+    font-size: 1.1rem;
+    width: 95%;
+  }
+
+  .button-prof,
+  .button-aluno {
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem 0.3rem;
+    width: calc(50% - 0.6rem);
+  }
+
+  .button-entrar {
+    font-size: 1.1rem;
+    padding: 0.9rem;
+    width: 90%;
+  }
+
+  .p-footer {
+    font-size: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .a-footer {
+    font-size: 1rem;
+  }
+
+  .buttonnao {
     font-size: 1rem;
   }
 }

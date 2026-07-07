@@ -538,3 +538,219 @@ span {
     transform:translateY(-2px);
     box-shadow:0 10px 30px rgba(132,56,255,.4);
 }
+
+
+/* ===========================
+   TABLET (≤ 768px)
+   =========================== */
+@media (max-width: 768px) {
+  .dtexto_setores {
+    padding: 1rem 0 2rem 0;
+
+    img {
+      height: 64px;
+      width: 64px;
+    }
+  }
+
+  .dsetores_linha1 {
+    gap: 1rem;
+    margin: 0.6rem 0;
+  }
+
+  .dsetores1,
+  .dsetores2,
+  .dsetores3,
+  .dsetores4 {
+    height: auto;
+    min-height: 140px;
+  }
+
+  .imagem_maiorsetor1 img {
+    width: 8rem;
+  }
+
+  .dtexto_setores1 h3,
+  .dtexto_setores2 h3,
+  .dtexto_setores3 h3,
+  .dtexto_setores4 h3 {
+    font-size: 1.1rem;
+  }
+
+  .dtexto_setores1 p,
+  .dtexto_setores2 p,
+  .dtexto_setores3 p,
+  .dtexto_setores4 p {
+    font-size: 0.85rem;
+  }
+
+  /* Modal */
+  .banner {
+    width: calc(100% - 32px);
+  }
+
+  .banner img {
+    height: 260px;
+  }
+
+  .conteudo {
+    padding: 20px 24px 32px;
+  }
+
+  .Informacoes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .dados {
+    padding: 20px;
+  }
+
+  .areaAvaliacao {
+    padding: 24px;
+    margin-top: 32px;
+  }
+
+  .areaAvaliacao textarea {
+    height: 160px;
+    padding: 16px;
+  }
+
+  .botaoEnviar {
+    height: 58px;
+    font-size: 17px;
+  }
+
+  .estrelas {
+    letter-spacing: 6px;
+  }
+}
+
+/* ===========================
+   CELULAR (≤ 480px)
+   =========================== */
+@media (max-width: 480px) {
+  .main {
+    padding: 0 3% 2rem 3%;
+  }
+
+  .dtexto_setores {
+    padding: 0.8rem 0 1.5rem 0;
+    gap: 0.6rem;
+
+    img {
+      height: 52px;
+      width: 52px;
+    }
+  }
+
+  .dsetores_linha1 {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .dsetores1,
+  .dsetores2,
+  .dsetores3,
+  .dsetores4 {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+  }
+
+  .imagem_maiorsetor1 img {
+    width: 6rem;
+  }
+
+  .dtexto_setores1,
+  .dtexto_setores2,
+  .dtexto_setores3,
+  .dtexto_setores4 {
+    padding: 1rem 0.8rem;
+
+    h3 {
+      font-size: 1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* Modal */
+  .overlay {
+    padding: 10px;
+  }
+
+  .modal {
+    width: 100%;
+    border-radius: 16px;
+    max-height: 96vh;
+  }
+
+  .voltar {
+    margin: 14px 16px;
+  }
+
+  .banner {
+    width: calc(100% - 20px);
+    border-radius: 14px;
+  }
+
+  .banner img {
+    height: 180px;
+  }
+
+  .status {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    right: 14px;
+    top: 14px;
+  }
+
+  .conteudo {
+    padding: 14px 16px 24px;
+  }
+
+  .Informacoes {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .dados {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .areaAvaliacao {
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 20px;
+  }
+
+  .areaAvaliacao h2 {
+    margin-bottom: 16px;
+  }
+
+  .areaAvaliacao textarea {
+    height: 130px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .botaoEnviar {
+    height: 50px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .estrelas {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+}

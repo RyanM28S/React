@@ -349,3 +349,115 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(147, 56, 255, .4);
 }
+
+/* ===========================
+   TABLET (≤ 768px)
+   =========================== */
+@media (max-width: 768px) {
+  .professores {
+    margin: 1.5rem 1rem;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+
+  .prof {
+    width: calc(50% - 0.6rem);
+    flex: 1 1 calc(50% - 0.6rem);
+    min-width: 180px;
+  }
+
+  .modal {
+    padding: 24px;
+    border-radius: 20px;
+    max-height: 95vh;
+  }
+
+  .topo {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .foto {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .foto img {
+    min-height: 280px;
+    height: 280px;
+  }
+
+  .avaliacao {
+    padding: 24px;
+  }
+
+  .estrelas {
+    letter-spacing: 6px;
+  }
+}
+
+/* ===========================
+   CELULAR (≤ 480px)
+   =========================== */
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
+
+  .titulo-p {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+
+  .professores {
+    flex-direction: column;
+    margin: 1rem 0.8rem;
+    gap: 1rem;
+  }
+
+  .prof {
+    width: 100%;
+    flex: unset;
+    min-width: unset;
+    border-radius: 1.2rem;
+  }
+
+  .modal {
+    padding: 16px;
+    border-radius: 16px;
+    width: 98%;
+  }
+
+  .topo {
+    gap: 16px;
+  }
+
+  .foto img {
+    min-height: 220px;
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  .avaliacao {
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 24px;
+  }
+
+  .avaliacao textarea {
+    height: 140px;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .enviar {
+    height: 52px;
+    font-size: 16px;
+  }
+
+  .estrelas {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+}
