@@ -245,7 +245,7 @@ body,
 .barrinha2 {
   margin-top: 1rem;
   height: 0.8rem;
-  width: 15rem;
+  width: 100%;
   background: #3a3a3a;
   border-radius: 0.5rem;
 }
@@ -483,13 +483,28 @@ body,
   /* Hero */
   .parte-de-cima {
     padding: 2rem 1.5rem;
-    min-height: auto;
+  min-width: unset;
+    min-width: none;
+
+    
   }
 
   .parte1 {
-    max-width: 60%;
+    max-width: 80%;
+    margin: 1rem auto;
+    height: 30px;
+    min-width: unset;
+    width: 80%;
+    box-sizing: border-box;
     font-size: 0.9rem;
   }
+  .titulo-parte-cima {
+    font-size: 5rem;
+    min-width: unset;
+    padding: 0;
+    line-height: 1.2;
+  }
+ 
 
   .parte1 h2 {
     font-size: 0.9rem;
@@ -503,11 +518,28 @@ body,
   .butoes-cima {
     gap: 1rem;
   }
+  .button1-cima,
+  .button2-cima {
+    width: 100%; 
+    font-size: 1.2rem;
+ 
+    
+  
+  };
+
 
   /* Seção 2 */
   .parte2 {
     flex-direction: column;
-    min-height: auto;
+    min-height: unset;
+
+  }
+  .titulo1-parte2,
+  .titulo2-parte2 {
+    font-size: 4rem;
+  }
+  .subtitulo {
+    font-size: 1.2rem;
   }
 
   .esquerda,
@@ -537,18 +569,23 @@ body,
     flex-direction: column;
     align-items: flex-start;
   }
-
+  .parte3-titulo1,
+  .parte3-titulo2 {
+    font-size: 4rem;
+  }
   .caixas-parte3 {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
     gap: 1.5rem;
+    margin: 1rem auto;
   }
 
   .caixa1-parte3,
   .caixa2-parte3 {
     width: 100%;
     min-width: unset;
+    margin:1rem auto;
   }
 
   .caixa1-parte3 h2,
@@ -564,14 +601,25 @@ body,
 
   .caixa1-parte4 {
     padding: 2rem 1.5rem;
+    width: 100%;
+    min-width: unset;
+    box-sizing: border-box;
+    margin: 1rem auto;
   }
 
   .caixa1-parte4 img {
     width: 120px;
   }
-
+  .caixa1-parte4 h1 {
+    font-size: 3rem;
+  } 
+  .caixa1-parte4 p {
+    font-size: 1.2rem;
+    margin: 1rem auto;
+  }
   .caixa1-parte4 .buttonL {
     width: 60%;
+    font-size: 1.5rem;
     padding: 1.2rem;
   }
 }
@@ -583,15 +631,21 @@ body,
   /* Hero */
   .parte-de-cima {
     padding: 1.5rem 1rem;
+    max-width: 100vh;
+    text-align: center;
   }
 
   .parte1 {
     max-width: 85%;
     font-size: 0.8rem;
   }
-
+  .titulo-parte-cima {
+    font-size: 4rem;
+    margin: 1rem auto;
+    line-height: 1.2;
+  }
   .parte1 h2 {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .h3-parte-cima {
@@ -629,6 +683,10 @@ body,
   .p-topico {
     font-size: 0.95rem;
   }
+  .titulo1-parte2,
+  .titulo2-parte2 {
+    font-size: 3rem;
+  }
 
   .subtitulo {
     font-size: 1.2rem;
@@ -655,6 +713,12 @@ body,
   /* Seção 3 */
   .parte3 {
     padding: 1.5rem 1rem;
+      min-width: unset;
+  
+  }
+  .parte3-titulo1,
+  .parte3-titulo2 {
+    font-size: 3rem;
   }
 
   .caixa1-parte3 p,
@@ -680,5 +744,150 @@ body,
     width: 85%;
     font-size: 1.1rem;
     padding: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* Hero */
+  .parte-de-cima {
+    padding: 2rem 1.5rem;
+  min-width: unset;
+    min-width: none;
+
+    
+  }
+
+  .parte1 {
+    max-width: 80%;
+    margin: 1rem auto;
+    height: 30px;
+    min-width: unset;
+    width: 80%;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+  }
+  .titulo-parte-cima {
+    font-size: 5rem;
+    min-width: unset;
+    padding: 0;
+    line-height: 1.2;
+  }
+ 
+
+  .parte1 h2 {
+    font-size: 0.9rem;
+  }
+
+  .h3-parte-cima {
+    font-size: 1.2rem;
+    margin: 1.5rem auto;
+  }
+
+  .butoes-cima {
+    gap: 1rem;
+  }
+  .button1-cima,
+  .button2-cima {
+    width: 100%; 
+    font-size: 1.2rem;
+ 
+    
+  
+  };
+
+
+  /* Seção 2 */
+  .parte2 {
+    flex-direction: column;
+    min-height: unset;
+
+  }
+  .titulo1-parte2,
+  .titulo2-parte2 {
+    font-size: 4rem;
+  }
+  .subtitulo {
+    font-size: 1.2rem;
+  }
+
+  .esquerda,
+  .direita {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .topico1 img,
+  .topico2 img {
+    height: 55px;
+  }
+
+  .elemento1 {
+    width: 90%;
+    padding: 4rem 0 0 0;
+  }
+
+  .barrinha2 {
+    width: 10rem;
+  }
+
+  /* Seção 3 */
+  .parte3 {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .parte3-titulo1,
+  .parte3-titulo2 {
+    font-size: 4rem;
+  }
+  .caixas-parte3 {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 1.5rem;
+    margin: 1rem auto;
+  }
+
+  .caixa1-parte3,
+  .caixa2-parte3 {
+    width: 100%;
+    min-width: unset;
+    margin:1rem auto;
+  }
+
+  .caixa1-parte3 h2,
+  .caixa2-parte3 h2 {
+    font-size: 1.4rem;
+  }
+
+  /* Seção 4 */
+  .parte4 {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .caixa1-parte4 {
+    padding: 2rem 1.5rem;
+    width: 100%;
+    min-width: unset;
+    box-sizing: border-box;
+    margin: 1rem auto;
+  }
+
+  .caixa1-parte4 img {
+    width: 120px;
+  }
+  .caixa1-parte4 h1 {
+    font-size: 3rem;
+  } 
+  .caixa1-parte4 p {
+    font-size: 1.2rem;
+    margin: 1rem auto;
+  }
+  .caixa1-parte4 .buttonL {
+    width: 80%;
+    font-size: 1.5rem;
+    padding: 1.2rem;
   }
 }

@@ -5,6 +5,11 @@ import Secretaria from "../../assets/iconsecretaria.png";
 import Localizacao from "../../assets/iconlocalizacao.png";
 import Carta from "../../assets/iconcarta.png";
 import { motion } from "framer-motion";
+import Cantina2 from "../../assets/Cantina.jpeg";
+import Biblioteca2 from "../../assets/biblioteca.jpeg";
+import Orientacao2 from "../../assets/orientação.jpeg";
+import Manutencao2 from "../../assets/limpeza.jpeg";
+import Cordenacao2 from "../../assets/codernação.jpeg";
 import Cantina from "../../assets/iconcantina.png";
 import Biblioteca from "../../assets/iconbiblioteca.png";
 import Orientacao from "../../assets/iconorientacaoeducacional.png";
@@ -142,7 +147,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
-                    foto: Cantina,
+                    foto: Cantina2,
                     nome: "Cantina",
                     setor: "Cozinha",
                     localizacao: "1° Anda",
@@ -160,7 +165,7 @@ const Categorias = () => {
                 }}
               >
                 <div className={styles.imagem_maiorsetor1}>
-                  <img src={Cantina} alt="" />
+                  <img src={Cantina2} alt="" />
                   <div className={styles.pdaimagemmaior}>
                     <p>Ativo</p>
                   </div>
@@ -204,7 +209,7 @@ const Categorias = () => {
                 }}
               >
                 <div className={styles.imagem_maiorsetor1}>
-                  <img src={Cordenacao} alt="" />
+                  <img src={Cordenacao2} alt="" />
                   <div className={styles.pdaimagemmaior}>
                     <p>Ativo</p>
                   </div>
@@ -229,7 +234,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
-                    foto: Biblioteca,
+                    foto: Biblioteca2,
                     nome: "Biblioteca",
                     setor: "Cultura",
                     localizacao: "1° Andar",
@@ -247,7 +252,7 @@ const Categorias = () => {
                 }}
               >
                 <div className={styles.imagem_maiorsetor1}>
-                  <img src={Biblioteca} alt="" />
+                  <img src={Biblioteca2} alt="" />
                   <div className={styles.pdaimagemmaior}>
                     <p>Ativo</p>
                   </div>
@@ -292,7 +297,7 @@ const Categorias = () => {
                 }}
               >
                 <div className={styles.imagem_maiorsetor1}>
-                  <img src={Orientacao} alt="" />
+                  <img src={Orientacao2} alt="" />
                   <div className={styles.pdaimagemmaior}>
                     <p>Ativo</p>
                   </div>
@@ -335,7 +340,7 @@ const Categorias = () => {
                 }}
               >
                 <div className={styles.imagem_maiorsetor1}>
-                  <img src={Manutencao} alt="" />
+                  <img src={Manutencao2} alt="" />
                   <div className={styles.pdaimagemmaior}>
                     <p>Ativo</p>
                   </div>
