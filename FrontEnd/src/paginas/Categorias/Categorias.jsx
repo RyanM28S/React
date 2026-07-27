@@ -6,7 +6,7 @@ import Localizacao from "../../assets/iconlocalizacao.png";
 import Carta from "../../assets/iconcarta.png";
 import { motion } from "framer-motion";
 import Cantina2 from "../../assets/Cantina.jpeg";
-import Biblioteca2 from "../../assets/biblioteca.jpeg";
+import Biblioteca2 from "../../assets/bibliotecaicon.jpg";
 import Orientacao2 from "../../assets/orientação.jpeg";
 import Manutencao2 from "../../assets/limpeza.jpeg";
 import Cordenacao2 from "../../assets/codernação.jpeg";
