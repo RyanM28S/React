@@ -2,20 +2,20 @@
   background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
   box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
   border-radius: 0.5rem;
-  height: 80px;
+  height: clamp(60px, 8vw, 80px);
+  width: clamp(60px, 8vw, 80px);
   display: block;
   margin: 1rem auto;
+  object-fit: contain;
 }
 html,
 body,
 #root {
   min-height: 100%;
+  min-height: 100dvh;
   margin: 0;
 }
-  
-
-
-
+ 
 body {
   background:
     radial-gradient(
@@ -29,15 +29,15 @@ body {
       transparent 30%
     ),
     #05010a;
-
   font-family: "Poppins", sans-serif;
 }
 .titulo {
   text-align: center;
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
   color: aliceblue;
   margin: 2rem 0;
   font-weight: 600;
+  padding: 0 1rem;
 }
 .plogin {
   text-shadow:
@@ -46,8 +46,9 @@ body {
     0 0 60px rgba(161, 0, 255, 0.18);
   color: #b100ff;
   color: white;
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
   width: 80%;
+  max-width: 500px;
   animation: glow 3s ease-in-out infinite;
   margin: 1rem auto;
 }
@@ -58,14 +59,12 @@ body {
       0 0 10px rgba(161, 0, 255, 0.3);
     color: #a1a1aa;
   }
-
   50% {
     text-shadow:
       0 0 10px rgba(161, 0, 255, 0.6),
       0 0 20px rgba(161, 0, 255, 0.5);
     color: #b100ff;
   }
-
   100% {
     text-shadow:
       0 0 5px rgba(161, 0, 255, 0.4),
@@ -73,22 +72,23 @@ body {
     color: #a1a1aa;
   }
 }
-
+ 
 .titulo span {
   background: rgb(127, 0, 255);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .titulo-p {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   color: #9d8ca8;
   margin: 2rem 0;
   text-align: center;
+  padding: 0 1rem;
 }
 input {
   transition: 0.3s;
 }
-
+ 
 input:hover {
   border-color: #7a00ff;
 }
@@ -101,9 +101,10 @@ input:hover {
     0 0 10px rgba(162, 0, 255, 0.2),
     0 0 40px rgba(162, 0, 255, 0.08);
   width: 30%;
+  min-width: 280px;
   display: block;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border: #3a1f4a 1px solid;
   margin: 3rem auto;
   text-align: center;
@@ -111,7 +112,7 @@ input:hover {
 .conteiner h1 {
   color: azure;
   font-weight: 200;
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   margin: 1rem 0;
 }
 .conteiner p {
@@ -119,10 +120,10 @@ input:hover {
 }
 .button-prof {
   background-color: transparent;
-  padding: 1rem 4rem;
+  padding: clamp(0.7rem, 1.2vw, 1rem) clamp(1.5rem, 3vw, 4rem);
   border: #3a1f4a 2px solid;
   height: 50%;
-  margin: 1rem 1rem;
+  margin: 1rem 0.5rem;
   border-radius: 1rem;
 }
 .butt .button-aluno img,
@@ -131,11 +132,11 @@ input:hover {
 }
 .button-aluno {
   background-color: transparent;
-  padding: 1rem 4rem;
+  padding: clamp(0.7rem, 1.2vw, 1rem) clamp(1.5rem, 3vw, 4rem);
   border: #3a1f4a 2px solid;
   height: 50%;
   border-radius: 1rem;
-  margin: 1rem 1rem;
+  margin: 1rem 0.5rem;
   transition: 0.3s all ease;
 }
 .button-aluno.active {
@@ -149,7 +150,6 @@ input:hover {
 .button-prof:focus {
   outline: none;
   border: 2px solid #a100ff;
-
   box-shadow:
     0 0 8px #a100ff,
     0 0 15px rgba(161, 0, 255, 0.5);
@@ -162,14 +162,14 @@ input:hover {
     0 0 60px rgba(161, 0, 255, 0.18);
   color: white;
   font-size: 1.2rem;
-  color: white;
 }
 .stitulo {
   text-align: center;
-  font-size: 4rem;
+  font-size: clamp(2rem, 4vw, 4rem);
   color: aliceblue;
   margin: 1rem 0;
   font-weight: 600;
+  padding: 0 1rem;
   span {
     text-shadow:
       0 0 10px #7a00ff,
@@ -178,15 +178,15 @@ input:hover {
 }
 .descri {
   color: #9d8ca8;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 1.3vw, 1.2rem);
   margin-top: 0.5rem;
 }
 input {
-  padding: 1rem;
+  padding: clamp(0.7rem, 1vw, 1rem);
   width: 90%;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 1.3vw, 1.2rem);
   background-color: #1a0f22;
-  margin: 1rem 0;
+  margin: 0.8rem 0;
   border: #3a1f4a 1px solid;
   color: #ffffff;
   border-radius: 1rem;
@@ -200,19 +200,21 @@ input {
 }
 .conteiner input::placeholder {
   color: #8a7a99;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 1.3vw, 1.2rem);
 }
 .button-entrar {
   background: linear-gradient(90deg, #7b2cbf, #c77dff);
   box-shadow: 0 5px 15px rgba(160, 32, 240, 0.3);
   color: white;
-  font-size: 1.4rem;
-  padding: 1rem;
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  padding: clamp(0.8rem, 1.2vw, 1rem);
   width: 80%;
+  max-width: 350px;
   margin: 1rem auto;
   border: none;
   border-radius: 1rem;
   transition: 0.3s all ease;
+  display: block;
 }
 .button-entrar:hover {
   transform: translateY(-3px);
@@ -221,19 +223,20 @@ input {
 .conteiner a {
   text-decoration: none;
   color: #a1a1aa;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
   display: block;
 }
 .buttonnao {
   text-decoration: none;
   color: #a1a1aa;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
   display: block;
   background-color: transparent;
   border: none;
   margin: auto;
+  cursor: pointer;
 }
-
+ 
 .conteiner a:hover {
   color: #7a00ff;
   animation: moverParaDireita 0.8s ease forwards;
@@ -242,12 +245,11 @@ input {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(8px);
   }
 }
-
+ 
 .p-footer {
   color: #a1a1aa;
   text-align: center;
@@ -256,28 +258,38 @@ input {
 .a-footer {
   text-decoration: none;
   color: #7a00ff;
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
 }
+ 
+/* ===========================
+   TABLET LANDSCAPE (≤ 1024px)
+   =========================== */
+@media (max-width: 1024px) {
+  .conteiner {
+    width: 40%;
+  }
+}
+ 
 /* ===========================
    TABLET (≤ 768px)
    =========================== */
 @media (max-width: 768px) {
   .conteiner {
-    width: 70%;
+    width: 60%;
     min-width: 280px;
     padding: 1.2rem;
   }
-
+ 
   .button-prof,
   .button-aluno {
     padding: 0.8rem 2rem;
   }
-
+ 
   .stitulo {
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   }
 }
-
+ 
 /* ===========================
    CELULAR (≤ 480px)
    =========================== */
@@ -289,63 +301,90 @@ input {
     margin: 2rem auto;
     border-radius: 0.8rem;
   }
-
+ 
   .conteiner h1 {
     font-size: 1.4rem;
   }
-
+ 
   .conteiner p {
     font-size: 1rem;
   }
-
+ 
   .conteiner input {
     width: 100%;
     font-size: 1rem;
     padding: 0.8rem;
     margin: 0.6rem 0;
   }
-
+ 
   .conteiner input::placeholder {
     font-size: 0.95rem;
   }
-
+ 
   .stitulo {
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
   }
-
+ 
   .titulo {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
     margin: 1.2rem 0;
   }
-
+ 
   .plogin {
-    font-size: 1.1rem;
+    font-size: 1rem;
     width: 95%;
   }
-
+ 
   .button-prof,
   .button-aluno {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     margin: 0.5rem 0.3rem;
     width: calc(50% - 0.6rem);
   }
-
+ 
   .button-entrar {
     font-size: 1.1rem;
     padding: 0.9rem;
     width: 90%;
   }
-
+ 
   .p-footer {
     font-size: 1rem;
     margin: 1.5rem 0;
   }
-
+ 
   .a-footer {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
-
+ 
   .buttonnao {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+}
+ 
+/* ===========================
+   CELULAR PEQUENO (≤ 360px)
+   =========================== */
+@media (max-width: 360px) {
+  .conteiner {
+    width: 95%;
+    padding: 0.8rem;
+    margin: 1.5rem auto;
+  }
+ 
+  .button-prof,
+  .button-aluno {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+ 
+  .stitulo {
+    font-size: 1.4rem;
+  }
+ 
+  .button-entrar {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+    width: 100%;
   }
 }
