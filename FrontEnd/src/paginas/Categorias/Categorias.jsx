@@ -282,7 +282,7 @@ const Categorias = () => {
                     foto: Orientacao,
                     nome: "Orientação",
                     setor: "Adiministração",
-                    localizacao: "1° andar",
+                    localizacao: "2° andar",
                     email: "Administração@gmail.com",
                     descricao:
                       "Oferece apoio aos estudantes em questões escolares, pessoais e de convivência, ajudando no desenvolvimento educacional.",
