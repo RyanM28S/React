@@ -1,15 +1,23 @@
 import { useState } from "react";
 import styles from "./Categorias.module.scss";
 import Predio from "../../assets/icone-predio.png";
-import Secretaria from "../../assets/iconsecretaria.png";
+import Secretaria from "../../assets/recretaria.png";
 import Localizacao from "../../assets/iconlocalizacao.png";
 import Carta from "../../assets/iconcarta.png";
 import { motion } from "framer-motion";
+<<<<<<< HEAD
+import Cantina2 from "../../assets/cantina.png";
+import Biblioteca2 from "../../assets/biblioteca.png";
+import Orientacao2 from "../../assets/orientação.png";
+import Manutencao2 from "../../assets/limpeza.png";
+import Cordenacao2 from "../../assets/cordenação.png";
+=======
 import Cantina2 from "../../assets/Cantina.jpeg";
 import Biblioteca2 from "../../assets/bibliotecaicon.jpg";
 import Orientacao2 from "../../assets/orientação.jpeg";
 import Manutencao2 from "../../assets/limpeza.jpeg";
 import Cordenacao2 from "../../assets/codernação.jpeg";
+>>>>>>> main
 import Cantina from "../../assets/iconcantina.png";
 import Biblioteca from "../../assets/iconbiblioteca.png";
 import Orientacao from "../../assets/iconorientacaoeducacional.png";
@@ -282,7 +290,7 @@ const Categorias = () => {
                     foto: Orientacao,
                     nome: "Orientação",
                     setor: "Adiministração",
-                    localizacao: "1° andar",
+                    localizacao: "2° andar",
                     email: "Administração@gmail.com",
                     descricao:
                       "Oferece apoio aos estudantes em questões escolares, pessoais e de convivência, ajudando no desenvolvimento educacional.",
