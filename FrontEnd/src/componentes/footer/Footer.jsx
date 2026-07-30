@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
         <div className={style["links-rapidos"]}>
           <h2>Links Rápidos</h2>
-          <Link to="/">Interface</Link>
+          <Link to="/inicial">Interface</Link>
           <br />
           <Link to="/professores">Professores</Link>
           <br />

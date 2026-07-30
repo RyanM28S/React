@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <header className={style.header}>
-      <Link to="/" className={style.começo}>
+      <Link to="/inicial" className={style.começo}>
         <img
           src={ImgInicial}
           alt="logo-da-inicial-do-header"
@@ -63,7 +63,7 @@ const Header = () => {
             </Link>
           )}
           <Link
-            to="/login"
+            to="/"
             className={`${style.btn6} ${token ? "Sair" : "Logar"}`}
           >
             <img src={ImgEntrar} alt="icone-para-ir-para-tela-cadastro" />

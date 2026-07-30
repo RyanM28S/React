@@ -32,7 +32,7 @@ const FormularioLogin = () => {
       console.log("Login realizado:", data);
       localStorage.setItem("token", data.token);
       setTimeout(() => {
-        window.location.href = "/";
+        window.location.href = "/inicial";
       }, 3000);
     } catch (error) {
       toast.error("Erro ao fazer login!");

@@ -18,7 +18,7 @@ const App = () => {
   const location = useLocation()
 
 
-  const naoTem = ['/login', '/cadastro', '*'];
+  const naoTem = ['/', '/cadastro', '*'];
   const hide = naoTem.includes(location.pathname)
 
   return (
@@ -71,7 +71,7 @@ const App = () => {
       <main className="conteiner-flexivel">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Inicial />} />
+            <Route path="/inicial" element={<Inicial />} />
 
             <Route path="/interface" element={<Interface />} />
 
@@ -85,7 +85,7 @@ const App = () => {
 
             <Route path="/cadastro" element={<Cadastro />} />
 
-            <Route path="/login" element={<FormularioLogin />} />
+            <Route path="/" element={<FormularioLogin />} />
 
             <Route path="*" element={<h1>404 - Página Não Encontrada</h1>} />
           </Routes>
