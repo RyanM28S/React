@@ -1,10 +1,15 @@
 import { useState } from "react";
 import styles from "./Categorias.module.scss";
 import Predio from "../../assets/icone-predio.png";
-import Secretaria from "../../assets/iconsecretaria.png";
+import Secretaria from "../../assets/recretaria.png";
 import Localizacao from "../../assets/iconlocalizacao.png";
 import Carta from "../../assets/iconcarta.png";
 import { motion } from "framer-motion";
+import Cantina2 from "../../assets/cantina.png";
+import Biblioteca2 from "../../assets/biblioteca.png";
+import Orientacao2 from "../../assets/orientação.png";
+import Manutencao2 from "../../assets/limpeza.png";
+import Cordenacao2 from "../../assets/cordenação.png";
 import Cantina from "../../assets/iconcantina.png";
 import Biblioteca from "../../assets/iconbiblioteca.png";
 import Orientacao from "../../assets/iconorientacaoeducacional.png";
@@ -142,7 +147,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
-                    foto: Cantina,
+                    foto: Cantina2,
                     nome: "Cantina",
                     setor: "Cozinha",
                     localizacao: "1° Anda",
@@ -160,7 +165,7 @@ const Categorias = () => {
                 }}
               >
                 <div className={styles.imagem_maiorsetor1}>
-                  <img src={Cantina} alt="" />
+                  <img src={Cantina2} alt="" />
                   <div className={styles.pdaimagemmaior}>
                     <p>Ativo</p>
                   </div>
@@ -204,7 +209,7 @@ const Categorias = () => {
                 }}
               >
                 <div className={styles.imagem_maiorsetor1}>
-                  <img src={Cordenacao} alt="" />
+                  <img src={Cordenacao2} alt="" />
                   <div className={styles.pdaimagemmaior}>
                     <p>Ativo</p>
                   </div>
@@ -229,7 +234,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
-                    foto: Biblioteca,
+                    foto: Biblioteca2,
                     nome: "Biblioteca",
                     setor: "Cultura",
                     localizacao: "1° Andar",
@@ -247,7 +252,7 @@ const Categorias = () => {
                 }}
               >
                 <div className={styles.imagem_maiorsetor1}>
-                  <img src={Biblioteca} alt="" />
+                  <img src={Biblioteca2} alt="" />
                   <div className={styles.pdaimagemmaior}>
                     <p>Ativo</p>
                   </div>
@@ -277,7 +282,7 @@ const Categorias = () => {
                     foto: Orientacao,
                     nome: "Orientação",
                     setor: "Adiministração",
-                    localizacao: "1° andar",
+                    localizacao: "2° andar",
                     email: "Administração@gmail.com",
                     descricao:
                       "Oferece apoio aos estudantes em questões escolares, pessoais e de convivência, ajudando no desenvolvimento educacional.",
@@ -292,7 +297,7 @@ const Categorias = () => {
                 }}
               >
                 <div className={styles.imagem_maiorsetor1}>
-                  <img src={Orientacao} alt="" />
+                  <img src={Orientacao2} alt="" />
                   <div className={styles.pdaimagemmaior}>
                     <p>Ativo</p>
                   </div>
@@ -335,7 +340,7 @@ const Categorias = () => {
                 }}
               >
                 <div className={styles.imagem_maiorsetor1}>
-                  <img src={Manutencao} alt="" />
+                  <img src={Manutencao2} alt="" />
                   <div className={styles.pdaimagemmaior}>
                     <p>Ativo</p>
                   </div>
@@ -399,15 +404,15 @@ const Categorias = () => {
                   {categoriaSelecionada.descricao}
                 </p>
 
-                <div className={styles.cardsInfo}>
-                  <div className={styles.cardInfo}>
+                <div className={styles.Informacoes}>
+                  <div className={styles.dados}>
                     <span>Localização</span>
                     <strong>
                       {categoriaSelecionada.localizacao}
                     </strong>
                   </div>
 
-                  <div className={styles.cardInfo}>
+                  <div className={styles.dados}>
                     <span>E-mail de Contato</span>
                     <strong>
                       {categoriaSelecionada.email || "Não informado"}
@@ -430,7 +435,7 @@ const Categorias = () => {
                     placeholder="Compartilhe sua experiência com este setor..."
                   />
 
-                  <button className={styles.btnEnviar}>
+                  <button className={styles.botaoEnviar}>
                     Enviar Avaliação
                   </button>
                 </div>

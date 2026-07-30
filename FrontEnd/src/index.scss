@@ -1,13 +1,16 @@
-html, body,#root {
+
+html, body, #root {
   height: 100%;
   margin: 0;
+    overflow:hidden;
   padding: 0;
 }
 
 body {
   overflow-y: auto;
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
@@ -25,9 +28,16 @@ body::-webkit-scrollbar {
 .conteiner-principal {
   display: flex;
   flex-direction: column;
-  height: 100%; 
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .conteiner-flexivel {
-  flex: 1 0 auto; 
+  flex: 1 0 auto;
+  width: 100%;
+  overflow-x: hidden;
 }
+
+

@@ -12,8 +12,14 @@ import { jwtDecode } from "jwt-decode";
 
 const Header = () => {
   const [visivel, setVisivel] = useState(false);
-  const token = jwtDecode(localStorage.getItem("token"));
-  const nome = token.nome;
+  // Antes:
+  // const token = jwtDecode(localStorage.getItem("token"));
+  // const nome = token.nome;
+
+  // Depois (Forma segura):
+  const storedToken = localStorage.getItem("token");
+  const token = storedToken ? jwtDecode(storedToken) : null;
+  const nome = token ? token.nome : "";
 
   return (
     <header className={style.header}>
@@ -82,6 +88,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+};;
 
 export default Header;

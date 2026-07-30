@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import Footer from './componentes/footer/Footer.jsx'
 import Header from './componentes/Header/Header.jsx'
 import Inicial from './paginas/Inicial/Inicial.jsx'
+import Pagina404 from './paginas/404/404'
 import Interface from './paginas/Interface/Interface.jsx'
 import Categorias from './paginas/Categorias/Categorias.jsx'
 import Perfil from './paginas/Perfil/Perfil.jsx'
@@ -18,7 +19,15 @@ const App = () => {
   const location = useLocation()
 
 
-  const naoTem = ['/', '/cadastro', '*'];
+  const naoTem = [
+    "/",
+    "/interface",
+    "/categorias",
+    "/perfil",
+    "/painel",
+    "/professores"
+    
+  ];
   const hide = naoTem.includes(location.pathname)
 
   return (
@@ -66,7 +75,7 @@ const App = () => {
         }}
       />
 
-      {!hide && <Header />}
+      {hide && <Header />}
 
       <main className="conteiner-flexivel">
         <AnimatePresence mode="wait">
@@ -87,12 +96,12 @@ const App = () => {
 
             <Route path="/" element={<FormularioLogin />} />
 
-            <Route path="*" element={<h1>404 - Página Não Encontrada</h1>} />
+            <Route path="*" element={<Pagina404 />} />
           </Routes>
         </AnimatePresence>
       </main>
 
-      {!hide && <Footer />}
+      {hide && <Footer />}
     </div>
   );
 }
