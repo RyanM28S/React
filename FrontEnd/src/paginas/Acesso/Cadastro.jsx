@@ -120,7 +120,7 @@ const Cadastro = () => {
           </form>
 
           <p id="p"></p>
-          <Link to="/login" id="login" className={styles.buttonnao}>
+          <Link to="/" id="login" className={styles.buttonnao}>
             Já tem cadastro?
           </Link>
         </div>

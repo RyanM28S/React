@@ -60,7 +60,7 @@ const Perfil = () => {
                 <p>{email}</p>
               </div>
               <div>
-                <Link to="/login">
+                <Link to="/">
                   <button type="submit">
                     <img src={Sair} alt="" />
                     Sair

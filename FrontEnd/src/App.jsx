@@ -80,7 +80,7 @@ const App = () => {
       <main className="conteiner-flexivel">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Inicial />} />
+            <Route path="/inicial" element={<Inicial />} />
 
             <Route path="/interface" element={<Interface />} />
 
@@ -94,7 +94,7 @@ const App = () => {
 
             <Route path="/cadastro" element={<Cadastro />} />
 
-            <Route path="/login" element={<FormularioLogin />} />
+            <Route path="/" element={<FormularioLogin />} />
 
             <Route path="*" element={<Pagina404 />} />
           </Routes>
