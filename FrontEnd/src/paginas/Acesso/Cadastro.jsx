@@ -41,12 +41,13 @@ const Cadastro = () => {
 
   return (
     <motion.div
+    
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <div id="conteudo">
+      <div id="conteudo">s
         <div className={styles.conteiner}>
           <h1>Crie sua Conta</h1>
           <p className={styles.plogin}>login para continuar</p>
