@@ -109,6 +109,7 @@ body,
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+
   flex-wrap: wrap;
 }
 .button1-cima {
@@ -116,6 +117,9 @@ body,
   border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: clamp(0.9rem, 1.5vw, 1.5rem);
   border-radius: 1rem;
+    display: flex;
+  align-items: center;       /* Centraliza na vertical */
+  justify-content: center;
   background: linear-gradient(90deg, #7b2cff, #a100ff);
   box-shadow: 0 0 25px rgba(161, 0, 255, 0.6);
   color: aliceblue;
@@ -357,7 +361,7 @@ body,
   gap: 2rem;
 }
 .caixa1-parte3 {
-  width: 50%;
+  width: 40%;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1rem;
   padding: 1rem;
@@ -631,6 +635,9 @@ body,
     padding-right: 0;
     margin-bottom: 2rem;
   }
+  .direita-parte3 {
+    gap: 0;
+  }
  
   .parte3-titulo1,
   .parte3-titulo2 {
@@ -854,12 +861,7 @@ body,
     font-size: 0.85rem;
   }
  
-  .button1-cima,
-  .button2-cima {
-    font-size: 0.85rem;
-    padding: 0.7rem 0.8rem;
-  }
- 
+
   .caixa1-parte4 .buttonL {
     font-size: 0.9rem;
     padding: 0.8rem 1rem;

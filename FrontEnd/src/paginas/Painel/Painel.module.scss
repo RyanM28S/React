@@ -251,7 +251,7 @@
   z-index: 99999999999;
   padding: 1rem;
 }
- 
+ .x
 .notas {
   gap: 1rem;
   display: grid;
@@ -307,7 +307,7 @@
 .x {
   position: absolute;
   top: 0.5rem;
-  right: 1rem;
+  right: 0.5rem;
   font-size: 1.5rem;
   background-color: transparent;
   border: none;
@@ -468,6 +468,13 @@ select {
     width: 95%;
     padding: 1.2rem;
   }
+    .notas {
+  display: grid;
+  grid-template-columns: repeat(2,2fr);
+}
+.formulario {
+  padding: 2rem;
+}
  
   .atual,
   .criar {
@@ -568,6 +575,13 @@ select {
     flex-direction: column;
     gap: 0.5rem;
   }
+    .notas {
+  display: grid;
+  grid-template-columns: repeat(2,2fr);
+}
+.formulario {
+  padding: 2rem;
+}
  
   .atual,
   .criar {
@@ -610,7 +624,13 @@ select {
   .btn2 img {
     height: 28px;
   }
- 
+  .notas {
+  display: grid;
+  grid-template-columns: repeat(2,2fr);
+}
+.formulario {
+  padding: 2rem;
+}
   .botoes {
     flex-direction: column;
     gap: 0.3rem;
