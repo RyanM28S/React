@@ -261,7 +261,7 @@
     height: 44px;
     margin-right: 1rem;
     cursor: pointer;
-    filter: invert(1);
+ 
     flex-shrink: 0;
   }
 
@@ -383,6 +383,7 @@
   .hamburguer {
     width: 34px;
     height: 34px;
+    color: white;
     margin-right: 0.5rem;
   }
 }

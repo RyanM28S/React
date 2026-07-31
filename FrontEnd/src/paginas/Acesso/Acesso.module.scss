@@ -77,8 +77,19 @@ body {
 }
  
 .titulo span {
-  background: rgb(127, 0, 255);
+    color:white;
+
+    letter-spacing:8px;
+
+    text-shadow:
+    0 0 10px #fff,
+    0 0 25px #d000ff,
+    0 0 50px #d000ff,
+    0 0 90px #d000ff,
+    0 0 170px #d000ff;
+
   -webkit-background-clip: text;
+
   -webkit-text-fill-color: transparent;
 }
 .titulo-p {
