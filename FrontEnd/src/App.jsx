@@ -6,6 +6,7 @@ import Footer from './componentes/footer/Footer.jsx'
 import Header from './componentes/Header/Header.jsx'
 import Inicial from './paginas/Inicial/Inicial.jsx'
 import Pagina404 from './paginas/404/404'
+import Termos from './paginas/termo/termo.jsx'
 import Interface from './paginas/Interface/Interface.jsx'
 import Categorias from './paginas/Categorias/Categorias.jsx'
 import Perfil from './paginas/Perfil/Perfil.jsx'
@@ -38,20 +39,19 @@ const App = () => {
         toastOptions={{
           duration: 3000,
           style: {
-            background: "rgba(15, 2, 22, 0.85)", 
-            minWidth:"325px",
-            color: "#f5f0f8", 
-            border: "1px solid rgba(208, 0, 255, 0.3)", 
-            padding: "12px 20px", 
-            borderRadius: "12px", 
+            background: "rgba(15, 2, 22, 0.85)",
+            minWidth: "325px",
+            color: "#f5f0f8",
+            border: "1px solid rgba(208, 0, 255, 0.3)",
+            padding: "12px 20px",
+            borderRadius: "12px",
             backdropFilter: "blur(12px)",
             boxShadow: "0 8px 32px 0 rgba(208, 0, 255, 0.15)",
-            fontSize: "1rem", 
-            fontWeight: "500", 
-            fontFamily: "sans-serif", 
+            fontSize: "1rem",
+            fontWeight: "500",
+            fontFamily: "sans-serif",
           },
           success: {
-           
             style: {
               border: "1px solid rgba(0, 255, 136, 0.3)",
               boxShadow: "0 8px 32px 0 rgba(0, 255, 136, 0.15)",
@@ -62,7 +62,6 @@ const App = () => {
             },
           },
           error: {
-           
             style: {
               border: "1px solid rgba(255, 46, 99, 0.4)",
               boxShadow: "0 8px 32px 0 rgba(255, 46, 99, 0.2)",
@@ -97,6 +96,8 @@ const App = () => {
             <Route path="/login" element={<FormularioLogin />} />
 
             <Route path="*" element={<Pagina404 />} />
+
+            <Route path="/termos" element={<Termos />} />
           </Routes>
         </AnimatePresence>
       </main>
