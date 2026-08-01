@@ -191,7 +191,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
-                    foto: Cordenacao,
+                    foto: Cordenacao2,
                     nome: "Cordenação",
                     setor: "Adiministração",
                     localizacao: "1° Anda",
@@ -279,7 +279,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
-                    foto: Orientacao,
+                    foto: Orientacao2,
                     nome: "Orientação",
                     setor: "Adiministração",
                     localizacao: "2° andar",
@@ -322,7 +322,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
-                    foto: Manutencao,
+                    foto: Manutencao2,
                     nome: "Limpeza",
                     setor: "Adiministração",
                     localizacao: "1° Andar",
