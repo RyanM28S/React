@@ -130,7 +130,7 @@ const Cadastro = () => {
       <div>
         <p className={styles["p-footer"]}>
           Ao fazer login, você concorda com nossos{" "}
-          <Link to="" className={styles["a-footer"]}>
+          <Link to="/termos" className={styles["a-footer"]}>
             Termos de Uso{" "}
           </Link>
         </p>
