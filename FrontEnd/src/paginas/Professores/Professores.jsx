@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import karen from "../../assets/karen.png";
 import romario from "../../assets/romario.png";
 import joao from "../../assets/joao.jpg";
+import luan from "../../assets/Luan .jpg";
 import sidney from "../../assets/sidney.png";
 import gabriel from "../../assets/gabriel.jpg";
 import { motion } from "framer-motion";
@@ -140,27 +141,29 @@ const Professores = () => {
             scale: 1.02,
           }}
         >
-          <h1 className={style["prof-inicial"]}>E</h1>
-          <h2>Elen</h2>
-          <p className={style.p2}>Linguagens Avançadas</p>
-          <p className={style.p2}>Ciências Humanas</p>
-          <p className={style.p2}>elen.portugues@salotti.com</p>
+          <h1 className={style["prof-inicial"]}>L</h1>
+          <h2>Luan</h2>
+          <p className={style.p2}>FrontEnd</p>
+          <p className={style.p2}>Tecnico</p>
+          <p className={style.p2}>Luan.Prof@salotti.com</p>
           <p className={style.pd}>
-            A professora Elen é dedicada ao ensino da língua portuguesa, com
-            foco em interpretação de textos, gramática e produção escrita. Busca
-            desenvolver nos alunos o pensamento crítico, a comunicação clara e a
-            capacidade de argumentação.
+            Mais do que ensinar códigos de Front-End, ele atua como um
+            verdadeiro mentor. É aquele professor que ajuda de forma prática nas
+            dificuldades, incentiva a gente a ir além e não deixa ninguém para
+            trás. Sua passagem por aqui foi curta, mas sua dedicação e apoio
+            deixaram uma marca inesquecível no Salotti.
           </p>
           <div>
             <button
               onClick={() =>
                 setProfessor({
-                  nome: "Elen",
-                  materia: "Portugues",
-                  area: "Humanas",
-                  email: "elen.prof@gmail.com",
+                  foto: luan,
+                  nome: "Luan",
+                  materia: "Front-End",
+                  area: "Tecnico",
+                  email: "Luan.prof@gmail.com",
                   descricao:
-                    "Especialista em língua portuguesa, com aulas focadas em interpretação de textos, gramática e produção escrita. Incentiva o pensamento crítico e a comunicação clara, tornando as aulas dinâmicas e envolventes.",
+                    "Ele chegou no meio do ano e, em pouco tempo, transformou o ritmo da nossa turma. É um profissional extremamente carismático, que lidera a sala com uma energia contagiante e um sorriso no rosto. Sua principal marca é a empatia: ele realmente entende o lado dos alunos, tem paciência para ouvir e sempre procura o melhor para o coletivo.",
                 })
               }
             >
@@ -322,12 +325,13 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
-                  foto:gabriel,
+                  foto: gabriel,
                   nome: "Gabriel",
                   materia: "Versionamento",
                   area: "Desenvolvimento de Sistemas",
                   email: "Gabriel.educacao.sp.gov",
-                  descricao: "sempre preucupador em prepara as melhores aulas, e que seus alunos aprendam",
+                  descricao:
+                    "sempre preucupador em prepara as melhores aulas, e que seus alunos aprendam",
                 })
               }
             >
@@ -338,95 +342,76 @@ const Professores = () => {
       </motion.div>
 
       {professorSelecionado && (
+        <motion.div
+          className={style.overlay}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
           <motion.div
-            className={style.overlay}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            className={style.modal}
+            initial={{
+              opacity: 0,
+              scale: 0.95,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.95,
+              y: 20,
+            }}
+            transition={{
+              duration: 0.35,
+            }}
           >
-            <motion.div
-              className={style.modal}
-              initial={{
-                opacity: 0,
-                scale: 0.95,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                scale: 0.95,
-                y: 20,
-              }}
-              transition={{
-                duration: 0.35,
-              }}
-            >
-              <button
-                className={style.voltar}
-                onClick={() => setProfessor(null)}
-              >
-                ← Voltar para professores
-              </button>
+            <button className={style.voltar} onClick={() => setProfessor(null)}>
+              ← Voltar para professores
+            </button>
 
-              <div className={style.topo}>
-                <div className={style.foto}>
-                  <img
-                    src={professorSelecionado.foto}
-                    alt={professorSelecionado.nome}
-                  />
-                </div>
-
-                <div className={style.info}>
-                  <h1>{professorSelecionado.nome}</h1>
-
-                  <p className={style.materia}>
-                    {professorSelecionado.materia}
-                  </p>
-
-                  <p className={style.area}>
-                    {professorSelecionado.area}
-                  </p>
-
-                  <p className={style.email}>
-                    {professorSelecionado.email}
-                  </p>
-
-                  <p className={style.descricao}>
-                    {professorSelecionado.descricao}
-                  </p>
-                </div>
+            <div className={style.topo}>
+              <div className={style.foto}>
+                <img
+                  src={professorSelecionado.foto}
+                  alt={professorSelecionado.nome}
+                />
               </div>
 
-              <div className={style.avaliacao}>
-                <h2>Avaliar Professor</h2>
+              <div className={style.info}>
+                <h1>{professorSelecionado.nome}</h1>
 
-                <p className={style.subtitulo}>
-                  Sua avaliação
+                <p className={style.materia}>{professorSelecionado.materia}</p>
+
+                <p className={style.area}>{professorSelecionado.area}</p>
+
+                <p className={style.email}>{professorSelecionado.email}</p>
+
+                <p className={style.descricao}>
+                  {professorSelecionado.descricao}
                 </p>
-
-                <div className={style.estrelas}>
-                  ☆ ☆ ☆ ☆ ☆
-                </div>
-
-                <label>
-                  Seu comentário
-                </label>
-
-                <textarea
-                  placeholder="Compartilhe sua experiência com este professor..."
-                ></textarea>
-
-                <button className={style.enviar}>
-                  Enviar Avaliação
-                </button>
               </div>
-            </motion.div>
+            </div>
+
+            <div className={style.avaliacao}>
+              <h2>Avaliar Professor</h2>
+
+              <p className={style.subtitulo}>Sua avaliação</p>
+
+              <div className={style.estrelas}>☆ ☆ ☆ ☆ ☆</div>
+
+              <label>Seu comentário</label>
+
+              <textarea placeholder="Compartilhe sua experiência com este professor..."></textarea>
+
+              <button className={style.enviar}>Enviar Avaliação</button>
+            </div>
           </motion.div>
-        )}
+        </motion.div>
+      )}
     </motion.div>
   );
 };
