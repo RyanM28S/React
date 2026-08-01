@@ -129,3 +129,55 @@ box-shadow: 0 8px 24px rgba(17, 24, 39, .45);
         transform:translateY(-12px);
     }
 }
+
+
+
+/* ===========================
+   TABLET (≤ 1024px)
+   =========================== */
+@media (max-width: 1024px) {
+.termos {
+    width: 80%;
+    padding: 40px;
+  }
+ 
+}
+ 
+/* ===========================
+   TABLET (≤ 768px)
+   =========================== */
+@media (max-width: 768px) {
+.termos {
+    width: 90%;
+    padding: 40px;
+  }
+ 
+}
+ 
+/* ===========================
+   CELULAR (≤ 480px)
+   =========================== */
+@media (max-width: 480px) {
+.termos {
+    width: 90%;
+    padding: 40px;
+  }
+  .botoes {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+ 
+/* ===========================
+   CELULAR PEQUENO (≤ 360px)
+   =========================== */
+@media (max-width: 360px) {
+.termos {
+    width: 90%;
+    padding: 40px;
+  }
+  .botoes {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
