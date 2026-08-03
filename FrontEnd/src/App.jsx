@@ -19,8 +19,8 @@ const App = () => {
   const location = useLocation()
 
 
-  const naoTem = [
-    "/",
+  const temHeF = [
+    "/inicial",
     "/interface",
     "/categorias",
     "/perfil",
@@ -28,7 +28,7 @@ const App = () => {
     "/professores"
     
   ];
-  const hide = naoTem.includes(location.pathname)
+  const hide = temHeF.includes(location.pathname)
 
   return (
     <div className="conteiner-principal">
