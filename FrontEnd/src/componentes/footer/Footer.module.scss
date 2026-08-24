@@ -1,0 +1,265 @@
+.footer {
+  padding: 60px 80px 0px 20px;
+  background: linear-gradient(180deg, #120014 0%, #1a001f 40%, #0b0010 100%);
+  border-top: 1px solid rgba(255, 0, 255, 0.15);
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 0 40px rgba(192, 0, 255, 0.2);
+  width: 100%;
+
+}
+
+.footer-flex {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-flex h1 {
+  color: #f2f2f2;
+  text-align: center;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.footer-flex span {
+  background: rgb(127, 0, 255);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inicial1 {
+  background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
+  box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
+  border-radius: 0.5rem;
+  height: 50px;
+  width: 50px;
+  padding: 0.2rem;
+}
+
+.text-footer {
+  margin: 1rem 0;
+  color: #a1a1aa;
+  font-size: 1.1rem;
+}
+
+.mae {
+  margin-top: 1rem;
+  display: flex;
+  padding-bottom: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #4a0d4f;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.links-rapidos h2 {
+  color: #f2f2f2;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-size: 1.8rem;
+  font-family: "Syne", sans-serif;
+}
+
+.links-rapidos a {
+  text-decoration: none;
+  color: #a1a1aa;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.links-rapidos a:hover {
+  color: #7a00ff;
+  animation: moverParaDireita 0.8s ease forwards;
+}
+
+@keyframes moverParaDireita {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(8px);
+  }
+}
+
+.direitos {
+  color: #a1a1aa;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.icone-redes2 {
+  background-image: url("../../assets/whatssap2.svg");
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  transition: background-image 0.3s ease;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.icone-redes2:hover {
+  background-image: url("../../assets/whatssap.svg");
+}
+.icone-redes {
+  background-image: url("../../assets/github.svg");
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  transition: background-image 0.3s ease;
+}
+.icone-redes:hover {
+  background-image: url("../../assets/github2.svg");
+}
+.icone-redes3 {
+  background-image: url("../../assets/gmail.svg");
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  transition: background-image 0.3s ease;
+}
+.icone-redes3:hover {
+  background-image: url("../../assets/gmail2.svg");
+}
+
+/* ===========================
+   TABLET (≤ 768px)
+   =========================== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 24px 0 24px;
+  }
+
+  .mae {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .links-rapidos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .links-rapidos h2 {
+    font-size: 1.4rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .links-rapidos a {
+    font-size: 1rem;
+  }
+
+  .footer-flex h1 {
+    font-size: 1.8rem;
+  }
+
+  .text-footer {
+    font-size: 1rem;
+  }
+}
+
+/* ===========================
+   CELULAR (≤ 480px)
+   =========================== */
+@media (max-width: 480px) {
+  .footer {
+    padding: 24px 16px 0 16px;
+  }
+
+  .footer-flex {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .footer-flex h1 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .inicial1 {
+    height: 42px;
+    width: 42px;
+  }
+
+  .text-footer {
+    font-size: 0.9rem;
+  }
+
+  .mae {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .links-rapidos {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .links-rapidos h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .links-rapidos a {
+    font-size: 0.95rem;
+  }
+
+  .redes-sociais {
+    padding: 0.5rem 0;
+    gap: 0.8rem;
+  }
+
+  .icone-redes,
+  .icone-redes2,
+  .icone-redes3 {
+    width: 36px;
+    height: 36px;
+  }
+
+  .direitos {
+    font-size: 0.75rem;
+  }
+}
+
+/* ===========================
+   CELULAR PEQUENO (≤ 360px)
+   =========================== */
+@media (max-width: 360px) {
+  .footer {
+    padding: 20px 12px 0 12px;
+  }
+
+  .footer-flex h1 {
+    font-size: 1.3rem;
+  }
+
+  .inicial1 {
+    height: 36px;
+    width: 36px;
+  }
+
+  .text-footer {
+    font-size: 0.8rem;
+  }
+
+  .links-rapidos h2 {
+    font-size: 1.1rem;
+  }
+
+  .links-rapidos a {
+    font-size: 0.85rem;
+  }
+
+  .icone-redes,
+  .icone-redes2,
+  .icone-redes3 {
+    width: 32px;
+    height: 32px;
+  }
+}
