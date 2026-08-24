@@ -222,7 +222,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-  padding: 1.5rem;
+  padding: 2rem;
   background: rgba(15, 15, 20, 0.75);
   border: 1px solid #c014ff;
   box-shadow: 0 0 22px rgba(192, 20, 255, 0.25);
@@ -306,16 +306,19 @@
 }
 .x {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  font-size: 1.5rem;
+  top: 0.1rem;
+  transition: all 0.3s ease;
+  right: 0.1rem;
+  font-size: 2rem;
   background-color: transparent;
   border: none;
   color: #d000ff;
   padding: 0.2rem 0.5rem;
   cursor: pointer;
 }
- 
+ .x:hover {
+transform: scale(1.8);
+ }
 .inputGroup {
   position: relative;
   width: 100%;

@@ -1,24 +1,26 @@
-import { useLocation} from 'react-router-dom'
-import { Route, Routes } from 'react-router-dom'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, useLocation, Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Toaster } from "react-hot-toast";
-import Footer from './componentes/footer/Footer.jsx'
-import Header from './componentes/Header/Header.jsx'
-import Inicial from './paginas/Inicial/Inicial.jsx'
-import Pagina404 from './paginas/404/404'
-import Termos from './paginas/termo/termo.jsx'
-import Interface from './paginas/Interface/Interface.jsx'
-import Categorias from './paginas/Categorias/Categorias.jsx'
-import Perfil from './paginas/Perfil/Perfil.jsx'
-import Professores from './paginas/Professores/Professores.jsx'
-import Cadastro from './paginas/Acesso/Cadastro.jsx'
-import Painel from './paginas/Painel/Painel.jsx';
-import FormularioLogin from './paginas/Acesso/FormularioLogin.jsx'
+
+import "./index.scss";
+
+import Footer from "./componentes/footer/Footer.jsx";
+import Header from "./componentes/Header/Header.jsx";
+import Inicial from "./paginas/Inicial/Inicial.jsx";
+import Pagina404 from "./paginas/404/404";
+import Termos from "./paginas/termo/termo.jsx";
+import Interface from "./paginas/Interface/Interface.jsx";
+import Categorias from "./paginas/Categorias/Categorias.jsx";
+import Perfil from "./paginas/Perfil/Perfil.jsx";
+import Professores from "./paginas/Professores/Professores.jsx";
+import Cadastro from "./paginas/Acesso/Cadastro.jsx";
+import Painel from "./paginas/Painel/Painel.jsx";
+import FormularioLogin from "./paginas/Acesso/FormularioLogin.jsx";
 
 const App = () => {
-
-  const location = useLocation()
-
+  const location = useLocation();
 
   const temHeF = [
     "/inicial",
@@ -26,10 +28,9 @@ const App = () => {
     "/categorias",
     "/perfil",
     "/painel",
-    "/professores"
-    
+    "/professores",
   ];
-  const hide = temHeF.includes(location.pathname)
+  const hide = temHeF.includes(location.pathname);
 
   return (
     <div className="conteiner-principal">
@@ -80,23 +81,14 @@ const App = () => {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Inicial />} />
-
             <Route path="/interface" element={<Interface />} />
-
             <Route path="/categorias" element={<Categorias />} />
-
             <Route path="/perfil" element={<Perfil />} />
-
             <Route path="/painel" element={<Painel />} />
-
             <Route path="/professores" element={<Professores />} />
-
             <Route path="/cadastro" element={<Cadastro />} />
-
             <Route path="/login" element={<FormularioLogin />} />
-
             <Route path="*" element={<Pagina404 />} />
-
             <Route path="/termos" element={<Termos />} />
           </Routes>
         </AnimatePresence>
@@ -105,6 +97,15 @@ const App = () => {
       {hide && <Footer />}
     </div>
   );
-}
+};
 
-export default App
+// Renderização correta do ponto de entrada
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>,
+);
+
+export default App;
