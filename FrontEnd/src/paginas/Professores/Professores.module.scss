@@ -33,7 +33,39 @@
   font-weight: 600;
   padding: 0 1rem;
 }
- 
+ /* Container que engloba as estrelas */
+.estrelas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+
+.estrela {
+  font-size: 32px; 
+  color: #666;   
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.1s ease;
+  user-select: none; 
+}
+
+
+.estrela:active {
+  transform: scale(0.9);
+}
+
+
+.estrela.ativa {
+  color: #d136ff; 
+  text-shadow: 
+    0 0 4px #c014ff,   
+    0 0 12px #c014ff,  
+    0 0 20px #9d00ff;  
+}
+
+
+
+
 .titulo span {
   background: rgb(127, 0, 255);
   -webkit-background-clip: text;
