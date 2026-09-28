@@ -23,8 +23,8 @@ const cardVariants = {
 };
 const Professores = () => {
   const [professorSelecionado, setProfessor] = useState(null);
-  
-  const [avaliacao, setAvaliacao] = useState(0); 
+
+  const [avaliacao, setAvaliacao] = useState(0);
   const [hoverAvaliacao, setHoverAvaliacao] = useState(0);
 
   return (
@@ -406,7 +406,6 @@ const Professores = () => {
 
               <div className={style.estrelas}>
                 {[1, 2, 3, 4, 5].map((estrela) => {
-               
                   const estaAtiva = estrela <= (hoverAvaliacao || avaliacao);
 
                   return (
