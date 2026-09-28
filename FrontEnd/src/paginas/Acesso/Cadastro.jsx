@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Cadastro = () => {
-  const [cargo, setCargo] = useState("visitante");
+  const [cargo, setCargo] = useState("Professor");
 
   async function Cadastrar(event) {
     event.preventDefault();
@@ -47,7 +47,7 @@ const Cadastro = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <div id="conteudo">s
+      <div id="conteudo">
         <div className={styles.conteiner}>
           <h1>Crie sua Conta</h1>
           <p className={styles.plogin}>login para continuar</p>

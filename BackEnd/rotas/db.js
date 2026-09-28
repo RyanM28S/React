@@ -1,11 +1,11 @@
 import mariadb from 'mariadb'
 
 const db = mariadb.createPool({
-    host:'172.30.1.52',
-    user: 'user',
-    database: 'opina',
-    password: 'usersenha',
+    host:'localhost',
+    user: 'ryanUser',
+    database: 'opinadb',
+    password: 'ryanSenha',
     port: "3306"
 })
 
-export default db
+export default db   

@@ -1,71 +1,74 @@
-import express from "express";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
-import db from "./db.js";
+  import express from "express";
+  import jwt from "jsonwebtoken";
+  import bcrypt from "bcrypt";
+  import db from "./db.js";
 
-const roteador = express.Router();
+  const roteador = express.Router();
 
-async function Login(req, res) {
-
-  const { email, senha } = req.body;
-  if (!email || !senha) {
-    return res.status(400).json({ message: "Falta informações" });
-  }
-  try {
-    const [buscar] = await db.query("SELECT * FROM usuarios WHERE email = ?", [
-      email,
-    ]);
-    if (buscar.length === 0) {
-      return res.status(400).json({ message: "email ou senha inválizdos" });
+  async function Login(req, res) {
+    const { email, senha } = req.body;
+    if (!email || !senha) {
+      return res.status(400).json({ message: "Falta informações" });
     }
-    const senhaIgual = await bcrypt.compare(senha, buscar.senha);
-
-    if (!senhaIgual) {
-      return res.status(400).json({ message: "email ou senha inválidos" });
-    }
-    const token = jwt.sign(
-      {
-        id: buscar.id,
-        email: buscar.email,
-        nome : buscar.nome
-      },
-      "process.env.JWT_SECRET",
-      {
-        expiresIn: "1h",
+    try {
+      const buscar = await db.query("SELECT * FROM usuarios WHERE email = ?", [
+        email,
+      ]);
+      if (buscar.length === 0) {
+        return res.status(400).json({ message: "email ou senha inválizdos" });
       }
-    );
-    return res.status(200).json({ message: "Logado", token: token });
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ message: "Erro interno" });
-  }
-}
+      const usuario = buscar[0];
+      const senhaIgual = await bcrypt.compare(senha, usuario.senha);
 
-async function Cadastro(req, res) {
-  const { nome, senha, email, cargo } = req.body;
-  if (!nome || !senha || !email || !cargo) {
-    return res.status(400).json({ message: "Falta informações" });
-  }
-  try {
-    const senhaCripto = await bcrypt.hash(senha, 10);
-    const criar = await db.query(
-      "INSERT INTO usuarios(nome,senha,email,cargo) VALUES(?,?,?,?)",
-      [nome, senhaCripto, email, cargo],
-    );
-    if (criar.affectedRows > 0) {
-      return res.status(201).json({ message: "Usuario criado com sucesso" });
+      if (!senhaIgual) {
+        return res.status(400).json({ message: "email ou senha inválidos" });
+      }
+      const token = jwt.sign(
+        {
+          id: usuario.id,
+          email: usuario.email,
+          nome: usuario.nome,
+        },
+        "process.env.JWT_SECRET",
+        {
+          expiresIn: "1h",
+        },
+      );
+      return res.status(200).json({ message: "Logado", token: token });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ message: "Erro interno" });
     }
-  } catch (error) {
-    if (error.code == "ER_DUP_ENTRY"){
-      return res.status(409).json({ message: "Usúario já cadastrado" });
-    }
-    console.log(error);
-    return res.status(500).json({ message: "Erro interno!" });
   }
-}
 
-roteador.post("/login", Login);
-roteador.post("/cadastro", Cadastro);
+  async function Cadastro(req, res) {
+    const { nome, senha, email, cargo, RA } = req.body;
+    if (!nome || !senha || !email || !cargo) {
+      return res.status(400).json({ message: "Falta informações" });
+    }
+    if (cargo === "Aluno" && !RA) {
+      return res.status(400).json({ message: "Falta informações"})
+    }
 
+      try {
+        const senhaCripto = await bcrypt.hash(senha, 10);
+        const criar = await db.query(
+          "INSERT INTO usuarios(nome,senha,email,cargo,ra) VALUES(?,?,?,?,?)",
+          [nome, senhaCripto, email, cargo, RA],
+        );
+        if (criar.affectedRows > 0) {
+          return res.status(201).json({ message: "Usuario criado com sucesso" });
+        }
+      } catch (error) {
+        if (error.code == "ER_DUP_ENTRY") {
+          return res.status(409).json({ message: "Usúario já cadastrado" });
+        }
+        console.log(error);
+        return res.status(500).json({ message: "Erro interno!" });
+      }
+  }
 
-export default roteador;
+  roteador.post("/login", Login);
+  roteador.post("/cadastro", Cadastro);
+
+  export default roteador;
