@@ -261,8 +261,17 @@ const Interface = () => {
           }}
           viewport={{ once: true }}
         >
-          <img src={Collage} alt="" />
-          <p>Nenhuma atividade recentes para exibir</p>
+         <section className={style.scomentarios}>
+          <div className={style.dcomentarios}>
+            <h1>Nome</h1>
+            <p>Comentario</p>
+          </div>
+          <div className={style.dcomentarios}>
+            <h1>Nome</h1>
+            <p>Comentario</p>
+          </div>
+         </section>
+
         </motion.div>
       </section>
     </motion.div>
