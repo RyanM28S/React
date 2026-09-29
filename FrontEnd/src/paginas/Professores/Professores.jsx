@@ -24,6 +24,9 @@ const cardVariants = {
 const Professores = () => {
   const [professorSelecionado, setProfessor] = useState(null);
 
+  const [avaliacao, setAvaliacao] = useState(0);
+  const [hoverAvaliacao, setHoverAvaliacao] = useState(0);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -261,7 +264,7 @@ const Professores = () => {
                   area: "Tecnologia da Informação",
                   email: "João.Prof@gmail.com",
                   descricao:
-                    "Especialista em banco de dados, conhecido por sua clareza e bom humor em sala de aula.Ele não é apenas um professor mas sim um amigo.",
+                    "Especialista em banco de dados, conhecido por sua clareza e bom humor em sala de aula. Ele não é apenas um professor mas sim um amigo.",
                 })
               }
             >
@@ -331,7 +334,7 @@ const Professores = () => {
                   area: "Desenvolvimento de Sistemas",
                   email: "Gabriel.educacao.sp.gov",
                   descricao:
-                    "sempre preucupador em prepara as melhores aulas, e que seus alunos aprendam",
+                    "Sempre preocupado em preparar as melhores aulas para que seus alunos aprendam cada vez melhor. ",
                 })
               }
             >
@@ -401,7 +404,23 @@ const Professores = () => {
 
               <p className={style.subtitulo}>Sua avaliação</p>
 
-              <div className={style.estrelas}>☆ ☆ ☆ ☆ ☆</div>
+              <div className={style.estrelas}>
+                {[1, 2, 3, 4, 5].map((estrela) => {
+                  const estaAtiva = estrela <= (hoverAvaliacao || avaliacao);
+
+                  return (
+                    <span
+                      key={estrela}
+                      className={`${style.estrela} ${estaAtiva ? style.ativa : ""}`}
+                      onClick={() => setAvaliacao(estrela)}
+                      onMouseEnter={() => setHoverAvaliacao(estrela)}
+                      onMouseLeave={() => setHoverAvaliacao(0)}
+                    >
+                      {estaAtiva ? "★" : "☆"}
+                    </span>
+                  );
+                })}
+              </div>
 
               <label>Seu comentário</label>
 

@@ -7,12 +7,17 @@ import { useState } from "react";
 const Termos = () => {
   return (
     <section className={styles.tudo}>
-      <motion.section className={styles.termos}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1}}
-      transition={{ duration: 0.5 }}
+      <motion.section
+        className={styles.termos}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
       >
-        <img src={ImgPessoa} className={styles.pessoa} alt="Imagem de uma pessoa" />
+        <img
+          src={ImgPessoa}
+          className={styles.pessoa}
+          alt="Imagem de uma pessoa"
+        />
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -166,10 +171,13 @@ const Termos = () => {
           transition={{ duration: 0.5 }}
           className={styles.botoes}
         >
-          <Link to="/" className={styles.aceito}>
+          <Link to="/login" className={styles.aceito}>
             Aceito
           </Link>
-          <Link to="/login" className={styles.recuso}>
+          <Link
+            to="https://www.google.com/webhp?hl=pt-BR&sa=X&ved=0ahUKEwiB75nunbmWAxVEJrkGHb_pNKsQPAgI"
+            className={styles.recuso}
+          >
             Recuso
           </Link>
         </motion.div>

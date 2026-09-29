@@ -81,6 +81,7 @@
   }
 }
  
+
 .container_estatisticas {
   display: flex;
   gap: 2rem;
@@ -191,19 +192,48 @@
   }
 }
  
+
 .datividade {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: 2fr;
   height: 14rem;
   width: 100%;
   background-color: #3B0F3F;
   border-radius: 1rem;
   border: 1px solid rgba(64, 45, 173, 0.24);
+  padding: 1rem 2rem;
  
-  p {
-    font-family: 'Nunito Sans', sans-serif;
-    color: #9D9AA8;
+  .scomentarios{
+    display: flex;
+    align-items: center;
+    gap: 2rem ;
+    height: 100%;
+    width: 100%;
+  }
+  .dcomentarios {
+    display: flex;
+      border: 1px solid rgb(64, 45, 173);
+  box-shadow:
+    0 0 20px rgba(168, 0, 255, 0.2),
+    inset 0 0 10px rgba(255, 0, 255, 0.1);
+    padding: 2rem 2rem;
+    gap: 20%;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #301934;
+    border-radius: 0.8rem;
+    height: 90%;
+    width: 50%;
+    h1{
+      justify-content: left;
+      font-size: 150%;
+      font-family: 'Syne', sans-serif;
+    }
+    p {
+      font-size: 120%;
+      height: 100%;
+      width: 100%;
+      font-family: 'Nunito Sans', sans-serif;
+    }
   }
 }
  
