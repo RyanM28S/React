@@ -12,11 +12,7 @@ import { jwtDecode } from "jwt-decode";
 
 const Header = () => {
   const [visivel, setVisivel] = useState(false);
-  // Antes:
-  // const token = jwtDecode(localStorage.getItem("token"));
-  // const nome = token.nome;
 
-  // Depois (Forma segura):
   const storedToken = localStorage.getItem("token");
   const token = storedToken ? jwtDecode(storedToken) : null;
   const nome = token ? token.nome : "";
@@ -34,20 +30,26 @@ const Header = () => {
         </h1>
       </Link>
       <div className={`${style.pro} ${visivel ? style.aberto : style.fechado}`}>
-        {token && (
-          <div className={`${style.meio} `}>
+        <div className={`${style.meio} `}>
+          {token && (
             <Link to="/interface" className={style.btn1} id="naoh">
               <img src={ImgInicial} alt="icone-para-ir-para-tela-inicial" />
-              Inicial
+              Interface
             </Link>
+          )}
+          {token && (
             <Link to="/professores" className={style.btn2} id="professoresh">
               <img src={ImgPessoas} alt="icone-para-ir-para-tela-professores" />
               Professores
             </Link>
+          )}
+          {token && (
             <Link to="/categorias" className={style.btn3} id="categoriash">
               <img src={ImgPredio} alt="icone-para-ir-para-tela-setores" />
               Categorias
             </Link>
+          )}
+          {token && (
             <Link to="/painel" className={style.btn5} id="entradah">
               <img
                 src={ImgIncocolage}
@@ -55,10 +57,7 @@ const Header = () => {
               />
               Painel
             </Link>
-          </div>
-        )}
-
-        <div className={style.fim}>
+          )}
           {token && (
             <Link to="/perfil" className={style["btn-perfil"]}>
               <img
@@ -68,13 +67,21 @@ const Header = () => {
               {nome}
             </Link>
           )}
-          <Link
-            to="/login"
+          <button
+            onClick={() => {
+              if (token) {
+                localStorage.removeItem("token");
+                localStorage.removeItem("nome");
+                window.location.href = "/login";
+              } else {
+                window.location.href = "/login";
+              }
+            }}
             className={`${style.btn6} ${token ? "Sair" : "Logar"}`}
           >
             <img src={ImgEntrar} alt="icone-para-ir-para-tela-cadastro" />
             {token ? "sair" : "logar"}
-          </Link>
+          </button>
         </div>
       </div>
 
@@ -88,6 +95,6 @@ const Header = () => {
       </div>
     </header>
   );
-};;
+};
 
 export default Header;
