@@ -29,7 +29,7 @@
           email: usuario.email,
           nome: usuario.nome,
         },
-        "process.env.JWT_SECRET",
+        process.env.JWT_SECRET,
         {
           expiresIn: "1h",
         },

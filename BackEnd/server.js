@@ -5,6 +5,9 @@ import roteadorRegistro from './rotas/registro.js'
 import roteadorAvaliacao from "./rotas/avaliacao.js"
 import rotaAvalicacao from "./rotas/avaliacao.js"
 import rotaPefil from "./rotas/perfil.js"
+import dotnet from "dotenv";
+
+dotnet.config();
 
 const app = express()
 
