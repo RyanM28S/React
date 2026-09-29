@@ -18,6 +18,7 @@ import Professores from "./paginas/Professores/Professores.jsx";
 import Cadastro from "./paginas/Acesso/Cadastro.jsx";
 import Painel from "./paginas/Painel/Painel.jsx";
 import FormularioLogin from "./paginas/Acesso/FormularioLogin.jsx";
+import RotaPrivada from "./paginas/rotaPrivada/rotaPrivada.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -81,11 +82,26 @@ const App = () => {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Inicial />} />
-            <Route path="/interface" element={<Interface />} />
-            <Route path="/categorias" element={<Categorias />} />
-            <Route path="/perfil" element={<Perfil />} />
-            <Route path="/painel" element={<Painel />} />
-            <Route path="/professores" element={<Professores />} />
+            <Route path="/interface" element={
+              <RotaPrivada>
+                <Interface />
+              </RotaPrivada>} />
+            <Route path="/categorias" element={
+              <RotaPrivada>
+                <Categorias />
+              </RotaPrivada>} />
+            <Route path="/perfil" element={
+              <RotaPrivada>
+                <Perfil />
+              </RotaPrivada>} />
+            <Route path="/painel" element={
+              <RotaPrivada>
+                <Painel />
+              </RotaPrivada>} />
+            <Route path="/professores" element={
+              <RotaPrivada>
+                <Professores />
+              </RotaPrivada>} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/login" element={<FormularioLogin />} />
 

@@ -33,6 +33,9 @@ const Cadastro = () => {
       const data = await res.json();
       toast.success("Cadastro realizado com sucesso!");
       console.log("Login realizado:", data);
+      setTimeout(() => {
+        window.location.href = "/login";
+      }, 3000);
     } catch (error) {
       toast.error("Erro ao cadastrar usuário!");
       console.log("Falha no login:", error.message);
@@ -41,7 +44,6 @@ const Cadastro = () => {
 
   return (
     <motion.div
-    
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -91,17 +93,19 @@ const Cadastro = () => {
             />
             <br />
 
-            {cargo === "Aluno" &&(<>
-              <label htmlFor="RA">RA</label>
-              <br />
-              <input
-                id="RA"
-                name="RA"
-                type="text"
-                placeholder="Digite sua RA"
-              />
-              <br />
-            </>)}
+            {cargo === "Aluno" && (
+              <>
+                <label htmlFor="RA">RA</label>
+                <br />
+                <input
+                  id="RA"
+                  name="RA"
+                  type="text"
+                  placeholder="Digite sua RA"
+                />
+                <br />
+              </>
+            )}
 
             <label htmlFor="Email">Email</label>
             <br />
