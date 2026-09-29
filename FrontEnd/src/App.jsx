@@ -23,7 +23,7 @@ const App = () => {
   const location = useLocation();
 
   const temHeF = [
-    "/inicial",
+    "/",
     "/interface",
     "/categorias",
     "/perfil",
@@ -88,8 +88,12 @@ const App = () => {
             <Route path="/professores" element={<Professores />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/login" element={<FormularioLogin />} />
-            <Route path="*" element={<Pagina404 />} />
+
             <Route path="/termos" element={<Termos />} />
+            
+            <Route path="*" element={<Pagina404 />} />
+
+            
           </Routes>
         </AnimatePresence>
       </main>
