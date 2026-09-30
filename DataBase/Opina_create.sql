@@ -1,39 +1,167 @@
-create table alunos(
-	id_aluno int primary key auto_increment,
-	nome varchar(100),
-	email varchar(256) not null unique,
-	senha varchar(256),
-	turma varchar(10),
-	ra varchar(20) not null unique,
-	descricao longtext,
-	constraint nome_turma_unique unique(nome,turma)
+-- ==========================================
+-- BANCO DE DADOS - SALOTTI OPINA
+-- ==========================================
+
+
+-- ==========================================
+-- ALUNOS
+-- ==========================================
+
+CREATE TABLE alunos (
+    id_aluno INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    turma VARCHAR(10),
+    ra VARCHAR(20) NOT NULL UNIQUE,
+    descricao LONGTEXT,
+
+    CONSTRAINT nome_turma_unique
+        UNIQUE(nome, turma)
 );
 
-create table notasAlunos(
-	id int primary key auto_increment,
-	id_aluno int,
-	nota_1 int,
-	nota_2 int,
-	nota_3 int,
-	nota_4 int,
-	nota_final int generated always as ((nota_1+nota_2+nota_3+nota_4)/4) stored,
-	constraint fk_id_alunos foreign key(id_aluno) references alunos(id_aluno)
+
+-- ==========================================
+-- NOTAS DOS ALUNOS
+-- ==========================================
+
+CREATE TABLE notasAlunos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_aluno INT,
+
+    nota_1 INT,
+    nota_2 INT,
+    nota_3 INT,
+    nota_4 INT,
+
+    nota_final INT
+        GENERATED ALWAYS AS (
+            (nota_1 + nota_2 + nota_3 + nota_4) / 4
+        ) STORED,
+
+    CONSTRAINT fk_id_alunos
+        FOREIGN KEY (id_aluno)
+        REFERENCES alunos(id_aluno)
 );
 
-create table professores(
-	id_professor int primary key auto_increment,
-	nome varchar(100),
-	email varchar(256) not null unique,
-	senha varchar(256),
-	area varchar(100),
-	descricao longtext
+
+-- ==========================================
+-- PROFESSORES
+-- ==========================================
+
+CREATE TABLE professores (
+    id_professor INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    email VARCHAR(256) NOT NULL UNIQUE,
+    senha VARCHAR(256),
+    area VARCHAR(100),
+    descricao LONGTEXT
 );
 
-create table avaliacoes(
-	id int primary key auto_increment,
-	id_professor int,
-	id_usuario int,
-	avaliacao longtext,
-	constraint fk_id_professor foreign key (id_professor) references professores(id),
-	constraint fk_id_usuario foreign key (id_aluno) references alunos(id)
+
+-- ==========================================
+-- USUÁRIOS
+-- ==========================================
+
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    cargo VARCHAR(100) NOT NULL,
+    ra VARCHAR(15) UNIQUE,
+	ADD COLUMN data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- ==========================================
+-- CATEGORIAS
+-- ==========================================
+
+CREATE TABLE categorias (
+    id_categoria INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    setor VARCHAR(100),
+    localizacao VARCHAR(100),
+    email VARCHAR(255),
+    descricao TEXT
+);
+
+
+-- ==========================================
+-- AVALIAÇÕES
+-- ==========================================
+
+CREATE TABLE avaliacoes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+
+    id_usuario INT NOT NULL,
+
+    id_professor INT NULL,
+    id_categoria INT NULL,
+
+    estrelas INT NOT NULL,
+    comentario LONGTEXT,
+
+    tipo VARCHAR(30) NOT NULL,
+ 	data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_avaliacao_usuario
+        FOREIGN KEY (id_usuario)
+        REFERENCES usuarios(id),
+
+    CONSTRAINT fk_avaliacao_professor
+        FOREIGN KEY (id_professor)
+        REFERENCES professores(id_professor),
+
+    CONSTRAINT fk_avaliacao_categoria
+        FOREIGN KEY (id_categoria)
+        REFERENCES categorias(id_categoria)
+);
+
+-- ==========================================
+-- CATEGORIAS
+-- ==========================================
+
+INSERT INTO categorias
+(nome, setor, localizacao, email, descricao)
+VALUES
+(
+    'Secretaria',
+    'Administração',
+    'Bloco A, Sala 101',
+    'Secretaria@gmail.com',
+    'Responsável pelo atendimento aos alunos, organização de documentos, matrículas e informações acadêmicas da escola.'
+),
+(
+    'Cantina',
+    'Cozinha',
+    'Pátio principal',
+    'Cantina@gmail.com',
+    'Espaço destinado à venda de alimentos e bebidas para alunos e funcionários durante o horário do intervalo.'
+),
+(
+    'Coordenação Pedagógica',
+    'Administração',
+    'Bloco B, Sala 205',
+    'Cordenação@gmail.com',
+    'Setor que acompanha o desempenho escolar, auxilia professores e organiza atividades pedagógicas da instituição.'
+),
+(
+    'Biblioteca',
+    'Cultura',
+    'Bloco C, Térreo',
+    'Biblioteca@gmail.com',
+    'Ambiente voltado ao estudo e pesquisa, com livros, materiais educativos e apoio ao aprendizado dos alunos.'
+),
+(
+    'Orientação Educacional',
+    'Administração',
+    'Bloco A, Sala 103',
+    'Administração@gmail.com',
+    'Oferece apoio aos estudantes em questões escolares, pessoais e de convivência, ajudando no desenvolvimento educacional.'
+),
+(
+    'Manutenção e Limpeza',
+    'Administração',
+    'Anexo de Serviços',
+    'limpeza@gmail.com',
+    'Responsável pela conservação, limpeza e bom funcionamento dos espaços da escola, garantindo um ambiente organizado e seguro.'
 );

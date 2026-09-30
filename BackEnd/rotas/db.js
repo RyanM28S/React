@@ -1,6 +1,6 @@
-import mariadb from 'mariadb';
+import mysql from 'mysql2/promise'
 
-const db = mariadb.createPool({
+const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     database: process.env.DB_NAME,

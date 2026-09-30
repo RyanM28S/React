@@ -1,37 +1,116 @@
-import livro from '../../assets/icone-livro.png';
-import styles from './Painel.module.scss';
-import lapis from '../../assets/lapis.png';
-import lixo from '../../assets/lixo.svg';
-import { useState } from 'react';
+import livro from "../../assets/icone-livro.png";
+import styles from "./Painel.module.scss";
+import lapis from "../../assets/lapis.png";
+import lixo from "../../assets/lixo.svg";
+import { useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
 
-import pessoas from '../../assets/icone-pessoas-roxo.png';
-import { motion, AnimatePresence } from 'framer-motion';
+import pessoas from "../../assets/icone-pessoas-roxo.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Painel = () => {
+  const token = jwtDecode(localStorage.getItem("token"));
+  const nome = token.nome;
   const [visivel, setvisivel] = useState(false);
+  const [alunos, setAlunos] = useState([]);
+  const [pesquisa, setPesquisa] = useState("");
 
+  const alunosFiltrados = alunos.filter((aluno) =>
+    aluno.turma?.toLowerCase().includes(pesquisa.toLowerCase()),
+  );
+
+  async function buscarAlunos() {
+    try {
+      const res = await fetch("http://localhost:3001/alunos", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message || "Erro ao buscar alunos");
+      }
+      setAlunos(data);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+  useEffect(() => {
+    buscarAlunos();
+  }, []);
+  async function Excluir(id) {
+    try {
+      const res = await fetch(`http://localhost:3001/alunos/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message || "Erro ao excluir");
+      }
+      await buscarAlunos();
+      setvisivel(false);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
   async function Registrar(event) {
     event.preventDefault();
 
     const form = event.currentTarget;
     const dados = Object.fromEntries(new FormData(form));
 
-    if (!dados.nome || !dados.turma || !dados.data) {
-      return alert('Falta informações!');
+    if (!dados.nome || !dados.turma || !dados.ra) {
+      return alert("Falta informações!");
     }
     try {
-      const res = await fetch('http://localhost:3001/registro', {
-        method: 'POST',
+      const res = await fetch("http://localhost:3001/registrar", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify(dados),
       });
-      if (!res.ok) {
-        throw new Error(res.message || 'Erro ao registrar');
-      }
       const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Erro ao registrar");
+      }
       console.log(data);
+      await buscarAlunos();
+      setvisivel(false);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+  async function Atualizar(event) {
+    event.preventDefault();
+    const form = event.currentTarget.form;
+    const dados = Object.fromEntries(new FormData(form));
+
+    if (!dados.ra) {
+      return alert("Falta informações!");
+    }
+    try {
+      const res = await fetch("http://localhost:3001/atualizar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(dados),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Erro ao registrar");
+      }
+      console.log(data);
+      await buscarAlunos();
     } catch (error) {
       console.error(error.message);
     }
@@ -54,10 +133,7 @@ const Painel = () => {
               <h1>
                 Painel do <span>Professor</span>
               </h1>
-              <p>
-                Olá, Prof. Vinicius Santos Camelo! Gerencie seus registros de
-                alunos.
-              </p>
+              <p>Olá, Prof. {nome}! Gerencie seus registros de alunos.</p>
             </div>
           </div>
           <button onClick={() => setvisivel(!visivel)}>
@@ -73,60 +149,75 @@ const Painel = () => {
       >
         Registros de Alunos
       </motion.h1>
-      <motion.div
-        className={styles.cont2}
-        initial={{
-          opacity: 0,
-          scale: 0.9,
-          y: 40,
-        }}
-        animate={{
-          opacity: 1,
-          scale: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.6,
-          delay: 0.2,
-        }}
-        whileHover={{
-          y: -5,
-          boxShadow: '0 0 25px rgba(195,0,255,0.35)',
-        }}
-      >
-        <div className={styles.flex5}>
-          <div className={styles.flex4}>
-            <div>
-              <img src={pessoas} alt="" />
-            </div>
-            <div>
-              <h1>?</h1>
-              <div className={styles.flex3}>
-                <p>
-                  {' '}
-                  <span>Turma:</span> ?
-                </p>
-                <br />
-                <p>
-                  <span>Nota:</span>?
-                </p>
-                <p>
-                  <span>Data:</span>?
-                </p>
+      <input
+        type="text"
+        placeholder="Pesquisar turma..."
+        value={pesquisa}
+        onChange={(e) => setPesquisa(e.target.value)}
+      />
+      {alunosFiltrados.map((aluno) => (
+        <motion.div
+          key={aluno.id_aluno}
+          className={styles.cont2}
+          initial={{
+            opacity: 0,
+            scale: 0.9,
+            y: 40,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+          whileHover={{
+            y: -5,
+            boxShadow: "0 0 25px rgba(195,0,255,0.35)",
+          }}
+        >
+          <div className={styles.flex5}>
+            <div className={styles.flex4}>
+              <div className={styles.divh1}>
+                <h2>{aluno.nome[0]}</h2>
+              </div>
+
+              <div>
+                <h1>{aluno.nome}</h1>
+
+                <div className={styles.flex3}>
+                  <p>
+                    <span>Turma:</span> {aluno.turma}
+                  </p>
+
+                  <p>
+                    <span>Nota:</span> {aluno.nota_final ?? "Sem notas"}
+                  </p>
+
+                  <p>
+                    <span>RA:</span> {aluno.ra}
+                  </p>
+                </div>
               </div>
             </div>
+
+            <div className={styles.botoes}>
+              <button
+                onClick={() => Excluir(aluno.id_aluno)}
+                className={styles.btn1}
+              >
+                <img src={lixo} alt="Excluir aluno" />
+              </button>
+            </div>
           </div>
-          <div class={styles.botoes}>
-            <button className={styles.btn1}>
-              <img src={lixo} alt="" />
-            </button>
-            <button className={styles.btn2}>
-              <img src={lapis} alt="" />
-            </button>
-          </div>
-        </div>
-        <h2 className={styles.descricao}>?</h2>
-      </motion.div>
+
+          <h2 className={styles.descricao}>
+            Notas: {aluno.nota_1 ?? "-"} | {aluno.nota_2 ?? "-"} |{" "}
+            {aluno.nota_3 ?? "-"} | {aluno.nota_4 ?? "-"}
+          </h2>
+        </motion.div>
+      ))}
       <AnimatePresence>
         {visivel && (
           <motion.div
@@ -154,7 +245,7 @@ const Painel = () => {
               }}
               transition={{
                 duration: 0.4,
-                type: 'spring',
+                type: "spring",
                 stiffness: 120,
               }}
             >
@@ -184,13 +275,23 @@ const Painel = () => {
                   <label htmlFor="notas">Notas</label>
                 </div>
                 <div className={styles.notas}>
-                  <input type="numb" name="notas" placeholder="Nota 1°" />
-                  <input type="text" placeholder="Nota 2°" />
-                  <input type="text" placeholder="Nota 3°" />
-                  <input type="text" placeholder="Nota 4°" />
+                  <input type="number" name="nota1" placeholder="Nota 1°" />
+                  <input type="number" name="nota2" placeholder="Nota 2°" />
+                  <input type="number" name="nota3" placeholder="Nota 3°" />
+                  <input type="number" name="nota4" placeholder="Nota 4°" />
                 </div>
-
-                <button className={styles.atual}>Atualizar</button>
+                <div>
+                  <button type="submit" className={styles.atual}>
+                    Registrar
+                  </button>
+                  <button
+                    type="button"
+                    onClick={Atualizar}
+                    className={styles.atual}
+                  >
+                    Atualizar
+                  </button>
+                </div>
               </form>
             </motion.div>
           </motion.div>

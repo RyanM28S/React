@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styles from "./Perfil.module.scss";
 import { Link } from "react-router-dom";
 import Sair from "../../assets/iconSair.png";
@@ -5,7 +6,6 @@ import Carta from "../../assets/iconcarta.png";
 import Escudo from "../../assets/iconEscudo.png";
 import { motion } from "framer-motion";
 import Calendario from "../../assets/iconCalendario.png";
-import { jwtDecode } from "jwt-decode";
 
 const cardVariants = {
   hidden: {
@@ -20,10 +20,35 @@ const cardVariants = {
 };
 
 const Perfil = () => {
-  const token = jwtDecode(localStorage.getItem("token"));
-  const nome = token.nome;
-  const email = token.email;
+  const tokenJWT = localStorage.getItem("token");
+  const [perfil, setPerfil] = useState(null)
 
+  function formatarData(data) {
+    if (!data) {
+      return ""
+    };
+    return new Date(data).toLocaleDateString("pt-br")
+  }
+  async function Buscar() {
+    try {
+      const res = await fetch("http://localhost:3001/perfil", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${tokenJWT}`,
+        },
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message);
+      }
+      setPerfil(data)
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
+  useEffect(() => {
+    Buscar();
+  }, []);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -52,12 +77,12 @@ const Perfil = () => {
           >
             <div className={styles.ddivs_perfil1}>
               <div className={styles.dimagem_perfil}>
-                <h1>{nome[0]}</h1>
+                <h1>{perfil?.nome?.[0]}</h1>
               </div>
 
               <div className={styles.dtexto_perfil}>
-                <h3>{nome}</h3>
-                <p>{email}</p>
+                <h3>{perfil?.nome}</h3>
+                <p>{perfil?.email}</p>
               </div>
               <div>
                 <Link to="/login">
@@ -91,9 +116,9 @@ const Perfil = () => {
                   <h3>Informações de Contato</h3>
                 </div>
                 <h4>Email</h4>
-                <p>{email}</p>
+                <p>{perfil?.email}</p>
                 <h4>Nome</h4>
-                <p>{nome}</p>
+                <p>{perfil?.nome}</p>
                 <h4>Celular</h4>
                 <p>+55 11 998867112</p>
               </div>
@@ -124,18 +149,14 @@ const Perfil = () => {
                 <h4>Membro desde</h4>
                 <div className={styles.d2data_perfil2}>
                   <img src={Calendario} alt="" />
-                  <p className={styles.d2data}>21/03/2026</p>
+                  <p className={styles.d2data}>{formatarData(perfil?.data_criacao)}</p>
                 </div>
-                <h4>Último acesso</h4>
-                <div className={styles.d2data_perfil2}>
-                  <img src={Calendario} alt="" />
-                  <p className={styles.d2data}>17/04/2026</p>
-                </div>
+
               </div>
             </motion.div>
           </div>
 
-          <motion.div
+          {/* <motion.div
             className={styles.d3atividade_perfil3}
             initial={{
               opacity: 0,
@@ -167,7 +188,7 @@ const Perfil = () => {
                 <h5>20</h5>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
           <details>
             <summary>
               {" "}

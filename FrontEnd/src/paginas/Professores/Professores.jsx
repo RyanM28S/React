@@ -22,8 +22,37 @@ const cardVariants = {
   },
 };
 const Professores = () => {
+
+  const tipo = "professor"
+  async function Avaliar(id_professor, estrelas, comentario) {
+    try {
+      const res = await fetch(`http://localhost:3001/avaliar`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          tipo,
+          id_professor,
+          estrelas,
+          comentario,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Houve um erro");
+      }
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   const [professorSelecionado, setProfessor] = useState(null);
 
+  const [comentario, setComentario] = useState("");
   const [avaliacao, setAvaliacao] = useState(0);
   const [hoverAvaliacao, setHoverAvaliacao] = useState(0);
 
@@ -119,6 +148,7 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
+                  id: 1,
                   foto: romario,
                   nome: "Romario",
                   materia: "Matematica",
@@ -160,6 +190,7 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
+                  id: 2,
                   foto: luan,
                   nome: "Luan",
                   materia: "Front-End",
@@ -201,6 +232,7 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
+                  id: 3,
                   foto: karen,
                   nome: "Karen",
                   materia: "Educação Física",
@@ -258,6 +290,7 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
+                  id: 4,
                   foto: joao,
                   nome: "João Gabriel de Lucca",
                   materia: "Banco de Dados",
@@ -288,6 +321,7 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
+                  id: 5,
                   foto: sidney,
                   nome: "Sidney",
                   materia: "Desenvolvimento Back-End e Mobile",
@@ -328,6 +362,7 @@ const Professores = () => {
             <button
               onClick={() =>
                 setProfessor({
+                  id: 6,
                   foto: gabriel,
                   nome: "Gabriel",
                   materia: "Versionamento",
@@ -424,9 +459,20 @@ const Professores = () => {
 
               <label>Seu comentário</label>
 
-              <textarea placeholder="Compartilhe sua experiência com este professor..."></textarea>
+              <textarea
+                placeholder="Compartilhe sua experiência com este professor..."
+                value={comentario}
+                onChange={(e) => setComentario(e.target.value)}
+              />
 
-              <button className={style.enviar}>Enviar Avaliação</button>
+              <button
+                onClick={() => {
+                  Avaliar(professorSelecionado.id, avaliacao, comentario);
+                }}
+                className={style.enviar}
+              >
+                Enviar Avaliação
+              </button>
             </div>
           </motion.div>
         </motion.div>

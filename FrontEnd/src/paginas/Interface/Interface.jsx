@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import style from "./Interface.module.scss";
 import Collage from "../../assets/iconcollage.svg";
 import Star from "../../assets/iconStar.svg";
@@ -20,14 +21,65 @@ const cardVariants = {
 };
 
 const Interface = () => {
-  // Antes:
-  // const token = jwtDecode(localStorage.getItem("token"));
-  // const nome = token.nome;
+  const [avaliacoes, setAvaliacoes] = useState([]);
+  const [usuario, setUsuario] = useState(null);
+  async function Buscar() {
+    try {
+      const res = await fetch("http://localhost:3001/interface", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message);
+      }
+      setUsuario(data);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+  async function BuscarAvaliacoes() {
+    try {
+      const res = await fetch("http://localhost:3001/minha-lista", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
 
-  // Depois (Forma segura):
-  const storedToken = localStorage.getItem("token");
-  const token = storedToken ? jwtDecode(storedToken) : null;
-  const nome = token ? token.nome : "";
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message);
+      }
+
+      setAvaliacoes(data);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  const [pagina, setPagina] = useState(1);
+
+  const porPagina = 2;
+
+  const inicio = (pagina - 1) * porPagina;
+
+  const avaliacoesPagina = avaliacoes.slice(inicio, inicio + porPagina);
+
+  const totalPaginas = Math.max(1, Math.ceil(avaliacoes.length / porPagina));
+  useEffect(() => {
+    Buscar();
+    BuscarAvaliacoes();
+  }, []);
+  useEffect(() => {
+  if (pagina > totalPaginas) {
+    setPagina(totalPaginas);
+  }
+}, [pagina, totalPaginas]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -55,7 +107,7 @@ const Interface = () => {
                   duration: 0.6,
                 }}
               >
-                Bem-vindo, <span id="nome">{nome}</span>!
+                Bem-vindo, <span id="nome">{usuario?.nome}</span>!
               </motion.h2>{" "}
               <p>
                 Este é seu painel de controle. Aqui você pode acessar todas as
@@ -230,14 +282,16 @@ const Interface = () => {
               <h5>Acessar</h5>
             </Link>
           </div>
-          <div className={style.dacoes}>
-            <img alt="" />
-            <h4>Painel de Professores</h4>
-            <p>Veja a categoria de professores.</p>
-            <Link to="/painel">
-              <h5>Acessar</h5>
-            </Link>
-          </div>
+          {
+            <div className={style.dacoes}>
+              <img alt="" />
+              <h4>Painel de Professores</h4>
+              <p>Veja a categoria de professores.</p>
+              <Link to="/painel">
+                <h5>Acessar</h5>
+              </Link>
+            </div>
+          }
         </motion.div>
         <div className={style.titulos}>
           <h3>Atividades Recente</h3>
@@ -261,21 +315,40 @@ const Interface = () => {
           }}
           viewport={{ once: true }}
         >
-         <section className={style.scomentarios}>
-          <div className={style.dcomentarios}>
-            <h1>Nome</h1>
-            <p>Comentario</p>
-          </div>
-          <div className={style.dcomentarios}>
-            <h1>Nome</h1>
-            <p>Comentario</p>
-          </div>
-         </section>
+          <section className={style.scomentarios}>
+            {avaliacoesPagina.map((avaliacao) => (
+              <div className={style.dcomentarios} key={avaliacao.id}>
+                <h1>{avaliacao.professor || avaliacao.categoria}</h1>
 
+                <p>{avaliacao.comentario}</p>
+
+                <div>{"★".repeat(avaliacao.estrelas)}</div>
+              </div>
+            ))}
+          </section>{" "}
+          <div className={style.paginacao}>
+            <button
+              onClick={() => setPagina(pagina - 1)}
+              disabled={pagina === 1}
+            >
+              ←
+            </button>
+
+            <span>
+              Página {pagina} de {totalPaginas}
+            </span>
+
+            <button
+              onClick={() => setPagina(pagina + 1)}
+              disabled={pagina === totalPaginas}
+            >
+              →
+            </button>
+          </div>
         </motion.div>
       </section>
     </motion.div>
   );
-};;
+};
 
 export default Interface;
