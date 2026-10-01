@@ -95,7 +95,7 @@ const App = () => {
                 <Perfil />
               </RotaPrivada>} />
             <Route path="/painel" element={
-              <RotaPrivada>
+              <RotaPrivada cargoPermitido="Professor">
                 <Painel />
               </RotaPrivada>} />
             <Route path="/professores" element={

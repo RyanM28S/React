@@ -32,6 +32,37 @@ const cardVariants = {
 
 const Categorias = () => {
   const [categoriaSelecionada, setCategoria] = useState(null);
+  const [comentario, setComentario] = useState("");
+  const [avaliacao, setAvaliacao] = useState(0);
+  const [hoverAvaliacao, setHoverAvaliacao] = useState(0);
+  const tipo = "categorias";
+    async function Avaliar(id_categoria, estrelas, comentario) {
+    try {
+      const res = await fetch(`http://localhost:3001/avaliar`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          tipo,
+          id_categoria,
+          estrelas,
+          comentario,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Houve um erro");
+      }
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 
   return (
     <motion.div
@@ -100,6 +131,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
+                    id: 1,
                     foto: Secretaria,
                     nome: "Secretaria",
                     setor: "Adiministração",
@@ -147,6 +179,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
+                    id:2,
                     foto: Cantina2,
                     nome: "Cantina",
                     setor: "Cozinha",
@@ -191,6 +224,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
+                    id:3,
                     foto: Cordenacao2,
                     nome: "Cordenação",
                     setor: "Adiministração",
@@ -234,6 +268,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
+                    id:4,
                     foto: Biblioteca2,
                     nome: "Biblioteca",
                     setor: "Cultura",
@@ -279,6 +314,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
+                    id:5,
                     foto: Orientacao2,
                     nome: "Orientação",
                     setor: "Adiministração",
@@ -322,6 +358,7 @@ const Categorias = () => {
               <motion.div
                 onClick={() =>
                   setCategoria({
+                    id:6,
                     foto: Manutencao2,
                     nome: "Limpeza",
                     setor: "Adiministração",
@@ -365,84 +402,101 @@ const Categorias = () => {
           </motion.div>
         </section>
       </section>
-        {categoriaSelecionada && (
+      {categoriaSelecionada && (
+        <motion.div
+          className={styles.overlay}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
           <motion.div
-            className={styles.overlay}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            className={styles.modal}
+            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.95, opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
           >
-            <motion.div
-              className={styles.modal}
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              transition={{ duration: 0.3 }}
+            <button
+              className={styles.voltar}
+              onClick={() => setCategoria(null)}
             >
-              <button
-                className={styles.voltar}
-                onClick={() => setCategoria(null)}
-              >
-                ← Voltar para categorias
-              </button>
+              ← Voltar para categorias
+            </button>
 
-              <div className={styles.banner}>
-                <img
-                  src={categoriaSelecionada.foto}
-                  alt={categoriaSelecionada.nome}
+            <div className={styles.banner}>
+              <img
+                src={categoriaSelecionada.foto}
+                alt={categoriaSelecionada.nome}
+              />
+
+              <div className={styles.status}>Ativo</div>
+            </div>
+
+            <div className={styles.conteudo}>
+              <h1>{categoriaSelecionada.nome}</h1>
+
+              <p className={styles.descricao}>
+                {categoriaSelecionada.descricao}
+              </p>
+
+              <div className={styles.Informacoes}>
+                <div className={styles.dados}>
+                  <span>Localização</span>
+                  <strong>{categoriaSelecionada.localizacao}</strong>
+                </div>
+
+                <div className={styles.dados}>
+                  <span>E-mail de Contato</span>
+                  <strong>
+                    {categoriaSelecionada.email || "Não informado"}
+                  </strong>
+                </div>
+              </div>
+
+              <div className={styles.areaAvaliacao}>
+                <h2>Avaliar Categoria</h2>
+
+                <p className={styles.subtitulo}>Sua avaliação</p>
+
+                <div className={styles.estrelas}>
+                  {[1, 2, 3, 4, 5].map((estrela) => {
+                    const estaAtiva = estrela <= (hoverAvaliacao || avaliacao);
+
+                    return (
+                      <span
+                        key={estrela}
+                        className={`${styles.estrela} ${estaAtiva ? styles.ativa : ""}`}
+                        onClick={() => setAvaliacao(estrela)}
+                        onMouseEnter={() => setHoverAvaliacao(estrela)}
+                        onMouseLeave={() => setHoverAvaliacao(0)}
+                      >
+                        {estaAtiva ? "★" : "☆"}
+                      </span>
+                    );
+                  })}
+                </div>
+
+                <label>Seu comentário</label>
+
+                <textarea
+                  placeholder="Compartilhe sua opinião sobre esse area"
+                  value={comentario}
+                  onChange={(e) => setComentario(e.target.value)}
                 />
 
-                <div className={styles.status}>
-                  Ativo
-                </div>
+                <button
+                  onClick={() => {
+                    Avaliar(categoriaSelecionada.id, avaliacao, comentario);
+                  }}
+                  className={styles.enviar}
+                >
+                  Enviar Avaliação
+                </button>
               </div>
-
-              <div className={styles.conteudo}>
-                <h1>{categoriaSelecionada.nome}</h1>
-
-                <p className={styles.descricao}>
-                  {categoriaSelecionada.descricao}
-                </p>
-
-                <div className={styles.Informacoes}>
-                  <div className={styles.dados}>
-                    <span>Localização</span>
-                    <strong>
-                      {categoriaSelecionada.localizacao}
-                    </strong>
-                  </div>
-
-                  <div className={styles.dados}>
-                    <span>E-mail de Contato</span>
-                    <strong>
-                      {categoriaSelecionada.email || "Não informado"}
-                    </strong>
-                  </div>
-                </div>
-
-                <div className={styles.areaAvaliacao}>
-                  <h2>Avaliar Setor</h2>
-
-                  <p>Sua avaliação</p>
-
-                  <div className={styles.estrelas}>
-                    ☆ ☆ ☆ ☆ ☆
-                  </div>
-
-                  <label>Seu comentário</label>
-
-                  <textarea
-                    placeholder="Compartilhe sua experiência com este setor..."
-                  />
-
-                  <button className={styles.botaoEnviar}>
-                    Enviar Avaliação
-                  </button>
-                </div>
-              </div>
-            </motion.div>
+            </div>
           </motion.div>
-        )}
+        </motion.div>
+      )}
     </motion.div>
   );
 };

@@ -11,7 +11,7 @@
       return res.status(400).json({ message: "Falta informações" });
     }
     try {
-      const buscar = await db.query("SELECT * FROM usuarios WHERE email = ?", [
+      const [buscar] = await db.query("SELECT * FROM usuarios WHERE email = ?", [
         email,
       ]);
       if (buscar.length === 0) {
@@ -28,6 +28,7 @@
           id: usuario.id,
           email: usuario.email,
           nome: usuario.nome,
+          cargo: usuario.cargo
         },
         process.env.JWT_SECRET,
         {
@@ -52,7 +53,7 @@
 
       try {
         const senhaCripto = await bcrypt.hash(senha, 10);
-        const criar = await db.query(
+        const [criar] = await db.query(
           "INSERT INTO usuarios(nome,senha,email,cargo,ra) VALUES(?,?,?,?,?)",
           [nome, senhaCripto, email, cargo, RA],
         );

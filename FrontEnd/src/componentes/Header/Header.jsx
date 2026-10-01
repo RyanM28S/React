@@ -15,6 +15,7 @@ const Header = () => {
 
   const storedToken = localStorage.getItem("token");
   const token = storedToken ? jwtDecode(storedToken) : null;
+  const cargo = token ? token.cargo : "";
   const nome = token ? token.nome : "";
 
   return (
@@ -49,7 +50,7 @@ const Header = () => {
               Categorias
             </Link>
           )}
-          {token && (
+          {token && cargo === "Professor" && (
             <Link to="/painel" className={style.btn5} id="entradah">
               <img
                 src={ImgIncocolage}
