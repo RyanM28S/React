@@ -235,15 +235,15 @@ VALUES
     'Romario',
     'romario@escola.com',
     'senha',
-    'Professor',
+    'Matematica Avançada',
     'Professor da instituição.'
 ),
 
 (
-    'Elen',
-    'elen@escola.com',
+    'Luan',
+    'luan@escola.com',
     'senha',
-    'Professor',
+    'FrontEnd',
     'Professora da instituição.'
 ),
 
@@ -251,7 +251,7 @@ VALUES
     'Karen',
     'karen@escola.com',
     'senha',
-    'Professor',
+    'Educação Fisica',
     'Professora da instituição.'
 ),
 
@@ -259,7 +259,7 @@ VALUES
     'João',
     'joao@escola.com',
     'senha',
-    'Professor',
+    'Técnico em Banco de Dados',
     'Professor da instituição.'
 ),
 
@@ -267,7 +267,7 @@ VALUES
     'Sidney',
     'sidney@escola.com',
     'senha',
-    'Professor',
+    'Técnico Back-End e Mobile',
     'Professor da instituição.'
 ),
 
@@ -275,7 +275,7 @@ VALUES
     'Gabriel',
     'gabriel@escola.com',
     'senha',
-    'Professor',
+    'Versionamento de Código e Projetos',
     'Professor da instituição.'
 );
 

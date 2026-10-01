@@ -35,7 +35,7 @@ const Categorias = () => {
   const [comentario, setComentario] = useState("");
   const [avaliacao, setAvaliacao] = useState(0);
   const [hoverAvaliacao, setHoverAvaliacao] = useState(0);
-  const tipo = "categorias";
+  const tipo = "categoria";
     async function Avaliar(id_categoria, estrelas, comentario) {
     try {
       const res = await fetch(`http://localhost:3001/avaliar`, {
