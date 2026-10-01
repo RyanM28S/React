@@ -15,7 +15,7 @@ import Biblioteca from "../../assets/iconbiblioteca.png";
 import Orientacao from "../../assets/iconorientacaoeducacional.png";
 import Manutencao from "../../assets/iconmanutencao.png";
 import Cordenacao from "../../assets/iconcordenacao.png";
-
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const cardVariants = {
@@ -57,8 +57,10 @@ const Categorias = () => {
       if (!res.ok) {
         throw new Error(data.message || "Houve um erro");
       }
+         toast.success("Avaliação Registrada");
       console.log(data);
     } catch (error) {
+       toast.error("Erro ao Avaliar!");
       console.log(error);
     }
   }

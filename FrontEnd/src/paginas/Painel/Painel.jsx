@@ -4,7 +4,7 @@ import lapis from "../../assets/lapis.png";
 import lixo from "../../assets/lixo.svg";
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-
+import toast, { Toaster } from "react-hot-toast";
 import pessoas from "../../assets/icone-pessoas-roxo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -32,8 +32,12 @@ const Painel = () => {
         throw new Error(data.message || "Erro ao buscar alunos");
       }
       setAlunos(data);
+
     } catch (error) {
-      console.error(error.message);
+
+       toast.error(error.message || "Erro ao carregar a lista de alunos");
+       console.error(error.message);
+
     }
   }
   useEffect(() => {
@@ -54,6 +58,7 @@ const Painel = () => {
       await buscarAlunos();
       setvisivel(false);
     } catch (error) {
+       toast.error(error.message || "Não foi possível excluir o aluno");
       console.error(error.message);
     }
   }
@@ -64,7 +69,8 @@ const Painel = () => {
     const dados = Object.fromEntries(new FormData(form));
 
     if (!dados.nome || !dados.turma || !dados.ra) {
-      return alert("Falta informações!");
+     
+      return toast.warn("Por favor, preencha todas as informações!");
     }
     try {
       const res = await fetch("http://localhost:3001/registrar", {
@@ -79,11 +85,14 @@ const Painel = () => {
 
       if (!res.ok) {
         throw new Error(data.message || "Erro ao registrar");
+        
       }
+          toast.success("Aluno registrado com sucesso!");
       console.log(data);
       await buscarAlunos();
       setvisivel(false);
     } catch (error) {
+       toast.error(error.message || "Não foi possível registrar o aluno");
       console.error(error.message);
     }
   }
@@ -109,9 +118,13 @@ const Painel = () => {
       if (!res.ok) {
         throw new Error(data.message || "Erro ao registrar");
       }
+        toast.success("Informações atualizadas com sucesso!");
       console.log(data);
       await buscarAlunos();
     } catch (error) {
+         toast.error(
+           error.message || "Não foi possível atualizar as informações",
+         );
       console.error(error.message);
     }
   }
