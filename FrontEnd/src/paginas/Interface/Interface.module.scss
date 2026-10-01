@@ -236,6 +236,25 @@
     }
   }
 }
+
+.paginacao {
+  width: 100%;
+  .botaop {
+  background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
+    box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
+    border-radius: 0.1rem;
+  border: 1px solid rgb(64, 45, 173);
+  padding: 0.2rem;
+  width: 5%;
+  height: 7%;
+  
+  color: white;
+  }
+  span {
+    margin: 0 1rem;
+    color: white;
+  }
+}
  
 /* ===========================
    TABLET LANDSCAPE (≤ 1024px)
