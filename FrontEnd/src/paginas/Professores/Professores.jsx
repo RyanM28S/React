@@ -9,6 +9,7 @@ import sidney from "../../assets/sidney.png";
 import gabriel from "../../assets/gabriel.jpg";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const cardVariants = {
   hidden: {
@@ -45,8 +46,10 @@ const Professores = () => {
       if (!res.ok) {
         throw new Error(data.message || "Houve um erro");
       }
+      toast.success("Avaliação Registrada");
       console.log(data);
     } catch (error) {
+        toast.error("Erro ao Avaliar!");
       console.log(error);
     }
   }
