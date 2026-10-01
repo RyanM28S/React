@@ -328,7 +328,7 @@ const Interface = () => {
           </section>{" "}
           <div className={style.paginacao}>
             <button
-              onClick={() => setPagina(pagina - 1)}
+              className={style.botaop} onClick={() => setPagina(pagina - 1)}
               disabled={pagina === 1}
             >
               ←
@@ -339,7 +339,7 @@ const Interface = () => {
             </span>
 
             <button
-              onClick={() => setPagina(pagina + 1)}
+              className={style.botaop} onClick={() => setPagina(pagina + 1)}
               disabled={pagina === totalPaginas}
             >
               →
