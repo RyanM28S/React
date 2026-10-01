@@ -397,6 +397,37 @@ span {
   grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
+.estrelas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+
+.estrela {
+  font-size: 32px; 
+  color: #666;   
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.1s ease;
+  user-select: none; 
+}
+
+
+.estrela:active {
+  transform: scale(0.9);
+}
+
+
+.estrela.ativa {
+  color: #d136ff; 
+  text-shadow: 
+    0 0 4px #c014ff,   
+    0 0 12px #c014ff,  
+    0 0 20px #9d00ff;  
+}
+
+
+
  
 .dados {
   background: #211225;
