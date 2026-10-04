@@ -37,7 +37,7 @@ CREATE TABLE alunos (
 
     nome VARCHAR(100),
 
-    email VARCHAR(256) NOT NULL UNIQUE,
+    email VARCHAR(256) UNIQUE,
 
     senha VARCHAR(256),
 
