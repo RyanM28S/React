@@ -266,7 +266,7 @@
 .atual {
   display: block;
   margin: 1rem auto;
-  background: linear-gradient(90deg, #b300ff, #ff00ff);
+  background: linear-gradient(90deg, #6d16d8, #8d2cff);
   color: white;
   border: none;
   font-family: 'Sora', arial;
@@ -281,7 +281,7 @@
 .criar {
   display: block;
   margin: 1rem auto;
-  background: linear-gradient(135deg, #a855f7, #ec4899);
+   background: linear-gradient(90deg, #6d16d8, #8d2cff);
   color: white;
   border: none;
   font-family: "Sora", arial;
@@ -365,7 +365,9 @@ transform: scale(1.8);
     color: #d946ef;
   }
 }
- 
+.botoes {
+  display: flex;
+}
 select {
   width: 100%;
   padding: 1rem;
