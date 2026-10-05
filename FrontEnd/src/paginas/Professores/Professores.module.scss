@@ -78,22 +78,27 @@
   margin: 2rem 0;
   text-align: center;
 }
-.prof button {
-  background: #7a00ff;
-  color: white;
+
+.prof button  {
+  margin-top: 30px;
+  width: 100%;
+  height: 70px;
   border: none;
-  display: block;
-  margin: auto;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #6d16d8, #8d2cff);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
 }
-.prof button:hover {
-  background-color: #c014ff;
-  box-shadow: 0 0 12px rgba(193, 20, 255, 0.6);
+ 
+.prof button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(132, 56, 255, 0.4);
 }
+
+
 .prof {
   border-radius: 2rem;
   width: 30%;

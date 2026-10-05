@@ -293,7 +293,7 @@ const Painel = () => {
                   <input type="number" name="nota3" placeholder="Nota 3°" />
                   <input type="number" name="nota4" placeholder="Nota 4°" />
                 </div>
-                <div>
+                <div className={styles.botoes}>
                   <button type="submit" className={styles.atual}>
                     Registrar
                   </button>
